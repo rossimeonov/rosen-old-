@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Новини и Позиции | Росен Симеонов</title>
+    <meta name="description" content="Актуални новини, събития и позиции на Росен Симеонов – кандидат за народен представител от ПП–ДБ в Русе.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #243a96;
+            --secondary-blue: #2f47b8;
+            --deep-blue: #15205d;
+            --navy: #07153b;
+            --accent-light: #e9efff;
+            --white: #ffffff;
+            --text-soft: rgba(255,255,255,0.82);
+            --text-dark: #1e2a4f;
+            --shadow: 0 18px 45px rgba(7, 21, 59, 0.28);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { margin: 0; overflow-x: hidden; font-family: 'Roboto', sans-serif; background: var(--navy); color: var(--white); }
+        h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; letter-spacing: 0.3px; }
+
+        /* HEADER STYLES (Same as Index) */
+        .navbar { background: rgba(10, 20, 58, 0.94); backdrop-filter: blur(16px); min-height: 82px; border-bottom: 1px solid rgba(255,255,255,0.09); }
+        .brand-name { color: #fff !important; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 16px; letter-spacing: 0.8px; }
+        .header-logos { display: flex; align-items: center; gap: 12px; padding-left: 16px; border-left: 1px solid rgba(255,255,255,0.18); }
+        .header-logos img { height: 50px; width: auto; }
+        .nav-link { color: rgba(255,255,255,0.88) !important; font-weight: 700; font-size: 13px; text-transform: uppercase; margin-left: 18px; transition: 0.25s ease; }
+        .dropdown-menu { background-color: var(--deep-blue); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; }
+        .dropdown-item { color: var(--text-soft) !important; font-weight: 600; font-size: 12px; text-transform: uppercase; padding: 10px 20px; }
+        .dropdown-item:hover { background-color: var(--primary-blue); color: #fff !important; }
+        .vote-chip { margin-left: 22px; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--primary-blue); padding: 8px 16px; border-radius: 999px; font-weight: 900; font-size: 13px; text-transform: uppercase; text-decoration: none; }
+        .social-nav { display: flex; gap: 14px; margin-left: 24px; padding-left: 18px; border-left: 1px solid rgba(255,255,255,0.18); }
+        .social-nav a { color: rgba(255,255,255,0.82); font-size: 18px; transition: 0.25s ease; }
+
+        /* BLOG SPECIFIC STYLES */
+        .blog-header {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #0a143d 0%, #1d2d7d 100%);
+            text-align: center;
+        }
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        .blog-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 22px;
+            overflow: hidden;
+            height: 100%;
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.3);
+        }
+        .blog-card img { width: 100%; height: 240px; object-fit: cover; }
+        .blog-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-meta { font-size: 12px; color: var(--accent-light); margin-bottom: 10px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
+        .blog-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; line-height: 1.3; }
+        .blog-excerpt { color: var(--text-soft); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; }
+        .read-more { margin-top: auto; color: #fff; text-decoration: none; font-weight: 700; font-size: 13px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .read-more:hover { color: var(--accent-light); }
+
+        /* FOOTER STYLES (Same as Index) */
+        .disclaimer-box { border: 1px solid rgba(255,255,255,0.2); padding: 15px; display: inline-block; margin-top: 25px; font-weight: 800; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
+        footer { background: #050b1c; padding: 48px 0; text-align: center; color: rgba(255,255,255,0.72); font-size: 14px; }
+
+        @media (max-width: 991px) {
+            .header-logos, .social-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
+                <div class="header-logos">
+                    <img src="ПП- ДБ.png" alt="ПП–ДБ">
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            За Росен
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="za-men.html">Биография</a></li>
+                            <li><a class="dropdown-item" href="index.html#on-field">На терен</a></li>
+                            <li><a class="dropdown-item" href="index.html#how-to-vote">Как да гласуваш</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#priorities">Приоритети</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Новини</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#media">Позиции</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Контакт</a></li>
+                    <li class="nav-item"><a href="index.html#how-to-vote" class="vote-chip">№7 | 105</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="blog-header">
+        <div class="container">
+            <h1 class="display-4 fw-900 text-uppercase mb-3" data-aos="fade-down">Новини и Позиции</h1>
+            <p class="lead text-soft mx-auto mb-5" style="max-width: 700px;" data-aos="fade-up">
+                Следете дейността ни в Русе, нашите предложения за региона и позициите ни по най-важните обществени теми.
+            </p>
+            
+            <div class="category-filter" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active">Всички</button>
+                <button class="filter-btn">Срещи</button>
+                <button class="filter-btn">Позиции</button>
+                <button class="filter-btn">Медии</button>
+                <button class="filter-btn">Кампания</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-5">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <article class="blog-card">
+                        <img src="news1.jpg" alt="Диалог с бизнеса">
+                        <div class="blog-content">
+                            <div class="blog-meta">20 Октомври 2026 | Срещи</div>
+                            <h2 class="blog-title">Диалог с бизнеса в Русе: Икономически център на Севера</h2>
+                            <p class="blog-excerpt">Обсъдихме конкретни стъпки за привличане на инвестиции и подобряване на бизнес климата в региона...</p>
+                            <a href="blog-single.html" class="read-more">Прочети още <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <article class="blog-card">
+                        <img src="news2.jpg" alt="Финансова грамотност">
+                        <div class="blog-content">
+                            <div class="blog-meta">18 Октомври 2026 | Позиции</div>
+                            <h2 class="blog-title">Защо финансовата грамотност трябва да влезе в училище?</h2>
+                            <p class="blog-excerpt">Моята визия за образованието като инструмент за реална стабилност и независими български семейства...</p>
+                            <a href="blog-single.html" class="read-more">Прочети още <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <article class="blog-card">
+                        <img src="news3.jpg" alt="Хазартна зависимост">
+                        <div class="blog-content">
+                            <div class="blog-meta">15 Октомври 2026 | Кампания</div>
+                            <h2 class="blog-title">Битката срещу хазарта: Време е за реални ограничения</h2>
+                            <p class="blog-excerpt">Представяме пакета от мерки за ограничаване на агресивната реклама и защита на младите хора от хазартна зависимост...</p>
+                            <a href="blog-single.html" class="read-more">Прочети още <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <article class="blog-card">
+                        <img src="news4.jpg" alt="Среща в Борово">
+                        <div class="blog-content">
+                            <div class="blog-meta">12 Октомври 2026 | Срещи</div>
+                            <h2 class="blog-title">На терен: Среща с гражданите в община Борово</h2>
+                            <p class="blog-excerpt">Основните притеснения на хората в малките населени места остават липсата на транспортна свързаност и здравеопазване...</p>
+                            <a href="blog-single.html" class="read-more">Прочети още <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <nav class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link filter-btn mx-1" href="#">Предишна</a></li>
+                    <li class="page-item"><a class="page-link filter-btn active mx-1" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link filter-btn mx-1" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link filter-btn mx-1" href="#">Следваща</a></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-2">© 2026 РОСЕН СИМЕОНОВ | ПП–ДБ РУСЕ</p>
+            <p class="mb-0">Русе може повече. №7 | 105</p>
+            <div class="disclaimer-box">
+                Купуването и продаването на гласове е престъпление
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: true });
+    </script>
+</body>
+</html>
