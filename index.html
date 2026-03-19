@@ -76,7 +76,7 @@
         }
 
         .header-logos img {
-            height: 52px;
+            height: 28px;
             width: auto;
         }
 
@@ -140,9 +140,8 @@
             position: relative;
             overflow: hidden;
             background:
-                radial-gradient(circle at 78% 24%, rgba(255,255,255,0.18) 0, rgba(255,255,255,0.04) 18%, transparent 42%),
-                radial-gradient(circle at 82% 72%, rgba(255,255,255,0.08) 0, transparent 32%),
-                linear-gradient(135deg, #07102f 0%, #16266d 40%, #2f47b8 100%);
+                radial-gradient(circle at 75% 55%, rgba(255,255,255,0.12) 0, rgba(255,255,255,0.03) 18%, transparent 45%),
+                linear-gradient(135deg, #0a143d 0%, #1d2d7d 45%, #3147b7 100%);
         }
 
         .hero::before {
@@ -151,22 +150,9 @@
             inset: 0;
             background:
                 radial-gradient(circle at 78% 70%, rgba(255,255,255,0.18) 0 2px, transparent 3px) 0 0/22px 22px,
-                linear-gradient(90deg, rgba(0,0,0,0.36), rgba(0,0,0,0.06));
+                linear-gradient(90deg, rgba(0,0,0,0.28), rgba(0,0,0,0.02));
             opacity: 0.28;
             pointer-events: none;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            right: -180px;
-            bottom: -120px;
-            width: 720px;
-            height: 720px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 35%, transparent 72%);
-            pointer-events: none;
-            z-index: 1;
         }
 
         .hero .container {
@@ -196,12 +182,11 @@
         }
 
         .hero-title {
-            font-size: clamp(2.3rem, 4.8vw, 5.2rem);
+            font-size: clamp(2.3rem, 4.8vw, 4.8rem);
             font-weight: 900;
-            line-height: 0.94;
+            line-height: 0.98;
             margin-bottom: 18px;
             text-transform: uppercase;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.18);
         }
 
         .hero-subtitle {
@@ -329,65 +314,12 @@
             min-height: 100%;
         }
 
-        .hero-image-frame {
-            position: relative;
-            display: inline-flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding: 0 12px 0;
-        }
-
-        .hero-image-frame::before {
-            content: "";
-            position: absolute;
-            inset: 60px 0 25px 0;
-            border-radius: 38px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.03));
-            border: 1px solid rgba(255,255,255,0.12);
-            box-shadow: 0 24px 60px rgba(0,0,0,0.2);
-            z-index: 0;
-        }
-
         .hero-image {
-            position: relative;
-            z-index: 2;
             max-width: 100%;
-            width: 700px;
+            width: 620px;
             height: auto;
             display: block;
-            filter: drop-shadow(0 20px 42px rgba(0,0,0,0.38));
-            margin-top: 90px;
-        }
-
-        .hero-stamp {
-            position: absolute;
-            left: -10px;
-            bottom: 36px;
-            z-index: 3;
-            background: rgba(7, 21, 59, 0.9);
-            border: 1px solid rgba(255,255,255,0.14);
-            border-radius: 22px;
-            padding: 18px 20px;
-            box-shadow: 0 16px 34px rgba(0,0,0,0.24);
-            backdrop-filter: blur(10px);
-            min-width: 180px;
-        }
-
-        .hero-stamp .small-label {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255,255,255,0.72);
-            margin-bottom: 6px;
-        }
-
-        .hero-stamp .big-line {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            font-weight: 900;
-            line-height: 1.05;
-            color: #fff;
+            filter: drop-shadow(0 18px 35px rgba(0,0,0,0.35));
         }
 
         .logos-inline {
@@ -398,7 +330,7 @@
         }
 
         .logos-inline img {
-            height: 64px;
+            height: 42px;
             width: auto;
         }
 
@@ -636,12 +568,6 @@
             font-size: 14px;
         }
 
-        @media (max-width: 1199px) {
-            .hero-image {
-                width: 620px;
-            }
-        }
-
         @media (max-width: 991px) {
             .header-logos, .social-nav { display: none; }
             .vote-chip { margin-left: 0; margin-top: 12px; }
@@ -673,19 +599,9 @@
                 max-width: 100%;
             }
 
-            .hero-image-frame::before {
-                inset: 35px 0 18px 0;
-            }
-
             .hero-image {
-                width: 470px;
-                margin-top: 36px;
-            }
-
-            .hero-stamp {
-                position: static;
-                margin: 18px auto 0;
-                max-width: 240px;
+                width: 440px;
+                margin-top: 30px;
             }
 
             .grid-wide { grid-column: span 1; }
@@ -720,15 +636,6 @@
                 width: 100%;
                 text-align: center;
             }
-
-            .logos-inline img {
-                height: 54px;
-            }
-
-            .hero-image {
-                width: 100%;
-                max-width: 420px;
-            }
         }
     </style>
 </head>
@@ -739,7 +646,7 @@
             <div class="navbar-brand">
                 <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
                 <div class="header-logos">
-                    <img src="ПП-ДБ.png" alt="Продължаваме Промяната и Демократична България">
+                    <img src="ПП- ДБ.png" alt="Продължаваме Промяната и Демократична България">
                 </div>
             </div>
 
@@ -812,13 +719,7 @@
 
                     <div class="col-lg-5" data-aos="fade-left">
                         <div class="hero-image-wrap">
-                            <div class="hero-image-frame">
-                                <img src="Росен.png" alt="Росен Симеонов, №7, преференция 105" class="hero-image">
-                                <div class="hero-stamp">
-                                    <div class="small-label">Избори</div>
-                                    <div class="big-line">№7 | 105</div>
-                                </div>
-                            </div>
+                            <img src="Росен.png" alt="Росен Симеонов, №7, преференция 105" class="hero-image">
                         </div>
                     </div>
                 </div>
