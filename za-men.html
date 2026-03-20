@@ -3,308 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>За мен | Росен Симеонов | №7 | Преференция 105</title>
-
-    <meta name="description" content="Биография на Росен Симеонов – пътят от професионалния успех в Лондон до каузата за Русе.">
-    <meta name="theme-color" content="#07153b">
-    <meta name="color-scheme" content="dark light">
-    <meta property="og:locale" content="bg_BG">
-    <meta property="og:title" content="За мен | Росен Симеонов">
-    <meta property="og:description" content="Биографията, опитът и ценностите зад каузата на Росен Симеонов за Русе.">
-    <meta property="og:image" content="thumbnail.png">
-    <meta property="og:type" content="website">
-
+    <title>За мен | Росен Симеонов</title>
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Идентичен CSS като в горния файл за консистентност */
+        :root {
+            --primary-blue: #243a96; --secondary-blue: #2f47b8; --deep-blue: #15205d;
+            --navy: #07153b; --white: #ffffff; --text-dark: #1e2a4f;
+            --nav-height: 86px; --nav-height-scrolled: 72px;
+        }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: #fff; color: var(--text-dark); }
+        .navbar { background: var(--navy); min-height: var(--nav-height); transition: 0.3s; z-index: 1030; position: fixed; width: 100%; top: 0; }
+        .navbar.navbar-scrolled { min-height: var(--nav-height-scrolled); background: #050b1c; }
+        .nav-shell { min-height: var(--nav-height); display: flex; align-items: center; justify-content: space-between; }
+        .brand-name { color: #fff !important; font-weight: 900; }
+        .desktop-nav .nav-link { color: #fff !important; font-weight: 700; text-transform: uppercase; padding: 10px 15px !important; }
+        
+        .header-pref { width: 38px; height: 38px; background: #fff; color: var(--primary-blue); display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; border: 2px solid var(--primary-blue); }
+        .header-num { width: 32px; height: 32px; background: #fff; color: var(--primary-blue); display: flex; align-items: center; justify-content: center; border-radius: 8px; font-weight: 900; }
+
+        .about-header { background: var(--navy); padding: 150px 0 80px; color: #fff; text-align: center; }
+        .check-list { list-style: none; padding: 0; }
+        .check-list li { position: relative; padding-left: 35px; margin-bottom: 20px; font-size: 1.1rem; }
+        .check-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--secondary-blue); }
+        
+        .mobile-menu-toggle { width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 12px; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+        .mobile-menu-toggle span { width: 25px; height: 2px; background: #fff; display: block; }
+        .mobile-menu-drawer { position: fixed; top: 0; right: 0; width: 300px; height: 100vh; background: var(--navy); z-index: 9999; transform: translateX(100%); transition: 0.4s; padding: 30px; }
+        .mobile-menu-drawer.active { transform: translateX(0); }
+        .mobile-nav-link { display: block; color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
+
+        @media (max-width: 991px) {
+            .desktop-nav { display: none !important; }
+            .mobile-menu-toggle { display: flex; }
+        }
+    </style>
 </head>
 <body>
-    <a href="#main-content" class="visually-hidden-focusable">Прескочи към основното съдържание</a>
 
-    <nav class="navbar sticky-top navbar-dark" id="mainNavbar">
+    <nav class="navbar navbar-dark" id="mainNavbar">
         <div class="container">
             <div class="nav-shell">
-                <div class="navbar-brand-wrap">
-                    <a href="index.html" class="brand-name" aria-label="Начало">РОСЕН СИМЕОНОВ</a>
-                    <div class="header-logos d-none d-lg-flex">
-                        <img src="ПП- ДБ.png" alt="ПП-ДБ" width="180" height="50">
-                    </div>
-                </div>
-
+                <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
                 <div class="desktop-nav d-none d-lg-flex align-items-center">
-                    <ul class="navbar-nav flex-row align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="za-men.html" aria-current="page">За мен</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#priorities">Приоритети</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#why">Защо</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Контакт</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.html#how-to-vote" class="vote-chip" aria-label="Как да гласуваш">
+                    <ul class="navbar-nav flex-row align-items-center" style="gap: 15px;">
+                        <li><a class="nav-link" href="index.html">Начало</a></li>
+                        <li><a class="nav-link" href="index.html#priorities">Приоритети</a></li>
+                        <li><a href="index.html#how-to-vote" class="d-flex align-items-center" style="gap: 8px;">
                                 <span class="header-num">7</span>
                                 <span class="header-pref">105</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <div class="social-nav">
-                                <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-                            </div>
-                        </li>
                     </ul>
                 </div>
-
-                <button type="button" class="mobile-menu-toggle d-lg-none" id="mobileMenuToggle" aria-label="Отвори меню">
+                <div class="mobile-menu-toggle d-lg-none" id="mobileMenuToggle">
                     <span></span><span></span><span></span>
-                </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    <aside class="mobile-menu-drawer" id="mobileMenu" aria-hidden="true">
-        <div class="mobile-menu-top">
-            <div>
-                <div class="mobile-menu-label">Навигация</div>
-                <div class="mobile-menu-title">Росен Симеонов</div>
-            </div>
-            <button class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="mobile-menu-content">
-            <a href="za-men.html" class="mobile-nav-link active">За мен</a>
-            <a href="index.html#priorities" class="mobile-nav-link">Приоритети</a>
-            <a href="index.html#why" class="mobile-nav-link">Защо</a>
-            <a href="#contact" class="mobile-nav-link">Контакт</a>
-            <a href="index.html#how-to-vote" class="mobile-vote-card">
-                <div class="mobile-vote-shapes">
-                    <span class="header-num">7</span>
-                    <span class="header-pref">105</span>
-                </div>
-                <div class="mobile-vote-text"><strong>ПП–ДБ №7</strong><span>Преференция 105</span></div>
-            </a>
-            <a href="#contact" class="mobile-cta">Пиши ми</a>
-        </div>
+    <aside class="mobile-menu-drawer" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Начало</a>
+        <a href="index.html#priorities" class="mobile-nav-link">Приоритети</a>
     </aside>
 
-    <main id="main-content">
-        <section class="bio-hero">
-            <div class="container text-center" data-aos="fade-up">
-                <div class="bio-kicker">Личната история зад каузата</div>
-                <h1 class="bio-title">Росен<br>Симеонов</h1>
-                <p class="bio-subtitle">
-                    Пътят от професионалното развитие в Обединеното кралство до завръщането в Русе е история за дисциплина,
-                    знания, отговорност и ясната вяра, че наученото има смисъл само когато се използва в полза на хората.
-                </p>
-            </div>
-        </section>
-
-        <section class="bio-section">
-            <div class="container">
-                <div class="row g-5 align-items-start">
-                    <div class="col-lg-4" data-aos="fade-right">
-                        <div class="bio-panel">
-                            <h2 class="section-title">Профил</h2>
-                            <div class="fact-grid">
-                                <div class="fact-item"><i class="fas fa-university"></i><div><strong>MBA с отличие</strong><span>Anglia Ruskin University</span></div></div>
-                                <div class="fact-item"><i class="fas fa-briefcase"></i><div><strong>Близо 20 години опит</strong><span>в логистика, управление и реална икономика в UK</span></div></div>
-                                <div class="fact-item"><i class="fas fa-chart-line"></i><div><strong>Финансова култура</strong><span>предприемачество, инвестиции и дългосрочно мислене</span></div></div>
-                                <div class="fact-item"><i class="fas fa-users"></i><div><strong>Семеен човек</strong><span>с ясна мотивация градът да е по-добро място за следващото поколение</span></div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-8" data-aos="fade-left">
-                        <div class="bio-copy">
-                            <h2 class="section-title">Европейска школа и завръщане</h2>
-                            <p>Роден в Русе през 1977 г., Росен Симеонов изгражда професионалния си път в среда, в която дисциплината, ясните правила и личната отговорност не са лозунги, а ежедневие. В продължение на близо 20 години в Обединеното кралство той преминава през всички нива на реалната икономика – от оперативна работа до управленски позиции в логистиката.</p>
-                            <p>Този опит му дава не само професионална стабилност, но и важен поглед върху това как функционират работещите системи: когато има ясни правила, последователност и уважение към труда, хората имат шанс да се развиват и да планират бъдещето си.</p>
-                            <p>През 2022 г. той избира да се върне в Русе със семейството си. Не по носталгия, а с убеждението, че наученото навън има най-голяма стойност, когато се прилага тук – за града, за региона и за хората, които искат повече възможности и по-справедлива среда.</p>
-                        </div>
-                        <div class="row g-3 mt-3">
-                            <div class="col-md-6"><img src="mattison-scaffolding.jpg" class="img-framed" alt="Професионална среда"></div>
-                            <div class="col-md-6"><img src="rosen-simeonov-manager-mattison.jpg" class="img-framed" alt="Управленска роля"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bio-section bio-section-white">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <div class="bio-copy">
-                            <h2 class="section-title">Академична подготовка</h2>
-                            <p>Паралелно с професионалното си развитие Росен Симеонов инвестира последователно и в образованието си. Той завършва MBA в <strong>Anglia Ruskin University</strong>, където постига отлични резултати и получава признание за високото си представяне.</p>
-                            <p>Академичната подготовка надгражда практическия опит и затвърждава уменията му за стратегическо мислене, финансов анализ, управление на процеси и вземане на решения в сложна среда.</p>
-                        </div>
-                        <div class="award-banner">
-                            <i class="fas fa-award fa-3x text-warning"></i>
-                            <div><h5 class="m-0 fw-bold">MBA Top Achiever</h5><p class="m-0 text-muted small">Отличие за най-високи резултати в магистърската програма.</p></div>
-                        </div>
-                        <img src="top achiever rosen simeonov.png" class="img-framed" alt="Отличие">
-                    </div>
-
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="bio-panel">
-                            <h3 class="section-title">Политическа подготовка</h3>
-                            <p class="bio-copy">Росен Симеонов завършва 8-ми випуск на Политическата академия „Атанас Буров“ – програма, която дава солидна рамка в политическия мениджмънт, лидерството и съвременните обществени политики.</p>
-                            <p class="bio-copy">Тази подготовка е важна, защото съчетава опита от реалната икономика с разбирането как обществените решения се превръщат в работещи политики.</p>
-                            <div class="award-banner alt-blue mt-4">
-                                <i class="fas fa-scroll fa-3x text-primary"></i>
-                                <div><h5 class="m-0 fw-bold">Академия „Атанас Буров“</h5><p class="m-0 text-muted small">8-ми випуск: политически мениджмънт и лидерство.</p></div>
-                            </div>
-                            <img src="rosen simeonov radan kanve atanas burov akademia.jpg" class="img-framed" alt="Сертификат">
-                            <p class="text-center small text-muted mt-3 mb-0">Връчване на сертификата от Радан Кънев</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="quote-section">
-            <div class="container">
-                <div class="quote-card" data-aos="fade-up">
-                    <div class="quote-mark">“</div>
-                    <div class="quote-text">Политиката има смисъл само когато си постоянно сред хората, когато ги слушаш честно и когато носиш отговорност за всяка позиция, която защитаваш.</div>
-                    <div class="quote-author">Росен Симеонов</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bio-section bio-section-soft">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-                        <div class="bio-copy">
-                            <h2 class="section-title">Личен фундамент и ценности</h2>
-                            <p>За Росен Симеонов семейството е най-силната лична мотивация. Като съпруг и баща, той гледа на обществената работа не абстрактно, а през въпроса какъв град и каква държава оставяме на децата си.</p>
-                            <p>Тази перспектива прави каузата му за Русе конкретна: град, в който младите виждат перспектива, семействата могат да планират спокойно, а трудът и усилието имат смисъл.</p>
-                            <p>В личния му път важна роля има и спортът. Дисциплината, самоконтролът, устойчивостта и уважението към правилата не са просто качества, а навици, изграждани с години.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
-                        <div class="row g-3">
-                            <div class="col-6"><img src="rosen simeonov semeistvo.jpg" class="img-framed" alt="Семейство"></div>
-                            <div class="col-6"><img src="rosen simeonov black belt kick box.jpg" class="img-framed" alt="Спорт"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bio-section bio-section-white">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5" data-aos="zoom-in">
-                        <img src="finansova-konferncia-invest-pro-rosen-simeonov.jpg" class="img-framed" alt="Конференция">
-                    </div>
-                    <div class="col-lg-7" data-aos="fade-left">
-                        <div class="bio-panel bio-panel-dark">
-                            <h2 class="section-title">Финансовата грамотност като свобода</h2>
-                            <p>Росен Симеонов е създател на <strong>AlphaInvest.bg</strong> – платформа, насочена към финансова култура, дългосрочно мислене и по-отговорно отношение към личните решения.</p>
-                            <p>За него икономическата независимост е основа на истинската гражданска свобода. Когато хората разбират парите си, рисковете си и възможностите си, те са по-независими, по-устойчиви и по-малко уязвими.</p>
-                            <p class="mb-0">Този фокус върху финансовото знание не е странична тема, а пряко свързан с идеята за по-силни семейства, по-уверени граждани и по-зряла обществена среда.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bio-section">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-10" data-aos="fade-up">
-                        <div class="leadership-box">
-                            <div class="text-center mb-4">
-                                <h2 class="section-title mx-auto">Лидерство в ДСБ Русе</h2>
-                                <p class="bio-copy mb-0">Доверието към Росен Симеонов е резултат от последователна работа, ясен публичен профил и разбиране, че политиката трябва да бъде почтена, пряка и отговорна към хората.</p>
-                            </div>
-                            <div class="row g-4 align-items-center">
-                                <div class="col-lg-7"><img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" class="img-framed" alt="ДСБ Русе"></div>
-                                <div class="col-lg-5">
-                                    <div class="statement-card">
-                                        <p>„Трябва да се върнем към основните принципи в политиката – да сме постоянно сред хората и да отговаряме честно.“</p>
-                                        <span>Росен Симеонов, общински председател на ДСБ Русе</span>
-                                    </div>
-                                    <div class="bio-copy mt-4">
-                                        <p>Това е и принципът, който определя целия му обществен път: не шумни жестове, а постоянство; не обещания без покритие, а работа с ясна посока и реална отговорност.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-wrap">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="contact-card" data-aos="fade-up">
-                            <div class="text-center mb-5">
-                                <h2 class="fw-900 text-uppercase text-white">Включи се или ми пиши</h2>
-                                <p style="color: rgba(255,255,255,0.88); max-width: 680px; margin: 12px auto 0; line-height: 1.8;">Кампанията се прави от хора. Ако искаш да помогнеш, да зададеш въпрос или да станеш доброволец, пиши ми директно.</p>
-                            </div>
-                            <form action="https://formspree.io/f/mnjbakgl" method="POST">
-                                <div class="row g-3">
-                                    <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Име" required></div>
-                                    <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Имейл" required></div>
-                                    <div class="col-12">
-                                        <select name="topic" class="form-control form-select">
-                                            <option value="">Избери тема</option>
-                                            <option value="volunteer">Искам да помогна</option>
-                                            <option value="meeting">Искам среща</option>
-                                            <option value="question">Имам въпрос</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="Вашето съобщение" required></textarea></div>
-                                    <div class="col-12 text-center"><button type="submit" class="btn-main mt-3">Изпрати</button></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="final-section">
-            <div class="container text-center" data-aos="fade-up">
-                <h2 class="fw-900 text-uppercase mb-4">Знания. Опит.<br>Ясна посока за Русе.</h2>
-                <div class="vote-panel justify-content-center">
-                    <div class="number-box">7</div>
-                    <div class="pref-circle">105</div>
-                </div>
-                <p style="color: rgba(255,255,255,0.94); font-weight: 700;">Гласувай за ПП–ДБ №7 с преференция 105</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container text-center">
-            <p>© 2026 РОСЕН СИМЕОНОВ | ПП–ДБ РУСЕ</p>
-            <div class="disclaimer-box">Купуването и продаването на гласове е престъпление</div>
+    <section class="about-header">
+        <div class="container">
+            <h1 class="fw-900 display-4">КОЙ Е РОСЕН СИМЕОНОВ?</h1>
         </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="lead">Роден в Русе през 1977 г., Росен Симеонов изгражда професионалния си път с близо 20 години опит в Обединеното кралство.</p>
+                    <p>Преминава през всички нива – от оперативна работа до управленски позиции в логистиката и инвестициите. Завършва бакалавър по аграрна икономика и магистратура по финанси, а през 2022 г. придобива и MBA от Anglia Ruskin University.</p>
+                    <p>Днес е предприемач, инвеститор и създател на платформа за финансова култура. През 2022 г. се завръща в Русе със семейството си, за да приложи наученото в полза на града.</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="p-4 rounded-4" style="background: #f8faff; border-top: 5px solid var(--primary-blue);">
+                        <h4 class="fw-900 mb-4">КАКВО ГО ОТЛИЧАВА?</h4>
+                        <ul class="check-list">
+                            <li>Опит извън политиката в международна среда</li>
+                            <li>Управленски поглед върху процеси и ресурси</li>
+                            <li>Финансова експертиза и дългосрочно мислене</li>
+                            <li>Реално завръщане в родната страна и град</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-center text-white" style="background: #050b1c;">
+        <p>© 2026 РОСЕН СИМЕОНОВ | ПП-ДБ №7</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 900, once: true });
+            
+            const toggle = document.getElementById('mobileMenuToggle');
+            const menu = document.getElementById('mobileMenu');
+            
+            if(toggle) {
+                toggle.addEventListener('click', () => {
+                    menu.classList.toggle('active');
+                });
+            }
+
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('mainNavbar');
+                if(window.scrollY > 20) nav.classList.add('navbar-scrolled');
+                else nav.classList.remove('navbar-scrolled');
+            });
+        });
+    </script>
 </body>
 </html>
