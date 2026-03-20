@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Росен Симеонов | Знания, опит и ясна посока за Русе | №7 | Преференция 105</title>
-    <link rel="icon" type="image/png" href="favicon.png">
 
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="Росен Симеонов – кандидат за народен представител от Русе. Знания, опит и ясна посока за Русе. Предприемач, инвеститор и човек с управленски опит. №7 с преференция 105.">
+    <meta name="theme-color" content="#07153b">
+
     <meta property="og:title" content="Росен Симеонов | Знания, опит и ясна посока за Русе">
     <meta property="og:description" content="Истинската свобода започва с финансова независимост. Виж приоритетите и позициите на Росен Симеонов за Русе.">
     <meta property="og:image" content="rosen_simeonov.png">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous-basic.min.css">
 
     <style>
@@ -59,7 +64,6 @@
         }
 
         .fw-900 { font-weight: 900; }
-
         a { transition: 0.25s ease; }
 
         /* =========================
@@ -231,7 +235,7 @@
             background: rgba(255,255,255,0.1);
         }
 
-        /* Mobile */
+        /* Mobile menu */
         .mobile-menu-toggle {
             width: 54px;
             height: 54px;
@@ -248,9 +252,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.18);
         }
 
-        .mobile-menu-toggle:hover {
-            background: rgba(255,255,255,0.1);
-        }
+        .mobile-menu-toggle:hover { background: rgba(255,255,255,0.1); }
 
         .mobile-menu-toggle span {
             display: block;
@@ -261,17 +263,9 @@
             transition: 0.25s ease;
         }
 
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
+        .mobile-menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         .mobile-menu-overlay {
             position: fixed;
@@ -309,9 +303,7 @@
             padding: 22px 20px 28px;
         }
 
-        .mobile-menu-drawer.active {
-            transform: translateX(0);
-        }
+        .mobile-menu-drawer.active { transform: translateX(0); }
 
         .mobile-menu-top {
             display: flex;
@@ -351,9 +343,7 @@
             transition: 0.25s ease;
         }
 
-        .mobile-menu-close:hover {
-            background: rgba(255,255,255,0.12);
-        }
+        .mobile-menu-close:hover { background: rgba(255,255,255,0.12); }
 
         .mobile-menu-content {
             display: flex;
@@ -495,7 +485,7 @@
             font-size: 15px;
         }
 
-      /* =========================
+        /* =========================
            HERO
         ========================= */
         .hero {
@@ -535,30 +525,20 @@
             justify-content: center;
             align-items: flex-end;
             height: 100%;
+            min-height: 100%;
+            padding-top: 60px;
             margin-bottom: -5px;
         }
 
         .hero-image {
-            width: auto;
+            width: 620px;
+            max-width: 100%;
             height: auto;
             max-height: 95vh;
-            min-width: 135%;
             display: block;
-            filter: drop-shadow(0 15px 45px rgba(0,0,0,0.4));
             object-fit: contain;
             transform: translateX(12%);
-        }
-
-        @media (max-width: 991px) {
-            .hero-image {
-                min-width: 100%;
-                max-height: 60vh;
-                transform: translateX(0);
-            }
-            .hero-image-wrap {
-                margin-top: 30px;
-                margin-bottom: 0;
-            }
+            filter: drop-shadow(0 18px 35px rgba(0,0,0,0.35));
         }
 
         .hero-badges {
@@ -713,23 +693,6 @@
             color: var(--primary-blue);
         }
 
-        .hero-image-wrap {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            min-height: 100%;
-            padding-top: 60px;
-        }
-
-        .hero-image {
-            max-width: 100%;
-            width: 620px;
-            height: auto;
-            display: block;
-            filter: drop-shadow(0 18px 35px rgba(0,0,0,0.35));
-        }
-
         .logos-inline {
             display: flex;
             align-items: center;
@@ -741,20 +704,41 @@
             height: 42px;
             width: auto;
         }
-        /* Countdown Styles */
+
+        /* Countdown */
         .countdown-container {
-            display: flex;
+            display: inline-flex;
             gap: 15px;
             margin-bottom: 30px;
             padding: 15px;
             background: rgba(255, 255, 255, 0.08);
             border-radius: 18px;
-            display: inline-flex;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-        .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 65px; }
-        .countdown-item span { font-size: 2rem; font-weight: 900; color: #fff; font-family: 'Montserrat', sans-serif; line-height: 1; }
-        .countdown-item label { font-size: 10px; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); margin-top: 5px; letter-spacing: 1px; font-weight: 700; }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 65px;
+        }
+
+        .countdown-item span {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+        }
+
+        .countdown-item label {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 5px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
 
         /* Sections */
         .section-dark { background: #0c1743; padding: 78px 0; }
@@ -1049,7 +1033,6 @@
             }
 
             .mobile-menu-toggle { display: flex; }
-
             .brand-name {
                 font-size: 14px;
                 letter-spacing: 0.6px;
@@ -1073,16 +1056,18 @@
 
             .hero-image {
                 width: 440px;
+                max-height: 60vh;
+                transform: translateX(0);
                 margin-top: 30px;
             }
 
-            .logos-inline {
-                justify-content: center;
+            .hero-image-wrap {
+                margin-top: 30px;
+                margin-bottom: 0;
             }
 
-            .vote-copy {
-                max-width: 100%;
-            }
+            .logos-inline { justify-content: center; }
+            .vote-copy { max-width: 100%; }
 
             .number-box,
             .pref-circle {
@@ -1141,11 +1126,7 @@
             }
 
             .hero-actions { width: 100%; }
-
-            .hero-image {
-                width: min(100%, 360px);
-            }
-
+            .hero-image { width: min(100%, 360px); }
             .vote-panel { gap: 14px; }
 
             .number-box,
@@ -1176,12 +1157,14 @@
             }
 
             .mobile-menu-title { font-size: 20px; }
-            .countdown-container { margin-left: auto; margin-right: auto; }
+            .countdown-container {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     </style>
 </head>
 <body>
-
     <nav class="navbar sticky-top navbar-dark" id="mainNavbar">
         <div class="container">
             <div class="nav-shell">
@@ -1432,36 +1415,36 @@
                 </div>
 
                 <div class="row g-4">
-    <div class="col-md-4" data-aos="zoom-in">
-        <div class="priority-card">
-            <div class="icon"><i class="fas fa-industry"></i></div>
-            <h5>Силна икономика и развитие на Русе</h5>
-            <p>
-                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
-            </p>
-        </div>
-    </div>
+                    <div class="col-md-4" data-aos="zoom-in">
+                        <div class="priority-card">
+                            <div class="icon"><i class="fas fa-industry"></i></div>
+                            <h5>Силна икономика и развитие на Русе</h5>
+                            <p>
+                                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
+                            </p>
+                        </div>
+                    </div>
 
-    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="priority-card">
-            <div class="icon"><i class="fas fa-chart-line"></i></div>
-            <h5>Финансова грамотност и независими граждани</h5>
-            <p>
-                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
-            </p>
-        </div>
-    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="priority-card">
+                            <div class="icon"><i class="fas fa-chart-line"></i></div>
+                            <h5>Финансова грамотност и независими граждани</h5>
+                            <p>
+                                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
+                            </p>
+                        </div>
+                    </div>
 
-    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="priority-card">
-            <div class="icon"><i class="fas fa-shield-heart"></i></div>
-            <h5>Ограничаване на хазарта и защита на семейството</h5>
-            <p>
-                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
-            </p>
-        </div>
-    </div>
-</div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="priority-card">
+                            <div class="icon"><i class="fas fa-shield-heart"></i></div>
+                            <h5>Ограничаване на хазарта и защита на семейството</h5>
+                            <p>
+                                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1505,11 +1488,11 @@
                         </div>
 
                         <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
-                            <img src="partia.png" alt="Гласувай за ПП-ДБ с №7" class="vote-instruction-img">
+                            <img src="partia.png" alt="Гласувай за ПП-ДБ с №7" class="vote-instruction-img" loading="lazy" decoding="async">
                         </div>
 
                         <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
-                            <img src="preferncia.png" alt="Избери преференция 105" class="vote-instruction-img">
+                            <img src="preferncia.png" alt="Избери преференция 105" class="vote-instruction-img" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -1524,22 +1507,22 @@
 
                 <div class="on-field-grid">
                     <a href="rosen-simeonov-govori-na-protest.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in">
-                        <img src="rosen-simeonov-govori-na-protest.jpg" alt="Росен Симеонов на събитие">
+                        <img src="rosen-simeonov-govori-na-protest.jpg" alt="Росен Симеонов на събитие" loading="lazy" decoding="async">
                     </a>
                     <a href="rosen-simeonov-protest-ruse-family.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="rosen-simeonov-protest-ruse-family.jpg" alt="Росен Симеонов сред граждани">
+                        <img src="rosen-simeonov-protest-ruse-family.jpg" alt="Росен Симеонов сред граждани" loading="lazy" decoding="async">
                     </a>
                     <a href="sreshta-s-grazhdani-ruse.jpg" class="grid-item grid-tall lightbox" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="sreshta-s-grazhdani-ruse.jpg" alt="Среща с граждани">
+                        <img src="sreshta-s-grazhdani-ruse.jpg" alt="Среща с граждани" loading="lazy" decoding="async">
                     </a>
                     <a href="rosen-simeonov-kiril-petkov-ruse.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="rosen-simeonov-kiril-petkov-ruse.jpg" alt="Росен Симеонов и Кирил Петков">
+                        <img src="rosen-simeonov-kiril-petkov-ruse.jpg" alt="Росен Симеонов и Кирил Петков" loading="lazy" decoding="async">
                     </a>
                     <a href="kampania-ruse-rosen-simeonov-dialog.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="kampania-ruse-rosen-simeonov-dialog.jpg" alt="Диалог с хората">
+                        <img src="kampania-ruse-rosen-simeonov-dialog.jpg" alt="Диалог с хората" loading="lazy" decoding="async">
                     </a>
                     <a href="dsb-ruse-meeting-rosen-simeonov.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="dsb-ruse-meeting-rosen-simeonov.jpg" alt="Среща с екипа">
+                        <img src="dsb-ruse-meeting-rosen-simeonov.jpg" alt="Среща с екипа" loading="lazy" decoding="async">
                     </a>
                 </div>
             </div>
@@ -1648,15 +1631,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/Luminous.min.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', () => {
             if (typeof AOS !== 'undefined') {
                 AOS.init({ duration: 900, once: true });
             }
 
             if (typeof Luminous !== 'undefined') {
-                document.querySelectorAll('.lightbox').forEach(function (elem) {
-                    new Luminous(elem);
-                });
+                document.querySelectorAll('.lightbox').forEach((elem) => new Luminous(elem));
             }
 
             const body = document.body;
@@ -1670,8 +1651,14 @@
             const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link[data-target]');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[data-target]');
             const sections = document.querySelectorAll('section[id]');
+            const countdownEl = document.getElementById('election-countdown');
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
 
-            function openMobileMenu() {
+            const ELECTION_DATE = new Date(2026, 3, 19, 0, 0, 0).getTime();
+
+            const openMobileMenu = () => {
                 if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
                 mobileMenu.classList.add('active');
                 mobileMenuOverlay.classList.add('active');
@@ -1679,9 +1666,9 @@
                 mobileMenuToggle.setAttribute('aria-expanded', 'true');
                 mobileMenu.setAttribute('aria-hidden', 'false');
                 body.classList.add('menu-open');
-            }
+            };
 
-            function closeMobileMenu() {
+            const closeMobileMenu = () => {
                 if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
                 mobileMenu.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
@@ -1689,73 +1676,93 @@
                 mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 mobileMenu.setAttribute('aria-hidden', 'true');
                 body.classList.remove('menu-open');
-            }
+            };
 
-            function smoothScrollTo(targetId) {
+            const smoothScrollTo = (targetId) => {
                 const target = document.getElementById(targetId);
                 if (!target) return;
+
                 const navbarHeight = navbar ? navbar.offsetHeight : 80;
                 const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
-                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-            }
 
-            function handleScrollState() {
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            };
+
+            const handleScrollState = () => {
                 if (!navbar) return;
-                if (window.scrollY > 16) { navbar.classList.add('navbar-scrolled'); } 
-                else { navbar.classList.remove('navbar-scrolled'); }
-            }
+                navbar.classList.toggle('navbar-scrolled', window.scrollY > 16);
+            };
 
-            function setActiveNav() {
+            const setActiveNav = () => {
                 if (!sections.length || !navbar) return;
+
                 let currentId = '';
-                sections.forEach(function (section) {
+
+                sections.forEach((section) => {
                     const sectionTop = section.offsetTop - (navbar.offsetHeight + 120);
                     const sectionHeight = section.offsetHeight;
+
                     if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                        currentId = section.getAttribute('id');
+                        currentId = section.id;
                     }
                 });
-                desktopNavLinks.forEach(function (link) { link.classList.toggle('active', link.dataset.target === currentId); });
-                mobileNavLinks.forEach(function (link) { link.classList.toggle('active', link.dataset.target === currentId); });
-            }
 
-            // Countdown Timer Logic
-            function updateCountdown() {
-                // ПРИМЕРНА ДАТА ЗА ИЗБОРИТЕ: 25 октомври 2026
-                const electionDate = new Date(2026, 3, 19, 0, 0, 0).getTime(); 
-                const now = new Date().getTime();
-                const distance = electionDate - now;
+                desktopNavLinks.forEach((link) => {
+                    link.classList.toggle('active', link.dataset.target === currentId);
+                });
+
+                mobileNavLinks.forEach((link) => {
+                    link.classList.toggle('active', link.dataset.target === currentId);
+                });
+            };
+
+            const updateCountdown = () => {
+                if (!countdownEl || !daysEl || !hoursEl || !minutesEl) return;
+
+                const now = Date.now();
+                const distance = ELECTION_DATE - now;
 
                 if (distance < 0) {
-                    const countdownEl = document.getElementById("election-countdown");
-                    if(countdownEl) countdownEl.style.display = "none";
+                    countdownEl.style.display = 'none';
                     return;
                 }
 
-                const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-                document.getElementById("days").innerText = d.toString().padStart(2, '0');
-                document.getElementById("hours").innerText = h.toString().padStart(2, '0');
-                document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
-            }
+                daysEl.textContent = String(days).padStart(2, '0');
+                hoursEl.textContent = String(hours).padStart(2, '0');
+                minutesEl.textContent = String(minutes).padStart(2, '0');
+            };
 
             if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function (e) {
+                mobileMenuToggle.addEventListener('click', (e) => {
                     e.preventDefault();
-                    if (mobileMenu && mobileMenu.classList.contains('active')) { closeMobileMenu(); } 
-                    else { openMobileMenu(); }
+                    if (mobileMenu?.classList.contains('active')) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
                 });
             }
 
-            if (mobileMenuClose) { mobileMenuClose.addEventListener('click', closeMobileMenu); }
-            if (mobileMenuOverlay) { mobileMenuOverlay.addEventListener('click', closeMobileMenu); }
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', closeMobileMenu);
+            }
 
-            [...desktopScrollLinks, ...mobileScrollLinks].forEach(function (link) {
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+            }
+
+            [...desktopScrollLinks, ...mobileScrollLinks].forEach((link) => {
                 link.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
                     const targetId = this.dataset.target || (href && href.startsWith('#') ? href.substring(1) : '');
+
                     if (targetId) {
                         e.preventDefault();
                         closeMobileMenu();
@@ -1764,15 +1771,15 @@
                 });
             });
 
-            window.addEventListener('scroll', function () {
+            window.addEventListener('scroll', () => {
                 handleScrollState();
                 setActiveNav();
             });
 
             handleScrollState();
             setActiveNav();
-            setInterval(updateCountdown, 60000);
             updateCountdown();
+            setInterval(updateCountdown, 60000);
         });
     </script>
 </body>
