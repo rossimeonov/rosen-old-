@@ -3,24 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Росен Симеонов | Знания, опит и ясна посока за Русе | №7 | Преференция 105</title>
+    <title>Росен Симеонов | Знания, опит и ясна посока за Русе | №7</title>
     <link rel="icon" type="image/png" href="favicon.png">
-
-    <meta name="description" content="Росен Симеонов – кандидат за народен представител от Русе. Знания, опит и ясна посока за Русе. Предприемач, инвеститор и човек с управленски опит. №7 с преференция 105.">
-    <meta property="og:title" content="Росен Симеонов | Знания, опит и ясна посока за Русе">
-    <meta property="og:description" content="Истинската свобода започва с финансова независимост. Виж приоритетите и позициите на Росен Симеонов за Русе.">
-    <meta property="og:image" content="rosen_simeonov.png">
-    <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous-basic.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --primary-blue: #243a96; --secondary-blue: #2f47b8; --deep-blue: #15205d;
+            --navy: #07153b; --navy-soft: #0b1438; --accent-light: #e9efff;
+            --white: #ffffff; --text-soft: rgba(255,255,255,0.82); --text-dark: #1e2a4f;
+            --text-muted: #526287; --shadow: 0 18px 45px rgba(7, 21, 59, 0.28);
+            --shadow-soft: 0 10px 30px rgba(7, 21, 59, 0.16);
+            --nav-height: 86px; --nav-height-scrolled: 72px;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; overflow-x: hidden; font-family: 'Roboto', sans-serif; background: var(--navy); color: var(--white); }
+        body.menu-open { overflow: hidden; }
+        h1, h2, h3, h4, h5 { font-family: 'Montserrat', sans-serif; letter-spacing: 0.3px; }
+        .fw-900 { font-weight: 900; }
+        a { transition: 0.25s ease; text-decoration: none; }
+
+        /* NAVBAR */
+        .navbar { background: rgba(10, 20, 58, 0.82); backdrop-filter: blur(18px); min-height: var(--nav-height); border-bottom: 1px solid rgba(255,255,255,0.08); transition: 0.3s; z-index: 1030; }
+        .navbar.navbar-scrolled { min-height: var(--nav-height-scrolled); background: rgba(7, 16, 45, 0.94); box-shadow: 0 12px 32px rgba(0,0,0,0.18); }
+        .nav-shell { min-height: var(--nav-height); display: flex; align-items: center; justify-content: space-between; width: 100%; transition: 0.3s; }
+        .navbar.navbar-scrolled .nav-shell { min-height: var(--nav-height-scrolled); }
+        .brand-name { color: #fff !important; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 16px; letter-spacing: 0.8px; }
+        .header-logos { display: flex; align-items: center; gap: 12px; padding-left: 16px; border-left: 1px solid rgba(255,255,255,0.18); }
+        .header-logos img { height: 50px; }
+        .desktop-nav .nav-link { color: rgba(255,255,255,0.88) !important; font-weight: 700; font-size: 13px; text-transform: uppercase; padding: 10px 12px !important; border-radius: 999px; margin-left: 8px; }
+        .desktop-nav .nav-link:hover, .desktop-nav .nav-link.active { background: rgba(255,255,255,0.1); color: #fff !important; }
+        .header-num { width: 32px; height: 32px; background: #fff; color: var(--primary-blue); display: flex; align-items: center; justify-content: center; border-radius: 8px; font-weight: 900; }
+        .header-pref { width: 38px; height: 38px; background: #fff; color: var(--primary-blue); display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; border: 2px solid var(--primary-blue); }
+        .social-nav { display: flex; gap: 10px; margin-left: 18px; padding-left: 18px; border-left: 1px solid rgba(255,255,255,0.18); }
+        .social-nav a { width: 38px; height: 38px; color: #fff; border-radius: 12px; background: rgba(255,255,255,0.06); display: inline-flex; align-items: center; justify-content: center; }
+
+        /* HERO */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; background: url('ruse.jpg') center/cover; padding: 40px 0; }
+        .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(7, 21, 59, 0.92) 0%, rgba(36, 58, 150, 0.8) 100%); z-index: 1; }
+        .hero .container { position: relative; z-index: 2; padding-top: 100px; }
+        .hero-image { width: 560px; max-width: 100%; filter: drop-shadow(0 18px 35px rgba(0,0,0,0.35)); transform: translateX(6%); }
+        .hero-title { font-size: clamp(2.3rem, 4.8vw, 4.8rem); font-weight: 900; line-height: 1; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-lead { max-width: 700px; font-size: 1.1rem; line-height: 1.8; color: var(--text-soft); border-left: 3px solid #fff; padding-left: 20px; margin-bottom: 30px; }
+        .btn-main { background: #fff; color: var(--primary-blue); padding: 16px 32px; border-radius: 999px; font-weight: 900; text-transform: uppercase; display: inline-block; }
+        .btn-outline-light { border: 2px solid rgba(255,255,255,0.5); color: #fff; padding: 14px 30px; border-radius: 999px; font-weight: 900; text-transform: uppercase; display: inline-block; }
+
+        /* VOTE PANEL */
+        .vote-panel { display: flex; align-items: center; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
+        .number-box { width: 120px; height: 120px; background: #fff; color: var(--primary-blue); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 80px; font-weight: 900; }
+        .pref-circle { width: 120px; height: 120px; background: #fff; color: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; font-weight: 900; }
+
+        /* SECTIONS */
+        .section-white { background: #fff; color: var(--text-dark); padding: 80px 0; }
+        .section-soft { background: #eef3ff; color: var(--text-dark); padding: 80px 0; }
+        .section-dark { background: #0c1743; padding: 80px 0; }
+        .priority-card { background: #fff; border-radius: 20px; padding: 30px; height: 100%; box-shadow: var(--shadow-soft); border-bottom: 5px solid var(--primary-blue); }
+        .check-list { list-style: none; padding: 0; }
+        .check-list li { position: relative; padding-left: 30px; margin-bottom: 12px; color: var(--text-dark); line-height: 1.6; }
+        .check-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--secondary-blue); }
+
+        /* MOBILE MENU DRAWER */
+        .mobile-menu-toggle { width: 50px; height: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px; cursor: pointer; }
+        .mobile-menu-toggle span { width: 25px; height: 2px; background: #fff; display: block; transition: 0.3s; }
+        .mobile-menu-drawer { position: fixed; top: 0; right: 0; width: 300px; height: 100vh; background: var(--navy-soft); z-index: 9999; transform: translateX(100%); transition: 0.4s; padding: 30px; }
+        .mobile-menu-drawer.active { transform: translateX(0); }
+        .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); opacity: 0; visibility: hidden; z-index: 9998; transition: 0.3s; }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-nav-link { display: block; color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
+
+        @media (max-width: 991px) {
+            .desktop-nav, .header-logos { display: none !important; }
+            .mobile-menu-toggle { display: flex; }
+            .hero { text-align: center; }
+            .hero-image { transform: none; width: 400px; margin-top: 30px; }
+            .hero-lead { border: none; padding: 0; margin: 0 auto 30px; }
+            .vote-panel { justify-content: center; }
+        }
+    </style>
 </head>
 <body>
 
@@ -30,325 +95,143 @@
                 <div class="navbar-brand-wrap">
                     <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
                     <div class="header-logos d-none d-lg-flex">
-                        <img src="ПП- ДБ.png" alt="Продължаваме Промяната и Демократична България">
+                        <img src="ПП- ДБ.png" alt="ПП-ДБ">
                     </div>
                 </div>
 
                 <div class="desktop-nav d-none d-lg-flex align-items-center">
-                    <ul class="navbar-nav flex-row align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="za-men.html">За мен</a></li>
-                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#priorities" data-target="priorities">Приоритети</a></li>
-                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#why" data-target="why">Защо</a></li>
-                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#contact" data-target="contact">Контакт</a></li>
-                        <li class="nav-item">
-                            <a href="#how-to-vote" class="vote-chip nav-scroll-link" data-target="how-to-vote">
+                    <ul class="navbar-nav flex-row align-items-center" style="gap: 10px;">
+                        <li><a class="nav-link" href="za-men.html">За мен</a></li>
+                        <li><a class="nav-link nav-scroll-link" href="#priorities">Приоритети</a></li>
+                        <li><a class="nav-link nav-scroll-link" href="#contact">Контакт</a></li>
+                        <li>
+                            <a href="#how-to-vote" class="nav-scroll-link d-flex align-items-center" style="gap: 8px;">
                                 <span class="header-num">7</span>
                                 <span class="header-pref">105</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <div class="social-nav">
-                                <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                            </div>
-                        </li>
                     </ul>
+                    <div class="social-nav">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
 
-                <button type="button" class="mobile-menu-toggle d-lg-none" id="mobileMenuToggle" aria-label="Отвори меню" aria-expanded="false" aria-controls="mobileMenu">
+                <div class="mobile-menu-toggle d-lg-none" id="mobileMenuToggle">
                     <span></span><span></span><span></span>
-                </button>
+                </div>
             </div>
         </div>
     </nav>
 
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    <aside class="mobile-menu-drawer" id="mobileMenu" aria-hidden="true">
-        <div class="mobile-menu-top">
-            <div>
-                <div class="mobile-menu-label">Навигация</div>
-                <div class="mobile-menu-title">Росен Симеонов</div>
-            </div>
-            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Затвори меню">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="mobile-menu-content">
-            <a href="za-men.html" class="mobile-nav-link">За мен</a>
-            <a href="#priorities" class="mobile-nav-link mobile-scroll-link" data-target="priorities">Приоритети</a>
-            <a href="#why" class="mobile-nav-link mobile-scroll-link" data-target="why">Защо</a>
-            <a href="#contact" class="mobile-nav-link mobile-scroll-link" data-target="contact">Контакт</a>
-            <a href="#how-to-vote" class="mobile-vote-card mobile-scroll-link" data-target="how-to-vote">
-                <div class="mobile-vote-shapes">
-                    <span class="header-num">7</span>
-                    <span class="header-pref">105</span>
-                </div>
-                <div class="mobile-vote-text"><strong>ПП–ДБ №7</strong><span>Преференция 105</span></div>
-            </a>
-            <a href="#contact" class="mobile-cta mobile-scroll-link" data-target="contact">Пиши ми</a>
-            <div class="mobile-socials">
-                <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-            </div>
-        </div>
+    <aside class="mobile-menu-drawer" id="mobileMenu">
+        <a href="za-men.html" class="mobile-nav-link">За мен</a>
+        <a href="#priorities" class="mobile-nav-link mobile-scroll-link">Приоритети</a>
+        <a href="#contact" class="mobile-nav-link mobile-scroll-link">Контакт</a>
+        <a href="#how-to-vote" class="btn-main w-100 text-center">Гласувай с №7</a>
     </aside>
 
     <main>
-        <section class="hero" id="top">
+        <section class="hero">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7" data-aos="fade-right">
-                        <div class="logos-inline"><img src="ПП- ДБ.png" alt="ПП–ДБ"></div>
-                        <div class="hero-badges">
-                            <span class="badge-soft">19 МИР Русе</span>
-                            <span class="badge-soft">ПП–ДБ №7</span>
-                            <span class="badge-soft">Преференция 105</span>
-                        </div>
                         <h1 class="hero-title">Росен<br>Симеонов</h1>
-                        <div class="hero-subtitle">Знания, опит и ясна посока за Русе.</div>
-                        <div class="hero-kicker">Истинската свобода започва с финансова независимост.</div>
-                        <p class="hero-lead">Предприемач с международен опит и управленска перспектива. След близо 20 години в реалната икономика се върнах в Русе, за да работя за повече възможности, ясни правила и дългосрочно развитие на региона.</p>
+                        <div class="hero-subtitle mb-3">Знания, опит и ясна посока за Русе.</div>
+                        <p class="hero-lead">Предприемач с международен опит. Върнах се в Русе, за да работя за ясни правила и икономическо развитие.</p>
                         
-                        <div class="countdown-container" id="election-countdown">
-                            <div class="countdown-item"><span id="days">00</span><label>Дни</label></div>
-                            <div class="countdown-item"><span id="hours">00</span><label>Часа</label></div>
-                            <div class="countdown-item"><span id="minutes">00</span><label>Мин</label></div>
-                        </div>
-
                         <div class="vote-panel">
                             <div class="number-box">7</div>
                             <div class="pref-circle">105</div>
-                            <div class="vote-copy">
-                                <h3>На изборите</h3>
-                                <p>Гласувай за <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
-                            </div>
                         </div>
-                        <div class="hero-actions">
-                            <a href="#priorities" class="btn-main nav-scroll-link" data-target="priorities">Виж приоритетите</a>
-                            <a href="#why" class="btn-outline-light nav-scroll-link" data-target="why">Защо се кандидатирам</a>
+
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#priorities" class="btn-main nav-scroll-link">Приоритети</a>
+                            <a href="za-men.html" class="btn-outline-light">Виж повече</a>
                         </div>
                     </div>
                     <div class="col-lg-5" data-aos="fade-left">
-                        <div class="hero-image-wrap"><img src="rosen_simeonov.png" alt="Росен Симеонов" class="hero-image"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-dark" id="why">
-            <div class="container">
-                <div class="trust-box" data-aos="fade-up">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-7">
-                            <h2>Защо се кандидатирам</h2>
-                            <p>Видях как работят системи, в които правилата са ясни, усилията се възнаграждават и хората имат шанс да се развиват.</p>
-                            <p>Върнах се в Русе, защото вярвам, че и тук можем да изградим среда с повече възможности, по-силна икономика и по-малко зависимости.</p>
-                            <p class="mb-0">Не идвам с лозунги. Идвам с опит, с разбиране за реалната икономика и с ясна посока за това как Русе може да се развива по-устойчиво.</p>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="row g-3">
-                                <div class="col-12"><div class="mini-proof-card"><strong>Близо 20 години международен опит</strong><span>в логистика, инвестиции и управление на процеси и екипи</span></div></div>
-                                <div class="col-12"><div class="mini-proof-card"><strong>Предприемач и инвеститор</strong><span>с фокус върху финансова култура и дългосрочно мислене</span></div></div>
-                                <div class="col-12"><div class="mini-proof-card"><strong>Завръщане в Русе</strong><span>с ясна цел: наученото да работи в полза на града и региона</span></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-white" id="about-rosen">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <div class="section-header mb-4"><h2>Кой е Росен Симеонов</h2></div>
-                        <p class="text-dark mb-3" style="font-size: 1.08rem; line-height: 1.9;">Роден в Русе през 1977 г., Росен Симеонов изгражда професионалния си път с близо 20 години опит в Обединеното кралство, където преминава през всички нива – от оперативна работа до управленски позиции в логистиката и инвестициите.</p>
-                        <p class="text-dark mb-3" style="font-size: 1.08rem; line-height: 1.9;">Завършва бакалавър по аграрна икономика и магистратура по финанси в Стопанска академия „Д. А. Ценов“ – Свищов, а през 2022 г. придобива и MBA от Anglia Ruskin University.</p>
-                        <p class="text-dark mb-0" style="font-size: 1.08rem; line-height: 1.9;">Днес е предприемач, инвеститор на капиталовите пазари и създател на платформа за финансова култура. През 2022 г. се завръща в Русе със семейството си, за да приложи наученото в полза на града и страната.</p>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="priority-card" style="border-bottom: none; border-top: 6px solid var(--secondary-blue);">
-                            <h5 style="margin-bottom: 20px;">Какво го отличава</h5>
-                            <ul class="check-list">
-                                <li>Опит извън политиката и в конкурентна международна среда</li>
-                                <li>Управленски поглед върху процеси, екипи и ресурси</li>
-                                <li>Финансова експертиза и дългосрочно мислене</li>
-                                <li>Ясна връзка с Русе и реално завръщане в града</li>
-                                <li>Фокус върху решения, а не върху шумни обещания</li>
-                            </ul>
-                        </div>
+                        <img src="rosen_simeonov.png" alt="Росен Симеонов" class="hero-image">
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="priorities" class="section-soft">
-            <div class="container">
-                <div class="section-header text-center" data-aos="fade-up">
-                    <h2>Моите приоритети за Русе</h2>
-                    <p style="max-width: 760px; margin: 0 auto; font-size: 1.08rem; line-height: 1.8;">Ясен фокус върху икономика, финансова независимост и защита на семейството.</p>
-                </div>
+            <div class="container text-center">
+                <h2 class="fw-900 mb-5 text-uppercase">Моите приоритети</h2>
                 <div class="row g-4">
                     <div class="col-md-4" data-aos="zoom-in">
                         <div class="priority-card">
-                            <div class="icon"><i class="fas fa-industry"></i></div>
-                            <h5>Силна икономика и развитие на Русе</h5>
-                            <p>Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места.</p>
+                            <h5 class="fw-900">Силна икономика</h5>
+                            <p>Русе като икономически двигател на Северна България чрез нови инвестиции.</p>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
                         <div class="priority-card">
-                            <div class="icon"><i class="fas fa-chart-line"></i></div>
-                            <h5>Финансова грамотност и независими граждани</h5>
-                            <p>Свободата започва с това хората да разбират парите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.</p>
+                            <h5 class="fw-900">Финансова грамотност</h5>
+                            <p>Повече знания за парите и финансова независимост за всяко семейство.</p>
                         </div>
                     </div>
                     <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
                         <div class="priority-card">
-                            <div class="icon"><i class="fas fa-shield-heart"></i></div>
-                            <h5>Ограничаване на хазарта и защита на семейството</h5>
-                            <p>Зависимостите разрушават семейства. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция.</p>
+                            <h5 class="fw-900">Защита на семейството</h5>
+                            <p>Ограничаване на хазарта и зависимостите, които разбиват домовете.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="ruse" class="section-white">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <div class="section-header mb-4"><h2>Какво виждам в Русе</h2></div>
-                        <p style="font-size: 1.08rem; line-height: 1.9; color: var(--text-dark);">Виждам град с огромен потенциал, но и с реални проблеми:</p>
-                        <ul class="check-list">
-                            <li>млади хора, които не виждат перспектива и заминават;</li>
-                            <li>работещи семейства, които усещат все по-голям натиск;</li>
-                            <li>недостатъчно инвестиции и пропуснати възможности;</li>
-                            <li>усещане, че Русе може повече.</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="vote-banner">
-                            <h3 class="fw-900 text-uppercase mb-3">Русе има потенциал</h3>
-                            <p class="mb-0" style="line-height: 1.9;">Това е въпрос на решения и управленски капацитет. Русе има място сред силните икономически центрове, ако има представители, които разбират как се създават възможности.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="how-to-vote" class="section-soft">
-            <div class="container">
-                <div class="vote-banner" data-aos="fade-up">
-                    <div class="row align-items-center g-4">
-                        <div class="col-lg-12 text-center mb-4">
-                            <h3 class="display-5 fw-900 text-uppercase">Как да гласуваш</h3>
-                            <p class="lead">Избери <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
-                        </div>
-                        <div class="col-md-6" data-aos="fade-right"><img src="partia.png" alt="Гласувай за ПП-ДБ с №7" class="vote-instruction-img"></div>
-                        <div class="col-md-6" data-aos="fade-left"><img src="preferncia.png" alt="Избери преференция 105" class="vote-instruction-img"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="on-field" class="section-white">
-            <div class="container">
-                <div class="section-header text-center" data-aos="fade-up"><h2>Сред хората, не само в кампания</h2></div>
-                <div class="on-field-grid">
-                    <a href="rosen-simeonov-govori-na-protest.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in"><img src="rosen-simeonov-govori-na-protest.jpg" alt="Росен Симеонов"></a>
-                    <a href="rosen-simeonov-protest-ruse-family.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="100"><img src="rosen-simeonov-protest-ruse-family.jpg" alt="Росен Симеонов"></a>
-                    <a href="sreshta-s-grazhdani-ruse.jpg" class="grid-item grid-tall lightbox" data-aos="zoom-in" data-aos-delay="200"><img src="sreshta-s-grazhdani-ruse.jpg" alt="Среща с граждани"></a>
-                    <a href="rosen-simeonov-kiril-petkov-ruse.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="300"><img src="rosen-simeonov-kiril-petkov-ruse.jpg" alt="Кирил Петков"></a>
-                    <a href="kampania-ruse-rosen-simeonov-dialog.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="400"><img src="kampania-ruse-rosen-simeonov-dialog.jpg" alt="Диалог"></a>
-                    <a href="dsb-ruse-meeting-rosen-simeonov.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in" data-aos-delay="500"><img src="dsb-ruse-meeting-rosen-simeonov.jpg" alt="Среща с екипа"></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="media" class="media-section">
-            <div class="container">
-                <div class="section-header text-center" data-aos="fade-up"><h2 class="text-white">Позиции и действия</h2></div>
-                <div class="row g-4">
-                    <div class="col-md-6" data-aos="fade-up">
-                        <div class="media-card">
-                            <div class="source"><i class="fas fa-newspaper"></i> <span>Вестник Утро</span></div>
-                            <h4>„Политиката има смисъл само ако си сред хората.“</h4>
-                            <p>Разговор за професионалния път, завръщането в Русе и нуждата от почтени представители.</p>
-                            <a href="https://utroruse.com/article/1179302/" target="_blank" rel="noopener noreferrer" class="btn-outline-light">Прочети</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="120">
-                        <div class="media-card">
-                            <div class="source"><i class="fas fa-newspaper"></i> <span>KISS 13</span></div>
-                            <h4>„Общественият интерес в Русе не е за заобикаляне.“</h4>
-                            <p>Позиция по казуса с големия ТИР паркинг и защита на интереса на русенци.</p>
-                            <a href="https://kiss13.net/news/ruse/pp-db-davat-sdelkata-za-golemiya-tir-parking-v-ruse-na-prokuraturata" target="_blank" rel="noopener noreferrer" class="btn-outline-light">Прочети</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-wrap">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="contact-card" data-aos="fade-up">
-                            <div class="text-center mb-5">
-                                <h2 class="fw-900 text-uppercase">Включи се или ми пиши</h2>
-                                <p style="color: rgba(255,255,255,0.82); max-width: 680px; margin: 12px auto 0; line-height: 1.8;">Кампанията се прави от хора. Ако искаш да помогнеш, пиши ми директно.</p>
-                            </div>
-                            <form action="https://formspree.io/f/mnjbakgl" method="POST">
-                                <input type="hidden" name="source" value="campaign-website-homepage">
-                                <div class="row g-3">
-                                    <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Име" required></div>
-                                    <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="Имейл" required></div>
-                                    <div class="col-12">
-                                        <select name="topic" class="form-control form-select">
-                                            <option value="">Избери тема</option>
-                                            <option value="volunteer">Искам да помогна</option>
-                                            <option value="meeting">Искам среща</option>
-                                            <option value="question">Имам въпрос</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12"><textarea name="message" class="form-control" rows="5" placeholder="Вашето съобщение" required></textarea></div>
-                                    <div class="col-12 text-center"><button type="submit" class="btn-main mt-3">Изпрати</button></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="final-section">
-            <div class="container">
-                <div class="text-center" data-aos="fade-up">
-                    <h2 class="fw-900 text-uppercase mb-4">Знания. Опит.<br>Ясна посока за Русе.</h2>
-                    <div class="vote-panel justify-content-center">
-                        <div class="number-box">7</div>
-                        <div class="pref-circle">105</div>
-                    </div>
-                    <p style="color: rgba(255,255,255,0.92); font-weight: 700; margin-top: 10px;">Гласувай за ПП–ДБ №7 с преференция 105</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 РОСЕН СИМЕОНОВ | ПП–ДБ РУСЕ</p>
-            <div class="disclaimer-box">Купуването и продаването на гласове е престъпление</div>
+    <footer class="py-5 text-center" style="background: #050b1c;">
+        <p>© 2026 РОСЕН СИМЕОНОВ | ПП-ДБ №7</p>
+        <div class="mt-3 p-2 border d-inline-block text-uppercase" style="font-size: 12px; opacity: 0.6;">
+            Купуването и продаването на гласове е престъпление
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/Luminous.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 900, once: true });
 
-    <script src="js/scripts.js"></script>
+            const navbar = document.getElementById('mainNavbar');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggle = document.getElementById('mobileMenuToggle');
+            const overlay = document.getElementById('mobileMenuOverlay');
+
+            // Меню функции
+            function toggleMenu() {
+                mobileMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            }
+
+            if(toggle) toggle.addEventListener('click', toggleMenu);
+            if(overlay) overlay.addEventListener('click', toggleMenu);
+
+            // Скрол функции
+            const links = document.querySelectorAll('.nav-scroll-link, .mobile-scroll-link');
+            links.forEach(l => {
+                l.addEventListener('click', function(e) {
+                    const id = this.getAttribute('href').substring(1);
+                    const el = document.getElementById(id);
+                    if(el) {
+                        e.preventDefault();
+                        if(mobileMenu.classList.contains('active')) toggleMenu();
+                        window.scrollTo({ top: el.offsetTop - 80, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 20) navbar.classList.add('navbar-scrolled');
+                else navbar.classList.remove('navbar-scrolled');
+            });
+        });
+    </script>
 </body>
 </html>
