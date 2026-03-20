@@ -41,17 +41,26 @@
         }
 
         * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+
+        html {
+            scroll-behavior: smooth;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
 
         body {
             margin: 0;
+            max-width: 100%;
             overflow-x: hidden;
             font-family: 'Roboto', sans-serif;
             background: var(--navy);
             color: var(--white);
         }
 
-        body.menu-open { overflow: hidden; }
+        body.menu-open {
+            overflow: hidden;
+            touch-action: none;
+        }
 
         h1, h2, h3, h4, h5 {
             font-family: 'Montserrat', sans-serif;
@@ -61,6 +70,11 @@
         .fw-900 { font-weight: 900; }
 
         a { transition: 0.25s ease; }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
         /* =========================
            NAVBAR
@@ -246,6 +260,7 @@
             padding: 0;
             transition: 0.25s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            flex: 0 0 auto;
         }
 
         .mobile-menu-toggle:hover {
@@ -276,6 +291,8 @@
         .mobile-menu-overlay {
             position: fixed;
             inset: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(3, 8, 24, 0.58);
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
@@ -294,8 +311,10 @@
             position: fixed;
             top: 0;
             right: 0;
+            bottom: 0;
             width: min(70vw, 370px);
-            height: 100vh;
+            max-width: 100%;
+            height: 100dvh;
             background:
                 radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 28%),
                 linear-gradient(180deg, rgba(25, 42, 110, 0.98) 0%, rgba(8, 18, 47, 0.99) 100%);
@@ -307,6 +326,7 @@
             display: flex;
             flex-direction: column;
             padding: 22px 20px 28px;
+            overflow: hidden;
         }
 
         .mobile-menu-drawer.active {
@@ -338,6 +358,7 @@
             font-weight: 900;
             color: #fff;
             line-height: 1.1;
+            word-break: break-word;
         }
 
         .mobile-menu-close {
@@ -360,7 +381,9 @@
             flex-direction: column;
             gap: 10px;
             overflow-y: auto;
+            overflow-x: hidden;
             padding-right: 4px;
+            min-width: 0;
         }
 
         .mobile-nav-link {
@@ -418,6 +441,7 @@
             display: flex;
             flex-direction: column;
             line-height: 1.2;
+            min-width: 0;
         }
 
         .mobile-vote-text strong {
@@ -459,6 +483,7 @@
             margin-top: 20px;
             padding-top: 18px;
             border-top: 1px solid rgba(255,255,255,0.08);
+            flex-wrap: wrap;
         }
 
         .mobile-socials a {
@@ -495,7 +520,7 @@
             font-size: 15px;
         }
 
-      /* =========================
+        /* =========================
            HERO
         ========================= */
         .hero {
@@ -523,10 +548,13 @@
             z-index: 2;
             padding-top: 110px;
             padding-bottom: 0;
+            overflow: hidden;
         }
 
         .hero .row {
             align-items: flex-end;
+            margin-left: 0;
+            margin-right: 0;
         }
 
         .hero-image-wrap {
@@ -534,31 +562,23 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            height: 100%;
-            margin-bottom: -5px;
+            min-height: 100%;
+            padding-top: 60px;
+            overflow: hidden;
+            width: 100%;
         }
 
         .hero-image {
-            width: auto;
-            height: auto;
-            max-height: 95vh;
-            min-width: 135%;
             display: block;
-            filter: drop-shadow(0 15px 45px rgba(0,0,0,0.4));
+            width: min(100%, 620px);
+            max-width: 100%;
+            height: auto;
+            min-width: 0;
+            max-height: 95vh;
             object-fit: contain;
-            transform: translateX(12%);
-        }
-
-        @media (max-width: 991px) {
-            .hero-image {
-                min-width: 100%;
-                max-height: 60vh;
-                transform: translateX(0);
-            }
-            .hero-image-wrap {
-                margin-top: 30px;
-                margin-bottom: 0;
-            }
+            filter: drop-shadow(0 18px 35px rgba(0,0,0,0.35));
+            transform: none;
+            margin: 0 auto;
         }
 
         .hero-badges {
@@ -636,6 +656,7 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             box-shadow: var(--shadow);
+            flex: 0 0 auto;
         }
 
         .pref-circle {
@@ -651,6 +672,7 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             box-shadow: var(--shadow);
+            flex: 0 0 auto;
         }
 
         .vote-copy { max-width: 330px; }
@@ -713,23 +735,6 @@
             color: var(--primary-blue);
         }
 
-        .hero-image-wrap {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            min-height: 100%;
-            padding-top: 60px;
-        }
-
-        .hero-image {
-            max-width: 100%;
-            width: 620px;
-            height: auto;
-            display: block;
-            filter: drop-shadow(0 18px 35px rgba(0,0,0,0.35));
-        }
-
         .logos-inline {
             display: flex;
             align-items: center;
@@ -741,9 +746,9 @@
             height: 42px;
             width: auto;
         }
+
         /* Countdown Styles */
         .countdown-container {
-            display: flex;
             gap: 15px;
             margin-bottom: 30px;
             padding: 15px;
@@ -751,10 +756,32 @@
             border-radius: 18px;
             display: inline-flex;
             border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-wrap: wrap;
         }
-        .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 65px; }
-        .countdown-item span { font-size: 2rem; font-weight: 900; color: #fff; font-family: 'Montserrat', sans-serif; line-height: 1; }
-        .countdown-item label { font-size: 10px; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); margin-top: 5px; letter-spacing: 1px; font-weight: 700; }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 65px;
+        }
+
+        .countdown-item span {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+        }
+
+        .countdown-item label {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 5px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
 
         /* Sections */
         .section-dark { background: #0c1743; padding: 78px 0; }
@@ -965,6 +992,7 @@
         .final-section {
             background: #08122f;
             padding: 85px 0;
+            overflow: hidden;
         }
 
         .disclaimer-box {
@@ -984,6 +1012,7 @@
             text-align: center;
             color: rgba(255,255,255,0.72);
             font-size: 14px;
+            overflow: hidden;
         }
 
         .mini-proof-card {
@@ -1072,8 +1101,16 @@
             }
 
             .hero-image {
-                width: 440px;
+                width: min(100%, 440px);
+                max-width: 100%;
+                min-width: 0;
+                max-height: 60vh;
                 margin-top: 30px;
+            }
+
+            .hero-image-wrap {
+                margin-top: 30px;
+                padding-top: 0;
             }
 
             .logos-inline {
@@ -1144,6 +1181,7 @@
 
             .hero-image {
                 width: min(100%, 360px);
+                margin-top: 20px;
             }
 
             .vote-panel { gap: 14px; }
@@ -1176,7 +1214,10 @@
             }
 
             .mobile-menu-title { font-size: 20px; }
-            .countdown-container { margin-left: auto; margin-right: auto; }
+            .countdown-container {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     </style>
 </head>
@@ -1432,36 +1473,36 @@
                 </div>
 
                 <div class="row g-4">
-    <div class="col-md-4" data-aos="zoom-in">
-        <div class="priority-card">
-            <div class="icon"><i class="fas fa-industry"></i></div>
-            <h5>Силна икономика и развитие на Русе</h5>
-            <p>
-                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
-            </p>
-        </div>
-    </div>
+                    <div class="col-md-4" data-aos="zoom-in">
+                        <div class="priority-card">
+                            <div class="icon"><i class="fas fa-industry"></i></div>
+                            <h5>Силна икономика и развитие на Русе</h5>
+                            <p>
+                                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
+                            </p>
+                        </div>
+                    </div>
 
-    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="priority-card">
-            <div class="icon"><i class="fas fa-chart-line"></i></div>
-            <h5>Финансова грамотност и независими граждани</h5>
-            <p>
-                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
-            </p>
-        </div>
-    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="priority-card">
+                            <div class="icon"><i class="fas fa-chart-line"></i></div>
+                            <h5>Финансова грамотност и независими граждани</h5>
+                            <p>
+                                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
+                            </p>
+                        </div>
+                    </div>
 
-    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="priority-card">
-            <div class="icon"><i class="fas fa-shield-heart"></i></div>
-            <h5>Ограничаване на хазарта и защита на семейството</h5>
-            <p>
-                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
-            </p>
-        </div>
-    </div>
-</div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="priority-card">
+                            <div class="icon"><i class="fas fa-shield-heart"></i></div>
+                            <h5>Ограничаване на хазарта и защита на семейството</h5>
+                            <p>
+                                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1701,13 +1742,17 @@
 
             function handleScrollState() {
                 if (!navbar) return;
-                if (window.scrollY > 16) { navbar.classList.add('navbar-scrolled'); } 
-                else { navbar.classList.remove('navbar-scrolled'); }
+                if (window.scrollY > 16) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
             }
 
             function setActiveNav() {
                 if (!sections.length || !navbar) return;
                 let currentId = '';
+
                 sections.forEach(function (section) {
                     const sectionTop = section.offsetTop - (navbar.offsetHeight + 120);
                     const sectionHeight = section.offsetHeight;
@@ -1715,20 +1760,24 @@
                         currentId = section.getAttribute('id');
                     }
                 });
-                desktopNavLinks.forEach(function (link) { link.classList.toggle('active', link.dataset.target === currentId); });
-                mobileNavLinks.forEach(function (link) { link.classList.toggle('active', link.dataset.target === currentId); });
+
+                desktopNavLinks.forEach(function (link) {
+                    link.classList.toggle('active', link.dataset.target === currentId);
+                });
+
+                mobileNavLinks.forEach(function (link) {
+                    link.classList.toggle('active', link.dataset.target === currentId);
+                });
             }
 
-            // Countdown Timer Logic
             function updateCountdown() {
-                // ПРИМЕРНА ДАТА ЗА ИЗБОРИТЕ: 19 април 2026
-                const electionDate = new Date(2026, 3, 19, 0, 0, 0).getTime(); 
+                const electionDate = new Date(2026, 3, 19, 0, 0, 0).getTime();
                 const now = new Date().getTime();
                 const distance = electionDate - now;
 
                 if (distance < 0) {
                     const countdownEl = document.getElementById("election-countdown");
-                    if(countdownEl) countdownEl.style.display = "none";
+                    if (countdownEl) countdownEl.style.display = "none";
                     return;
                 }
 
@@ -1736,26 +1785,39 @@
                 const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-                document.getElementById("days").innerText = d.toString().padStart(2, '0');
-                document.getElementById("hours").innerText = h.toString().padStart(2, '0');
-                document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
+                const daysEl = document.getElementById("days");
+                const hoursEl = document.getElementById("hours");
+                const minutesEl = document.getElementById("minutes");
+
+                if (daysEl) daysEl.innerText = d.toString().padStart(2, '0');
+                if (hoursEl) hoursEl.innerText = h.toString().padStart(2, '0');
+                if (minutesEl) minutesEl.innerText = m.toString().padStart(2, '0');
             }
 
             if (mobileMenuToggle) {
                 mobileMenuToggle.addEventListener('click', function (e) {
                     e.preventDefault();
-                    if (mobileMenu && mobileMenu.classList.contains('active')) { closeMobileMenu(); } 
-                    else { openMobileMenu(); }
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
                 });
             }
 
-            if (mobileMenuClose) { mobileMenuClose.addEventListener('click', closeMobileMenu); }
-            if (mobileMenuOverlay) { mobileMenuOverlay.addEventListener('click', closeMobileMenu); }
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', closeMobileMenu);
+            }
+
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+            }
 
             [...desktopScrollLinks, ...mobileScrollLinks].forEach(function (link) {
                 link.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
                     const targetId = this.dataset.target || (href && href.startsWith('#') ? href.substring(1) : '');
+
                     if (targetId) {
                         e.preventDefault();
                         closeMobileMenu();
@@ -1769,10 +1831,16 @@
                 setActiveNav();
             });
 
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 992) {
+                    closeMobileMenu();
+                }
+            });
+
             handleScrollState();
             setActiveNav();
-            setInterval(updateCountdown, 60000);
             updateCountdown();
+            setInterval(updateCountdown, 60000);
         });
     </script>
 </body>
