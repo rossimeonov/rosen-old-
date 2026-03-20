@@ -707,6 +707,21 @@
             width: auto;
         }
 
+        /* Countdown Styles */
+        .countdown-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            display: inline-flex;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 65px; }
+        .countdown-item span { font-size: 2rem; font-weight: 900; color: #fff; font-family: 'Montserrat', sans-serif; line-height: 1; }
+        .countdown-item label { font-size: 10px; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); margin-top: 5px; letter-spacing: 1px; font-weight: 700; }
+
         /* Sections */
         .section-dark { background: #0c1743; padding: 78px 0; }
         .section-white { background: #fff; color: var(--text-dark); padding: 100px 0; }
@@ -1127,6 +1142,7 @@
             }
 
             .mobile-menu-title { font-size: 20px; }
+            .countdown-container { margin-left: auto; margin-right: auto; }
         }
     </style>
 </head>
@@ -1256,6 +1272,21 @@
                             Предприемач с международен опит и управленска перспектива. След близо 20 години в реалната икономика се върнах в Русе, за да работя за повече възможности, ясни правила и дългосрочно развитие на региона.
                         </p>
 
+                        <div class="countdown-container" id="election-countdown">
+                            <div class="countdown-item">
+                                <span id="days">00</span>
+                                <label>Дни</label>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="hours">00</span>
+                                <label>Часа</label>
+                            </div>
+                            <div class="countdown-item">
+                                <span id="minutes">00</span>
+                                <label>Мин</label>
+                            </div>
+                        </div>
+
                         <div class="vote-panel">
                             <div class="number-box">7</div>
                             <div class="pref-circle">105</div>
@@ -1367,36 +1398,36 @@
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-4" data-aos="zoom-in">
-                        <div class="priority-card">
-                            <div class="icon"><i class="fas fa-industry"></i></div>
-                            <h5>Силна икономика и развитие на Русе</h5>
-                            <p>
-                                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
-                            </p>
-                        </div>
-                    </div>
+    <div class="col-md-4" data-aos="zoom-in">
+        <div class="priority-card">
+            <div class="icon"><i class="fas fa-industry"></i></div>
+            <h5>Силна икономика и развитие на Русе</h5>
+            <p>
+                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
+            </p>
+        </div>
+    </div>
 
-                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="priority-card">
-                            <div class="icon"><i class="fas fa-chart-line"></i></div>
-                            <h5>Финансова грамотност и независими граждани</h5>
-                            <p>
-                                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
-                            </p>
-                        </div>
-                    </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="priority-card">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <h5>Финансова грамотност и независими граждани</h5>
+            <p>
+                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
+            </p>
+        </div>
+    </div>
 
-                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="priority-card">
-                            <div class="icon"><i class="fas fa-shield-heart"></i></div>
-                            <h5>Ограничаване на хазарта и защита на семейството</h5>
-                            <p>
-                                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="priority-card">
+            <div class="icon"><i class="fas fa-shield-heart"></i></div>
+            <h5>Ограничаване на хазарта и защита на семейството</h5>
+            <p>
+                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
+            </p>
+        </div>
+    </div>
+</div>
             </div>
         </section>
 
@@ -1629,80 +1660,68 @@
             function smoothScrollTo(targetId) {
                 const target = document.getElementById(targetId);
                 if (!target) return;
-
                 const navbarHeight = navbar ? navbar.offsetHeight : 80;
                 const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
-
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
 
             function handleScrollState() {
                 if (!navbar) return;
-
-                if (window.scrollY > 16) {
-                    navbar.classList.add('navbar-scrolled');
-                } else {
-                    navbar.classList.remove('navbar-scrolled');
-                }
+                if (window.scrollY > 16) { navbar.classList.add('navbar-scrolled'); } 
+                else { navbar.classList.remove('navbar-scrolled'); }
             }
 
             function setActiveNav() {
                 if (!sections.length || !navbar) return;
-
                 let currentId = '';
-
                 sections.forEach(function (section) {
                     const sectionTop = section.offsetTop - (navbar.offsetHeight + 120);
                     const sectionHeight = section.offsetHeight;
-
                     if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                         currentId = section.getAttribute('id');
                     }
                 });
+                desktopNavLinks.forEach(function (link) { link.classList.toggle('active', link.dataset.target === currentId); });
+                mobileNavLinks.forEach(function (link) { link.classList.toggle('active', link.dataset.target === currentId); });
+            }
 
-                desktopNavLinks.forEach(function (link) {
-                    link.classList.toggle('active', link.dataset.target === currentId);
-                });
+            // Countdown Timer Logic
+            function updateCountdown() {
+                // ПРИМЕРНА ДАТА ЗА ИЗБОРИТЕ: 25 октомври 2026
+                const electionDate = new Date(2026, 3, 19, 0, 0, 0).getTime(); 
+                const now = new Date().getTime();
+                const distance = electionDate - now;
 
-                mobileNavLinks.forEach(function (link) {
-                    link.classList.toggle('active', link.dataset.target === currentId);
-                });
+                if (distance < 0) {
+                    const countdownEl = document.getElementById("election-countdown");
+                    if(countdownEl) countdownEl.style.display = "none";
+                    return;
+                }
+
+                const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                document.getElementById("days").innerText = d.toString().padStart(2, '0');
+                document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
             }
 
             if (mobileMenuToggle) {
                 mobileMenuToggle.addEventListener('click', function (e) {
                     e.preventDefault();
-                    e.stopPropagation();
-
-                    if (mobileMenu && mobileMenu.classList.contains('active')) {
-                        closeMobileMenu();
-                    } else {
-                        openMobileMenu();
-                    }
+                    if (mobileMenu && mobileMenu.classList.contains('active')) { closeMobileMenu(); } 
+                    else { openMobileMenu(); }
                 });
             }
 
-            if (mobileMenuClose) {
-                mobileMenuClose.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    closeMobileMenu();
-                });
-            }
-
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.addEventListener('click', function () {
-                    closeMobileMenu();
-                });
-            }
+            if (mobileMenuClose) { mobileMenuClose.addEventListener('click', closeMobileMenu); }
+            if (mobileMenuOverlay) { mobileMenuOverlay.addEventListener('click', closeMobileMenu); }
 
             [...desktopScrollLinks, ...mobileScrollLinks].forEach(function (link) {
                 link.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
                     const targetId = this.dataset.target || (href && href.startsWith('#') ? href.substring(1) : '');
-
                     if (targetId) {
                         e.preventDefault();
                         closeMobileMenu();
@@ -1711,25 +1730,15 @@
                 });
             });
 
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
-                    closeMobileMenu();
-                }
-            });
-
             window.addEventListener('scroll', function () {
                 handleScrollState();
                 setActiveNav();
             });
 
-            window.addEventListener('resize', function () {
-                if (window.innerWidth >= 992) {
-                    closeMobileMenu();
-                }
-            });
-
             handleScrollState();
             setActiveNav();
+            setInterval(updateCountdown, 60000);
+            updateCountdown();
         });
     </script>
 </body>
