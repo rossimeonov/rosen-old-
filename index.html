@@ -522,7 +522,43 @@
             position: relative;
             z-index: 2;
             padding-top: 110px;
-            padding-bottom: 70px;
+            padding-bottom: 0;
+        }
+
+        .hero .row {
+            align-items: flex-end;
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100%;
+            margin-bottom: -5px;
+        }
+
+        .hero-image {
+            width: auto;
+            height: auto;
+            max-height: 95vh;
+            min-width: 135%;
+            display: block;
+            filter: drop-shadow(0 15px 45px rgba(0,0,0,0.4));
+            object-fit: contain;
+            transform: translateX(12%);
+        }
+
+        @media (max-width: 991px) {
+            .hero-image {
+                min-width: 100%;
+                max-height: 60vh;
+                transform: translateX(0);
+            }
+            .hero-image-wrap {
+                margin-top: 30px;
+                margin-bottom: 0;
+            }
         }
 
         .hero-badges {
