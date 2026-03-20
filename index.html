@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Росен Симеонов | Знания. Опит. Ясна посока за Русе | №7 | Преференция 105</title>
+
+    <title>Росен Симеонов | Знания, опит и ясна посока за Русе | №7 | Преференция 105</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="Росен Симеонов – кандидат за народен представител от Русе. Предприемач, инвеститор и човек от практиката. Силна икономика, финансова грамотност и защита на семейството. №7 с преференция 105.">
-    <meta property="og:title" content="Росен Симеонов | №7 | Преференция 105">
-    <meta property="og:description" content="Истинската свобода започва с финансова независимост. Виж приоритетите на Росен Симеонов за Русе. №7 с преференция 105.">
+
+    <meta name="description" content="Росен Симеонов – кандидат за народен представител от Русе. Знания, опит и ясна посока за Русе. Предприемач, инвеститор и човек с управленски опит. №7 с преференция 105.">
+    <meta property="og:title" content="Росен Симеонов | Знания, опит и ясна посока за Русе">
+    <meta property="og:description" content="Истинската свобода започва с финансова независимост. Виж приоритетите и позициите на Росен Симеонов за Русе.">
     <meta property="og:image" content="rosen_simeonov.png">
+    <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -28,6 +30,7 @@
             --white: #ffffff;
             --text-soft: rgba(255,255,255,0.82);
             --text-dark: #1e2a4f;
+            --text-muted: #526287;
             --shadow: 0 18px 45px rgba(7, 21, 59, 0.28);
             --shadow-soft: 0 10px 30px rgba(7, 21, 59, 0.16);
             --radius-xl: 24px;
@@ -38,7 +41,6 @@
         }
 
         * { box-sizing: border-box; }
-
         html { scroll-behavior: smooth; }
 
         body {
@@ -49,9 +51,7 @@
             color: var(--white);
         }
 
-        body.menu-open {
-            overflow: hidden;
-        }
+        body.menu-open { overflow: hidden; }
 
         h1, h2, h3, h4, h5 {
             font-family: 'Montserrat', sans-serif;
@@ -60,12 +60,10 @@
 
         .fw-900 { font-weight: 900; }
 
-        a {
-            transition: 0.25s ease;
-        }
+        a { transition: 0.25s ease; }
 
         /* =========================
-            PREMIUM NAVBAR
+           NAVBAR
         ========================= */
         .navbar {
             background: rgba(10, 20, 58, 0.82);
@@ -173,7 +171,7 @@
             text-decoration: none;
             transition: transform 0.2s ease;
         }
-        
+
         .vote-chip:hover { transform: translateY(-1px) scale(1.03); }
 
         .header-num {
@@ -205,30 +203,6 @@
             box-shadow: 0 6px 18px rgba(0,0,0,0.15);
         }
 
-        .dropdown-menu {
-            background-color: rgba(16, 28, 82, 0.98);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
-            margin-top: 12px;
-            padding: 10px;
-            box-shadow: 0 18px 40px rgba(0,0,0,0.24);
-        }
-
-        .dropdown-item {
-            color: var(--text-soft) !important;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            padding: 12px 14px;
-            border-radius: 12px;
-        }
-
-        .dropdown-item:hover,
-        .dropdown-item:focus {
-            background-color: rgba(255,255,255,0.09);
-            color: #fff !important;
-        }
-
         .social-nav {
             display: flex;
             gap: 10px;
@@ -257,7 +231,7 @@
             background: rgba(255,255,255,0.1);
         }
 
-        /* Mobile toggle */
+        /* Mobile */
         .mobile-menu-toggle {
             width: 54px;
             height: 54px;
@@ -299,7 +273,6 @@
             transform: translateY(-7px) rotate(-45deg);
         }
 
-        /* Overlay */
         .mobile-menu-overlay {
             position: fixed;
             inset: 0;
@@ -317,7 +290,6 @@
             visibility: visible;
         }
 
-        /* Drawer */
         .mobile-menu-drawer {
             position: fixed;
             top: 0;
@@ -391,8 +363,7 @@
             padding-right: 4px;
         }
 
-        .mobile-nav-link,
-        .mobile-accordion-trigger {
+        .mobile-nav-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -411,63 +382,10 @@
         }
 
         .mobile-nav-link:hover,
-        .mobile-nav-link.active,
-        .mobile-accordion-trigger:hover,
-        .mobile-accordion-trigger.active {
+        .mobile-nav-link.active {
             background: rgba(255,255,255,0.11);
             color: #fff;
             transform: translateX(3px);
-        }
-
-        .mobile-accordion-trigger {
-            appearance: none;
-            cursor: pointer;
-            text-align: left;
-        }
-
-        .mobile-accordion-trigger i {
-            font-size: 14px;
-            transition: transform 0.25s ease;
-        }
-
-        .mobile-accordion.open .mobile-accordion-trigger i {
-            transform: rotate(180deg);
-        }
-
-        .mobile-accordion-panel {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.28s ease;
-            padding-left: 8px;
-        }
-
-        .mobile-submenu {
-            padding-top: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .mobile-submenu-link {
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            border-radius: 14px;
-            padding: 0 16px;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 0.35px;
-            color: rgba(255,255,255,0.9);
-            background: rgba(255,255,255,0.035);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .mobile-submenu-link:hover,
-        .mobile-submenu-link.active {
-            background: rgba(255,255,255,0.1);
-            color: #fff;
         }
 
         .mobile-vote-card {
@@ -578,7 +496,7 @@
         }
 
         /* =========================
-            HERO
+           HERO
         ========================= */
         .hero {
             min-height: 96vh;
@@ -637,16 +555,26 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.4rem, 2.3vw, 2.1rem);
+            font-size: clamp(1.3rem, 2.2vw, 1.95rem);
             color: var(--accent-light);
-            margin-bottom: 16px;
-            font-weight: 400;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .hero-kicker {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 18px;
+            font-weight: 800;
         }
 
         .hero-lead {
-            max-width: 660px;
-            font-size: 1.12rem;
-            line-height: 1.8;
+            max-width: 700px;
+            font-size: 1.1rem;
+            line-height: 1.85;
             color: var(--text-soft);
             margin-bottom: 28px;
             padding-left: 18px;
@@ -691,11 +619,28 @@
             box-shadow: var(--shadow);
         }
 
-        .vote-copy { max-width: 300px; }
-        .vote-copy h3 { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 8px; }
-        .vote-copy p { margin: 0; color: var(--text-soft); line-height: 1.65; font-size: 1rem; }
+        .vote-copy { max-width: 330px; }
 
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; }
+        .vote-copy h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .vote-copy p {
+            margin: 0;
+            color: var(--text-soft);
+            line-height: 1.65;
+            font-size: 1rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 14px;
+        }
 
         .btn-main {
             background: #fff;
@@ -729,7 +674,10 @@
             transition: 0.25s ease;
         }
 
-        .btn-outline-light:hover { background: #fff; color: var(--primary-blue); }
+        .btn-outline-light:hover {
+            background: #fff;
+            color: var(--primary-blue);
+        }
 
         .hero-image-wrap {
             position: relative;
@@ -747,18 +695,35 @@
             filter: drop-shadow(0 18px 35px rgba(0,0,0,0.35));
         }
 
-        .logos-inline { display: flex; align-items: center; gap: 18px; margin-bottom: 30px; }
-        .logos-inline img { height: 42px; width: auto; }
+        .logos-inline {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 30px;
+        }
 
-        /* =========================
-            SECTIONS
-        ========================= */
-        .section-dark { background: #0c1743; padding: 72px 0; }
+        .logos-inline img {
+            height: 42px;
+            width: auto;
+        }
+
+        /* Sections */
+        .section-dark { background: #0c1743; padding: 78px 0; }
         .section-white { background: #fff; color: var(--text-dark); padding: 100px 0; }
         .section-soft { background: #eef3ff; color: var(--text-dark); padding: 100px 0; }
 
         .section-header { margin-bottom: 50px; }
-        .section-header h2 { font-weight: 900; font-size: clamp(2rem, 3vw, 2.8rem); text-transform: uppercase; margin-bottom: 16px; }
+
+        .section-header h2 {
+            font-weight: 900;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
 
         .trust-box {
             background: rgba(255,255,255,0.06);
@@ -768,7 +733,17 @@
             box-shadow: var(--shadow-soft);
         }
 
-        .trust-box h2 { margin-bottom: 18px; font-weight: 900; text-transform: uppercase; }
+        .trust-box h2 {
+            margin-bottom: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .trust-box p {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.85;
+            margin-bottom: 0.8rem;
+        }
 
         .priority-card {
             background: #fff;
@@ -786,13 +761,31 @@
         }
 
         .priority-card .icon {
-            width: 68px; height: 68px; border-radius: 18px;
-            background: #eef3ff; color: var(--secondary-blue);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 28px; margin-bottom: 24px;
+            width: 68px;
+            height: 68px;
+            border-radius: 18px;
+            background: #eef3ff;
+            color: var(--secondary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
         }
 
-        .priority-card h5 { font-size: 1.25rem; font-weight: 900; text-transform: uppercase; color: var(--deep-blue); margin-bottom: 16px; }
+        .priority-card h5 {
+            font-size: 1.25rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--deep-blue);
+            margin-bottom: 16px;
+        }
+
+        .priority-card p,
+        .priority-card li {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
 
         .vote-banner {
             background: linear-gradient(135deg, #21348d 0%, #3147b7 100%);
@@ -802,7 +795,6 @@
             box-shadow: var(--shadow);
         }
 
-        /* Vote Instructions Styling */
         .vote-instruction-img {
             max-width: 100%;
             border-radius: 16px;
@@ -810,6 +802,7 @@
             border: 1px solid rgba(255,255,255,0.1);
             transition: transform 0.3s ease;
         }
+
         .vote-instruction-img:hover {
             transform: scale(1.02);
         }
@@ -821,13 +814,32 @@
             gap: 16px;
         }
 
-        .grid-item { position: relative; overflow: hidden; border-radius: 18px; cursor: pointer; }
-        .grid-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.45s ease; }
-        .grid-item:hover img { transform: scale(1.08); filter: brightness(85%); }
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.45s ease;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(85%);
+        }
+
         .grid-wide { grid-column: span 2; }
         .grid-tall { grid-row: span 2; }
 
-        .media-section { background: #0b1438; padding: 100px 0; }
+        .media-section {
+            background: #0b1438;
+            padding: 100px 0;
+        }
 
         .media-card {
             background: rgba(255,255,255,0.06);
@@ -864,7 +876,10 @@
             margin-bottom: 22px;
         }
 
-        .contact-wrap { background: linear-gradient(135deg, #1b2f86 0%, #2e43ae 100%); padding: 110px 0; }
+        .contact-wrap {
+            background: linear-gradient(135deg, #1b2f86 0%, #2e43ae 100%);
+            padding: 110px 0;
+        }
 
         .contact-card {
             background: rgba(255,255,255,0.08);
@@ -890,7 +905,18 @@
             box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.15) !important;
         }
 
-        .final-section { background: #08122f; padding: 85px 0; }
+        .form-select.form-control {
+            color: rgba(255,255,255,0.88) !important;
+        }
+
+        .form-select.form-control option {
+            color: #111;
+        }
+
+        .final-section {
+            background: #08122f;
+            padding: 85px 0;
+        }
 
         .disclaimer-box {
             border: 1px solid rgba(255,255,255,0.2);
@@ -911,9 +937,55 @@
             font-size: 14px;
         }
 
-        /* =========================
-            RESPONSIVE
-        ========================= */
+        .mini-proof-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            height: 100%;
+        }
+
+        .mini-proof-card strong {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .mini-proof-card span {
+            color: rgba(255,255,255,0.78);
+            line-height: 1.6;
+            font-size: 0.96rem;
+        }
+
+        .check-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .check-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 14px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .check-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--secondary-blue);
+        }
+
+        /* Responsive */
         @media (max-width: 991px) {
             :root {
                 --nav-height: 76px;
@@ -927,18 +999,14 @@
                 display: none !important;
             }
 
-            .mobile-menu-toggle {
-                display: flex;
-            }
+            .mobile-menu-toggle { display: flex; }
 
             .brand-name {
                 font-size: 14px;
                 letter-spacing: 0.6px;
             }
 
-            .hero {
-                text-align: center;
-            }
+            .hero { text-align: center; }
 
             .hero-badges,
             .hero-actions,
@@ -973,13 +1041,8 @@
                 height: 120px;
             }
 
-            .number-box {
-                font-size: 78px;
-            }
-
-            .pref-circle {
-                font-size: 48px;
-            }
+            .number-box { font-size: 78px; }
+            .pref-circle { font-size: 48px; }
 
             .grid-wide,
             .grid-tall {
@@ -1007,13 +1070,9 @@
                 padding-bottom: 55px;
             }
 
-            .hero-title {
-                font-size: 2.4rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.18rem;
-            }
+            .hero-title { font-size: 2.4rem; }
+            .hero-subtitle { font-size: 1.18rem; }
+            .hero-kicker { font-size: 0.88rem; }
 
             .hero-lead {
                 font-size: 1rem;
@@ -1032,17 +1091,13 @@
                 text-align: center;
             }
 
-            .hero-actions {
-                width: 100%;
-            }
+            .hero-actions { width: 100%; }
 
             .hero-image {
                 width: min(100%, 360px);
             }
 
-            .vote-panel {
-                gap: 14px;
-            }
+            .vote-panel { gap: 14px; }
 
             .number-box,
             .pref-circle {
@@ -1055,13 +1110,9 @@
                 border-radius: 22px;
             }
 
-            .pref-circle {
-                font-size: 40px;
-            }
+            .pref-circle { font-size: 40px; }
 
-            .section-header {
-                margin-bottom: 34px;
-            }
+            .section-header { margin-bottom: 34px; }
 
             .priority-card,
             .media-card {
@@ -1075,9 +1126,7 @@
                 padding: 18px 16px 24px;
             }
 
-            .mobile-menu-title {
-                font-size: 20px;
-            }
+            .mobile-menu-title { font-size: 20px; }
         }
     </style>
 </head>
@@ -1095,19 +1144,18 @@
 
                 <div class="desktop-nav d-none d-lg-flex align-items-center">
                     <ul class="navbar-nav flex-row align-items-center">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                За Росен
-                            </a>
-                            <ul class="dropdown-menu shadow">
-                                <li><a class="dropdown-item" href="za-men.html">Биография</a></li>
-                                <li><a class="dropdown-item nav-scroll-link" href="#on-field">На терен</a></li>
-                                <li><a class="dropdown-item nav-scroll-link" href="#how-to-vote">Как да гласуваш</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="za-men.html">За мен</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#priorities" data-target="priorities">Приоритети</a></li>
-                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#media" data-target="media">В медиите</a></li>
-                        <li class="nav-item"><a class="nav-link nav-scroll-link" href="#contact" data-target="contact">Контакт</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-scroll-link" href="#priorities" data-target="priorities">Приоритети</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-scroll-link" href="#why" data-target="why">Защо</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-scroll-link" href="#contact" data-target="contact">Контакт</a>
+                        </li>
                         <li class="nav-item">
                             <a href="#how-to-vote" class="vote-chip nav-scroll-link" data-target="how-to-vote">
                                 <span class="header-num">7</span>
@@ -1153,22 +1201,9 @@
         </div>
 
         <div class="mobile-menu-content">
-            <div class="mobile-accordion" id="mobileAboutAccordion">
-                <button class="mobile-accordion-trigger" id="mobileAccordionTrigger" type="button" aria-expanded="false" aria-controls="mobileAccordionPanel">
-                    <span>За Росен</span>
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <div class="mobile-accordion-panel" id="mobileAccordionPanel">
-                    <div class="mobile-submenu">
-                        <a href="za-men.html" class="mobile-submenu-link">Биография</a>
-                        <a href="#on-field" class="mobile-submenu-link mobile-scroll-link" data-target="on-field">На терен</a>
-                        <a href="#how-to-vote" class="mobile-submenu-link mobile-scroll-link" data-target="how-to-vote">Как да гласуваш</a>
-                    </div>
-                </div>
-            </div>
-
+            <a href="za-men.html" class="mobile-nav-link">За мен</a>
             <a href="#priorities" class="mobile-nav-link mobile-scroll-link" data-target="priorities">Приоритети</a>
-            <a href="#media" class="mobile-nav-link mobile-scroll-link" data-target="media">В медиите</a>
+            <a href="#why" class="mobile-nav-link mobile-scroll-link" data-target="why">Защо</a>
             <a href="#contact" class="mobile-nav-link mobile-scroll-link" data-target="contact">Контакт</a>
 
             <a href="#how-to-vote" class="mobile-vote-card mobile-scroll-link" data-target="how-to-vote">
@@ -1199,37 +1234,43 @@
     </aside>
 
     <main>
-        <section class="hero">
+        <section class="hero" id="top">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7" data-aos="fade-right">
                         <div class="logos-inline">
                             <img src="ПП- ДБ.png" alt="ПП–ДБ">
                         </div>
+
                         <div class="hero-badges">
                             <span class="badge-soft">19 МИР Русе</span>
                             <span class="badge-soft">ПП–ДБ №7</span>
                             <span class="badge-soft">Преференция 105</span>
                         </div>
-                       <h1 class="hero-title">Росен<br>Симеонов</h1>
-<div class="hero-subtitle">Истинската свобода започва с финансова независимост.</div>
-<p class="hero-lead">
-    След близо 20 години опит в реалната икономика в Обединеното кралство се върнах в Русе, за да работя за повече възможности, ясни правила и по-силен регион.
-</p>
+
+                        <h1 class="hero-title">Росен<br>Симеонов</h1>
+                        <div class="hero-subtitle">Знания, опит и ясна посока за Русе.</div>
+                        <div class="hero-kicker">Истинската свобода започва с финансова независимост.</div>
+
+                        <p class="hero-lead">
+                            Предприемач с международен опит и управленска перспектива. След близо 20 години в реалната икономика се върнах в Русе, за да работя за повече възможности, ясни правила и дългосрочно развитие на региона.
+                        </p>
+
                         <div class="vote-panel">
                             <div class="number-box">7</div>
                             <div class="pref-circle">105</div>
                             <div class="vote-copy">
-                                <div class="vote-copy">
-    <h3>На изборите</h3>
-    <p>Гласувай за <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
-</div>
+                                <h3>На изборите</h3>
+                                <p>Гласувай за <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
+                            </div>
                         </div>
+
                         <div class="hero-actions">
-                            <a href="#priorities" class="btn-main nav-scroll-link">Виж приоритетите</a>
-                            <a href="#contact" class="btn-outline-light nav-scroll-link">Пиши ми</a>
+                            <a href="#priorities" class="btn-main nav-scroll-link" data-target="priorities">Виж приоритетите</a>
+                            <a href="#why" class="btn-outline-light nav-scroll-link" data-target="why">Защо се кандидатирам</a>
                         </div>
                     </div>
+
                     <div class="col-lg-5" data-aos="fade-left">
                         <div class="hero-image-wrap">
                             <img src="rosen_simeonov.png" alt="Росен Симеонов" class="hero-image">
@@ -1239,40 +1280,150 @@
             </div>
         </section>
 
-        <section class="section-dark">
+        <section class="section-dark" id="why">
             <div class="container">
-                <div class="trust-box text-center" data-aos="fade-up">
-                    <h2>Не влизам в кампанията с празни обещания.</h2>
-                    <p>Влизам с ясна позиция: Русе има нужда от повече възможности, по-добри доходи и реална защита на хората.</p>
+                <div class="trust-box" data-aos="fade-up">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-7">
+                            <h2>Защо се кандидатирам</h2>
+                            <p>
+                                Видях как работят системи, в които правилата са ясни, усилията се възнаграждават и хората имат шанс да се развиват.
+                            </p>
+                            <p>
+                                Върнах се в Русе, защото вярвам, че и тук можем да изградим среда с повече възможности, по-силна икономика и по-малко зависимости.
+                            </p>
+                            <p class="mb-0">
+                                Не идвам с лозунги. Идвам с опит, с разбиране за реалната икономика и с ясна посока за това как Русе може да се развива по-устойчиво.
+                            </p>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="mini-proof-card">
+                                        <strong>Близо 20 години международен опит</strong>
+                                        <span>в логистика, инвестиции и управление на процеси и екипи</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mini-proof-card">
+                                        <strong>Предприемач и инвеститор</strong>
+                                        <span>с фокус върху финансова култура и дългосрочно мислене</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mini-proof-card">
+                                        <strong>Завръщане в Русе</strong>
+                                        <span>с ясна цел: наученото да работи в полза на града и региона</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="priorities" class="section-white">
+        <section class="section-white" id="about-rosen">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2>Моите приоритети за Русе</h2>
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="section-header mb-4">
+                            <h2>Кой е Росен Симеонов</h2>
+                        </div>
+                        <p class="text-dark mb-3" style="font-size: 1.08rem; line-height: 1.9;">
+                            Роден в Русе през 1977 г., Росен Симеонов изгражда професионалния си път с близо 20 години опит в Обединеното кралство, където преминава през всички нива – от оперативна работа до управленски позиции в логистиката и инвестициите.
+                        </p>
+                        <p class="text-dark mb-3" style="font-size: 1.08rem; line-height: 1.9;">
+                            Завършва бакалавър по аграрна икономика и магистратура по финанси в Стопанска академия „Д. А. Ценов“ – Свищов, а през 2022 г. придобива и MBA от Anglia Ruskin University.
+                        </p>
+                        <p class="text-dark mb-0" style="font-size: 1.08rem; line-height: 1.9;">
+                            Днес е предприемач, инвеститор на капиталовите пазари и създател на платформа за финансова култура. През 2022 г. се завръща в Русе със семейството си, за да приложи наученото в полза на града и страната.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="priority-card" style="border-bottom: none; border-top: 6px solid var(--secondary-blue);">
+                            <h5 style="margin-bottom: 20px;">Какво го отличава</h5>
+                            <ul class="check-list">
+                                <li>Опит извън политиката и в конкурентна международна среда</li>
+                                <li>Управленски поглед върху процеси, екипи и ресурси</li>
+                                <li>Финансова експертиза и дългосрочно мислене</li>
+                                <li>Ясна връзка с Русе и реално завръщане в града</li>
+                                <li>Фокус върху решения, а не върху шумни обещания</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="priorities" class="section-soft">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <h2>Моите приоритети за Русе</h2>
+                    <p style="max-width: 760px; margin: 0 auto; font-size: 1.08rem; line-height: 1.8;">
+                        Ясен фокус върху икономика, финансова независимост и защита на семейството.
+                    </p>
+                </div>
+
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4" data-aos="zoom-in">
                         <div class="priority-card">
                             <div class="icon"><i class="fas fa-industry"></i></div>
-                            <h5>Развитие на Русе и региона</h5>
-                            <p>Ще работя за повече инвестиции, по-добра свързаност и условия за добре платена работа.</p>
+                            <h5>Силна икономика и развитие на Русе</h5>
+                            <p>
+                                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
+                            </p>
                         </div>
                     </div>
+
                     <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                         <div class="priority-card">
                             <div class="icon"><i class="fas fa-chart-line"></i></div>
-                            <h5>Финансова грамотност</h5>
-                            <p>Финансовата култура е защита за всяко семейство и шанс за по-сигурно бъдеще.</p>
+                            <h5>Финансова грамотност и независими граждани</h5>
+                            <p>
+                                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
+                            </p>
                         </div>
                     </div>
+
                     <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                         <div class="priority-card">
-                            <div class="icon"><i class="fas fa-ban"></i></div>
-                            <h5>Ограничаване на хазарта</h5>
-                            <p>Трябват по-строги правила, по-малко реклама и реална защита на младите хора.</p>
+                            <div class="icon"><i class="fas fa-shield-heart"></i></div>
+                            <h5>Ограничаване на хазарта и защита на семейството</h5>
+                            <p>
+                                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-white" id="ruse">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="section-header mb-4">
+                            <h2>Какво виждам в Русе</h2>
+                        </div>
+                        <p style="font-size: 1.08rem; line-height: 1.9; color: var(--text-dark);">
+                            Виждам град с огромен потенциал, но и с реални проблеми:
+                        </p>
+                        <ul class="check-list">
+                            <li>млади хора, които не виждат перспектива и заминават;</li>
+                            <li>работещи семейства, които усещат все по-голям натиск;</li>
+                            <li>недостатъчно инвестиции и пропуснати възможности;</li>
+                            <li>усещане, че Русе може повече, но не получава достатъчно внимание.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="vote-banner">
+                            <h3 class="fw-900 text-uppercase mb-3">Русе има потенциал</h3>
+                            <p class="mb-0" style="line-height: 1.9;">
+                                Това не е съдба. Това е въпрос на решения, управленски капацитет и последователност. Русе има място сред силните икономически центрове на България – ако има представители, които разбират как се създават възможности и как се защитават хората.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1285,11 +1436,13 @@
                     <div class="row align-items-center g-4">
                         <div class="col-lg-12 text-center mb-4">
                             <h3 class="display-5 fw-900 text-uppercase">Как да гласуваш</h3>
-                            <p class="lead">В изборния ден гласувай за <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
+                            <p class="lead">Избери <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
                         </div>
+
                         <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
                             <img src="partia.png" alt="Гласувай за ПП-ДБ с №7" class="vote-instruction-img">
                         </div>
+
                         <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
                             <img src="preferncia.png" alt="Избери преференция 105" class="vote-instruction-img">
                         </div>
@@ -1303,24 +1456,25 @@
                 <div class="section-header text-center" data-aos="fade-up">
                     <h2>Сред хората, не само в кампания</h2>
                 </div>
+
                 <div class="on-field-grid">
                     <a href="rosen-simeonov-govori-na-protest.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in">
-                        <img src="rosen-simeonov-govori-na-protest.jpg" alt="Протест">
+                        <img src="rosen-simeonov-govori-na-protest.jpg" alt="Росен Симеонов на събитие">
                     </a>
                     <a href="rosen-simeonov-protest-ruse-family.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="rosen-simeonov-protest-ruse-family.jpg" alt="Семейство">
+                        <img src="rosen-simeonov-protest-ruse-family.jpg" alt="Росен Симеонов сред граждани">
                     </a>
                     <a href="sreshta-s-grazhdani-ruse.jpg" class="grid-item grid-tall lightbox" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="sreshta-s-grazhdani-ruse.jpg" alt="Среща">
+                        <img src="sreshta-s-grazhdani-ruse.jpg" alt="Среща с граждани">
                     </a>
                     <a href="rosen-simeonov-kiril-petkov-ruse.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="rosen-simeonov-kiril-petkov-ruse.jpg" alt="Кирил Петков">
+                        <img src="rosen-simeonov-kiril-petkov-ruse.jpg" alt="Росен Симеонов и Кирил Петков">
                     </a>
                     <a href="kampania-ruse-rosen-simeonov-dialog.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="kampania-ruse-rosen-simeonov-dialog.jpg" alt="Диалог">
+                        <img src="kampania-ruse-rosen-simeonov-dialog.jpg" alt="Диалог с хората">
                     </a>
                     <a href="dsb-ruse-meeting-rosen-simeonov.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="dsb-ruse-meeting-rosen-simeonov.jpg" alt="Екип">
+                        <img src="dsb-ruse-meeting-rosen-simeonov.jpg" alt="Среща с екипа">
                     </a>
                 </div>
             </div>
@@ -1329,22 +1483,24 @@
         <section id="media" class="media-section">
             <div class="container">
                 <div class="section-header text-center" data-aos="fade-up">
-                    <h2 class="text-white">Позиции и публични разговори</h2>
+                    <h2 class="text-white">Позиции и действия</h2>
                 </div>
+
                 <div class="row g-4">
                     <div class="col-md-6" data-aos="fade-up">
                         <div class="media-card">
                             <div class="source"><i class="fas fa-newspaper"></i> <span>Вестник Утро</span></div>
                             <h4>„Политиката има смисъл само ако си сред хората.“</h4>
-                            <p>Разговор за професионалния път и защо Русе има нужда от почтени представители.</p>
+                            <p>Разговор за професионалния път, завръщането в Русе и нуждата от почтени представители с ясна посока.</p>
                             <a href="https://utroruse.com/article/1179302/" target="_blank" rel="noopener noreferrer" class="btn-outline-light">Прочети</a>
                         </div>
                     </div>
+
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="120">
                         <div class="media-card">
                             <div class="source"><i class="fas fa-newspaper"></i> <span>KISS 13</span></div>
                             <h4>„Общественият интерес в Русе не е за заобикаляне.“</h4>
-                            <p>Позиция по казуса с големия ТИР паркинг и защита на интереса на русенци.</p>
+                            <p>Позиция по казуса с големия ТИР паркинг и защита на интереса на русенци чрез ясни правила и отчетност.</p>
                             <a href="https://kiss13.net/news/ruse/pp-db-davat-sdelkata-za-golemiya-tir-parking-v-ruse-na-prokuraturata" target="_blank" rel="noopener noreferrer" class="btn-outline-light">Прочети</a>
                         </div>
                     </div>
@@ -1358,19 +1514,38 @@
                     <div class="col-lg-8">
                         <div class="contact-card" data-aos="fade-up">
                             <div class="text-center mb-5">
-                                <h2 class="fw-900 text-uppercase">Пиши ми директно</h2>
+                                <h2 class="fw-900 text-uppercase">Включи се или ми пиши</h2>
+                                <p style="color: rgba(255,255,255,0.82); max-width: 680px; margin: 12px auto 0; line-height: 1.8;">
+                                    Кампанията се прави от хора. Ако искаш да помогнеш, да зададеш въпрос или да станеш доброволец, пиши ми директно.
+                                </p>
                             </div>
+
                             <form action="https://formspree.io/f/mnjbakgl" method="POST">
+                                <input type="hidden" name="source" value="campaign-website-homepage">
+
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <input type="text" name="name" class="form-control" placeholder="Име" required>
                                     </div>
+
                                     <div class="col-md-6">
                                         <input type="email" name="email" class="form-control" placeholder="Имейл" required>
                                     </div>
+
+                                    <div class="col-12">
+                                        <select name="topic" class="form-control form-select">
+                                            <option value="">Избери тема</option>
+                                            <option value="volunteer">Искам да помогна в кампанията</option>
+                                            <option value="meeting">Искам среща</option>
+                                            <option value="question">Имам въпрос</option>
+                                            <option value="media">Медийно запитване</option>
+                                        </select>
+                                    </div>
+
                                     <div class="col-12">
                                         <textarea name="message" class="form-control" rows="5" placeholder="Вашето съобщение" required></textarea>
                                     </div>
+
                                     <div class="col-12 text-center">
                                         <button type="submit" class="btn-main mt-3">Изпрати</button>
                                     </div>
@@ -1385,12 +1560,12 @@
         <section class="final-section">
             <div class="container">
                 <div class="text-center" data-aos="fade-up">
-                    <h2 class="fw-900 text-uppercase mb-4">Русе има потенциал.<br>Нужни са решения.</h2>
+                    <h2 class="fw-900 text-uppercase mb-4">Знания. Опит.<br>Ясна посока за Русе.</h2>
                     <div class="vote-panel justify-content-center">
                         <div class="number-box">7</div>
                         <div class="pref-circle">105</div>
                     </div>
-                    <p style="color: rgba(255,255,255,0.92); font-weight: 700; margin-top: 10px;">ПП–ДБ №7 | Росен Симеонов</p>
+                    <p style="color: rgba(255,255,255,0.92); font-weight: 700; margin-top: 10px;">Гласувай за ПП–ДБ №7 с преференция 105</p>
                 </div>
             </div>
         </section>
@@ -1407,200 +1582,155 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/Luminous.min.js"></script>
 
-   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        if (typeof AOS !== 'undefined') {
-            AOS.init({ duration: 900, once: true });
-        }
-
-        if (typeof Luminous !== 'undefined') {
-            document.querySelectorAll('.lightbox').forEach(function (elem) {
-                new Luminous(elem);
-            });
-        }
-
-        const body = document.body;
-        const navbar = document.getElementById('mainNavbar');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const mobileScrollLinks = document.querySelectorAll('.mobile-scroll-link');
-        const desktopScrollLinks = document.querySelectorAll('.nav-scroll-link');
-        const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link[data-target]');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[data-target], .mobile-submenu-link[data-target]');
-        const sections = document.querySelectorAll('section[id]');
-        const accordion = document.getElementById('mobileAboutAccordion');
-        const accordionTrigger = document.getElementById('mobileAccordionTrigger');
-        const accordionPanel = document.getElementById('mobileAccordionPanel');
-
-        function openMobileMenu() {
-            if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
-
-            mobileMenu.classList.add('active');
-            mobileMenuOverlay.classList.add('active');
-            mobileMenuToggle.classList.add('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'true');
-            mobileMenu.setAttribute('aria-hidden', 'false');
-            body.classList.add('menu-open');
-        }
-
-        function closeMobileMenu() {
-            if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
-
-            mobileMenu.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            body.classList.remove('menu-open');
-        }
-
-        function toggleAccordion() {
-            if (!accordion || !accordionTrigger || !accordionPanel) return;
-
-            const isOpen = accordion.classList.contains('open');
-
-            if (isOpen) {
-                accordion.classList.remove('open');
-                accordionTrigger.classList.remove('active');
-                accordionTrigger.setAttribute('aria-expanded', 'false');
-                accordionPanel.style.maxHeight = null;
-            } else {
-                accordion.classList.add('open');
-                accordionTrigger.classList.add('active');
-                accordionTrigger.setAttribute('aria-expanded', 'true');
-                accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px';
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 900, once: true });
             }
-        }
 
-        function smoothScrollTo(targetId) {
-            const target = document.getElementById(targetId);
-            if (!target) return;
-
-            const navbarHeight = navbar ? navbar.offsetHeight : 80;
-            const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
-
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-
-        function handleScrollState() {
-            if (!navbar) return;
-
-            if (window.scrollY > 16) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
+            if (typeof Luminous !== 'undefined') {
+                document.querySelectorAll('.lightbox').forEach(function (elem) {
+                    new Luminous(elem);
+                });
             }
-        }
 
-        function setActiveNav() {
-            if (!sections.length || !navbar) return;
+            const body = document.body;
+            const navbar = document.getElementById('mainNavbar');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileScrollLinks = document.querySelectorAll('.mobile-scroll-link');
+            const desktopScrollLinks = document.querySelectorAll('.nav-scroll-link');
+            const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link[data-target]');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[data-target]');
+            const sections = document.querySelectorAll('section[id]');
 
-            let currentId = '';
-
-            sections.forEach(function (section) {
-                const sectionTop = section.offsetTop - (navbar.offsetHeight + 120);
-                const sectionHeight = section.offsetHeight;
-
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    currentId = section.getAttribute('id');
-                }
-            });
-
-            desktopNavLinks.forEach(function (link) {
-                link.classList.toggle('active', link.dataset.target === currentId);
-            });
-
-            mobileNavLinks.forEach(function (link) {
-                link.classList.toggle('active', link.dataset.target === currentId);
-            });
-
-            if (accordion && accordionTrigger && accordionPanel) {
-                const submenuTargets = ['on-field', 'how-to-vote'];
-
-                if (submenuTargets.includes(currentId)) {
-                    accordion.classList.add('open');
-                    accordionTrigger.classList.add('active');
-                    accordionTrigger.setAttribute('aria-expanded', 'true');
-                    accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px';
-                }
+            function openMobileMenu() {
+                if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                mobileMenuToggle.classList.add('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                body.classList.add('menu-open');
             }
-        }
 
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
+            function closeMobileMenu() {
+                if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                body.classList.remove('menu-open');
+            }
 
-                if (mobileMenu && mobileMenu.classList.contains('active')) {
-                    closeMobileMenu();
+            function smoothScrollTo(targetId) {
+                const target = document.getElementById(targetId);
+                if (!target) return;
+
+                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
+
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+
+            function handleScrollState() {
+                if (!navbar) return;
+
+                if (window.scrollY > 16) {
+                    navbar.classList.add('navbar-scrolled');
                 } else {
-                    openMobileMenu();
+                    navbar.classList.remove('navbar-scrolled');
                 }
-            });
-        }
+            }
 
-        if (mobileMenuClose) {
-            mobileMenuClose.addEventListener('click', function (e) {
-                e.preventDefault();
-                closeMobileMenu();
-            });
-        }
+            function setActiveNav() {
+                if (!sections.length || !navbar) return;
 
-        if (mobileMenuOverlay) {
-            mobileMenuOverlay.addEventListener('click', function () {
-                closeMobileMenu();
-            });
-        }
+                let currentId = '';
 
-        if (accordionTrigger) {
-            accordionTrigger.addEventListener('click', function (e) {
-                e.preventDefault();
-                toggleAccordion();
-            });
-        }
+                sections.forEach(function (section) {
+                    const sectionTop = section.offsetTop - (navbar.offsetHeight + 120);
+                    const sectionHeight = section.offsetHeight;
 
-        [...desktopScrollLinks, ...mobileScrollLinks].forEach(function (link) {
-            link.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                const targetId = this.dataset.target || (href && href.startsWith('#') ? href.substring(1) : '');
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentId = section.getAttribute('id');
+                    }
+                });
 
-                if (targetId) {
+                desktopNavLinks.forEach(function (link) {
+                    link.classList.toggle('active', link.dataset.target === currentId);
+                });
+
+                mobileNavLinks.forEach(function (link) {
+                    link.classList.toggle('active', link.dataset.target === currentId);
+                });
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
+                    }
+                });
+            }
+
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function (e) {
                     e.preventDefault();
                     closeMobileMenu();
-                    smoothScrollTo(targetId);
+                });
+            }
+
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.addEventListener('click', function () {
+                    closeMobileMenu();
+                });
+            }
+
+            [...desktopScrollLinks, ...mobileScrollLinks].forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    const targetId = this.dataset.target || (href && href.startsWith('#') ? href.substring(1) : '');
+
+                    if (targetId) {
+                        e.preventDefault();
+                        closeMobileMenu();
+                        smoothScrollTo(targetId);
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
                 }
             });
-        });
 
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closeMobileMenu();
-            }
-        });
+            window.addEventListener('scroll', function () {
+                handleScrollState();
+                setActiveNav();
+            });
 
-        window.addEventListener('scroll', function () {
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 992) {
+                    closeMobileMenu();
+                }
+            });
+
             handleScrollState();
             setActiveNav();
         });
-
-        window.addEventListener('resize', function () {
-            if (window.innerWidth >= 992) {
-                closeMobileMenu();
-            }
-
-            if (accordion && accordionPanel && accordion.classList.contains('open')) {
-                accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px';
-            }
-        });
-
-        handleScrollState();
-        setActiveNav();
-    });
-</script>
+    </script>
 </body>
 </html>
