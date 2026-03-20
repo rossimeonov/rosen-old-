@@ -3,29 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Росен Симеонов | Знания, опит и ясна посока за Русе | №7 | Преференция 105</title>
-
-    <meta name="description" content="Росен Симеонов – кандидат за народен представител от Русе. Знания, опит и ясна посока за Русе. Предприемач, инвеститор и човек с управленски опит. №7 с преференция 105.">
-    <meta name="theme-color" content="#07153b">
-    <meta name="color-scheme" content="dark light">
-
-    <!-- Препоръка: замени с абсолютния адрес на сайта -->
-    <!-- <link rel="canonical" href="https://example.com/"> -->
-
-    <meta property="og:locale" content="bg_BG">
-    <meta property="og:title" content="Росен Симеонов | Знания, опит и ясна посока за Русе">
-    <meta property="og:description" content="Истинската свобода започва с финансова независимост. Виж приоритетите и позициите на Росен Симеонов за Русе.">
-    <!-- Препоръка: замени с абсолютен URL -->
-    <meta property="og:image" content="thumbnail.png">
-    <meta property="og:type" content="website">
-
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Росен Симеонов – кандидат за народен представител от Русе. Знания, опит и ясна посока за Русе. Предприемач, инвеститор и човек с управленски опит. №7 с преференция 105.">
+    <meta property="og:title" content="Росен Симеонов | Знания, опит и ясна посока за Русе">
+    <meta property="og:description" content="Истинската свобода започва с финансова независимост. Виж приоритетите и позициите на Росен Симеонов за Русе.">
+    <meta property="og:image" content="rosen_simeonov.png">
+    <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous-basic.min.css">
@@ -39,9 +28,9 @@
             --navy-soft: #0b1438;
             --accent-light: #e9efff;
             --white: #ffffff;
-            --text-soft: rgba(255,255,255,0.88);
+            --text-soft: rgba(255,255,255,0.82);
             --text-dark: #1e2a4f;
-            --text-muted: #4b5d85;
+            --text-muted: #526287;
             --shadow: 0 18px 45px rgba(7, 21, 59, 0.28);
             --shadow-soft: 0 10px 30px rgba(7, 21, 59, 0.16);
             --radius-xl: 24px;
@@ -49,71 +38,29 @@
             --radius-md: 14px;
             --nav-height: 86px;
             --nav-height-scrolled: 72px;
-            --focus-ring: 0 0 0 3px rgba(255,255,255,0.32);
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             margin: 0;
+            overflow-x: hidden;
             font-family: 'Roboto', sans-serif;
             background: var(--navy);
             color: var(--white);
-            overflow-x: clip;
         }
 
-        body.menu-open {
-            overflow: hidden;
-        }
+        body.menu-open { overflow: hidden; }
 
         h1, h2, h3, h4, h5 {
             font-family: 'Montserrat', sans-serif;
             letter-spacing: 0.3px;
         }
 
-        .fw-900 {
-            font-weight: 900;
-        }
+        .fw-900 { font-weight: 900; }
 
-        a,
-        button,
-        input,
-        select,
-        textarea {
-            transition: 0.25s ease;
-        }
-
-        a:focus-visible,
-        button:focus-visible,
-        input:focus-visible,
-        select:focus-visible,
-        textarea:focus-visible {
-            outline: none;
-            box-shadow: var(--focus-ring);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .visually-hidden-focusable:not(:focus):not(:focus-within) {
-            position: absolute !important;
-            width: 1px !important;
-            height: 1px !important;
-            padding: 0 !important;
-            margin: -1px !important;
-            overflow: hidden !important;
-            clip: rect(0, 0, 0, 0) !important;
-            white-space: nowrap !important;
-            border: 0 !important;
-        }
+        a { transition: 0.25s ease; }
 
         /* =========================
            NAVBAR
@@ -189,7 +136,7 @@
 
         .desktop-nav .nav-link {
             position: relative;
-            color: rgba(255,255,255,0.9) !important;
+            color: rgba(255,255,255,0.88) !important;
             font-weight: 700;
             font-size: 13px;
             text-transform: uppercase;
@@ -222,16 +169,10 @@
             align-items: center;
             gap: 8px;
             text-decoration: none;
-            transition: transform 0.2s ease, background 0.2s ease;
-            border-radius: 999px;
-            padding: 6px;
+            transition: transform 0.2s ease;
         }
 
-        .vote-chip:hover,
-        .vote-chip.active {
-            transform: translateY(-1px) scale(1.02);
-            background: rgba(255,255,255,0.06);
-        }
+        .vote-chip:hover { transform: translateY(-1px) scale(1.03); }
 
         .header-num {
             width: 32px;
@@ -273,7 +214,7 @@
         .social-nav a {
             width: 38px;
             height: 38px;
-            color: rgba(255,255,255,0.86);
+            color: rgba(255,255,255,0.82);
             font-size: 16px;
             border-radius: 12px;
             background: rgba(255,255,255,0.04);
@@ -303,6 +244,7 @@
             align-items: center;
             gap: 5px;
             padding: 0;
+            transition: 0.25s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.18);
         }
 
@@ -353,7 +295,7 @@
             top: 0;
             right: 0;
             width: min(90vw, 390px);
-            height: 100dvh;
+            height: 100vh;
             background:
                 radial-gradient(circle at top right, rgba(255,255,255,0.08), transparent 28%),
                 linear-gradient(180deg, rgba(25, 42, 110, 0.98) 0%, rgba(8, 18, 47, 0.99) 100%);
@@ -385,7 +327,7 @@
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1.4px;
-            color: rgba(255,255,255,0.72);
+            color: rgba(255,255,255,0.58);
             margin-bottom: 6px;
             font-weight: 700;
         }
@@ -406,6 +348,7 @@
             color: #fff;
             border-radius: 14px;
             flex: 0 0 auto;
+            transition: 0.25s ease;
         }
 
         .mobile-menu-close:hover {
@@ -435,6 +378,7 @@
             letter-spacing: 0.4px;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.06);
+            transition: 0.25s ease;
         }
 
         .mobile-nav-link:hover,
@@ -458,11 +402,9 @@
             box-shadow: 0 14px 32px rgba(0,0,0,0.18);
         }
 
-        .mobile-vote-card:hover,
-        .mobile-vote-card.active {
+        .mobile-vote-card:hover {
             color: #fff;
             transform: translateY(-1px);
-            background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
         }
 
         .mobile-vote-shapes {
@@ -485,7 +427,7 @@
 
         .mobile-vote-text span {
             font-size: 13px;
-            color: rgba(255,255,255,0.84);
+            color: rgba(255,255,255,0.78);
         }
 
         .mobile-cta {
@@ -531,6 +473,7 @@
             justify-content: center;
             font-size: 17px;
             text-decoration: none;
+            transition: 0.25s ease;
         }
 
         .mobile-socials a:hover {
@@ -552,7 +495,7 @@
             font-size: 15px;
         }
 
-        /* =========================
+      /* =========================
            HERO
         ========================= */
         .hero {
@@ -600,6 +543,7 @@
         .hero-image {
             width: 560px;
             max-width: 100%;
+            height: auto;
             max-height: 88vh;
             display: block;
             object-fit: contain;
@@ -646,7 +590,7 @@
             font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.7px;
-            color: rgba(255,255,255,0.94);
+            color: rgba(255,255,255,0.92);
             margin-bottom: 18px;
             font-weight: 800;
         }
@@ -699,9 +643,7 @@
             box-shadow: var(--shadow);
         }
 
-        .vote-copy {
-            max-width: 330px;
-        }
+        .vote-copy { max-width: 330px; }
 
         .vote-copy h3 {
             font-size: 1.5rem;
@@ -735,6 +677,7 @@
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
+            transition: 0.25s ease;
         }
 
         .btn-main:hover {
@@ -753,6 +696,7 @@
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
+            transition: 0.25s ease;
         }
 
         .btn-outline-light:hover {
@@ -772,62 +716,27 @@
             width: auto;
         }
 
-        /* Countdown */
+        /* Countdown Styles */
         .countdown-container {
-            display: inline-flex;
+            display: flex;
             gap: 15px;
             margin-bottom: 30px;
             padding: 15px;
             background: rgba(255, 255, 255, 0.08);
             border-radius: 18px;
+            display: inline-flex;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
-
-        .countdown-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 65px;
-        }
-
-        .countdown-item span {
-            font-size: 2rem;
-            font-weight: 900;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1;
-        }
-
-        .countdown-item label {
-            font-size: 10px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.82);
-            margin-top: 5px;
-            letter-spacing: 1px;
-            font-weight: 700;
-        }
+        .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 65px; }
+        .countdown-item span { font-size: 2rem; font-weight: 900; color: #fff; font-family: 'Montserrat', sans-serif; line-height: 1; }
+        .countdown-item label { font-size: 10px; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); margin-top: 5px; letter-spacing: 1px; font-weight: 700; }
 
         /* Sections */
-        .section-dark {
-            background: #0c1743;
-            padding: 78px 0;
-        }
+        .section-dark { background: #0c1743; padding: 78px 0; }
+        .section-white { background: #fff; color: var(--text-dark); padding: 100px 0; }
+        .section-soft { background: #eef3ff; color: var(--text-dark); padding: 100px 0; }
 
-        .section-white {
-            background: #fff;
-            color: var(--text-dark);
-            padding: 100px 0;
-        }
-
-        .section-soft {
-            background: #eef3ff;
-            color: var(--text-dark);
-            padding: 100px 0;
-        }
-
-        .section-header {
-            margin-bottom: 50px;
-        }
+        .section-header { margin-bottom: 50px; }
 
         .section-header h2 {
             font-weight: 900;
@@ -855,7 +764,7 @@
         }
 
         .trust-box p {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.85);
             line-height: 1.85;
             margin-bottom: 0.8rem;
         }
@@ -911,7 +820,7 @@
         }
 
         .vote-instruction-img {
-            width: 100%;
+            max-width: 100%;
             border-radius: 16px;
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
             border: 1px solid rgba(255,255,255,0.1);
@@ -934,7 +843,6 @@
             overflow: hidden;
             border-radius: 18px;
             cursor: pointer;
-            display: block;
         }
 
         .grid-item img {
@@ -949,13 +857,8 @@
             filter: brightness(85%);
         }
 
-        .grid-wide {
-            grid-column: span 2;
-        }
-
-        .grid-tall {
-            grid-row: span 2;
-        }
+        .grid-wide { grid-column: span 2; }
+        .grid-tall { grid-row: span 2; }
 
         .media-section {
             background: #0b1438;
@@ -980,7 +883,7 @@
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.84);
+            color: rgba(255,255,255,0.76);
             margin-bottom: 18px;
             letter-spacing: 0.3px;
         }
@@ -992,7 +895,7 @@
         }
 
         .media-card p {
-            color: rgba(255,255,255,0.88);
+            color: rgba(255,255,255,0.82);
             line-height: 1.7;
             margin-bottom: 22px;
         }
@@ -1019,7 +922,7 @@
         }
 
         .form-control::placeholder {
-            color: rgba(255,255,255,0.78);
+            color: rgba(255,255,255,0.68);
         }
 
         .form-control:focus {
@@ -1027,7 +930,7 @@
         }
 
         .form-select.form-control {
-            color: rgba(255,255,255,0.92) !important;
+            color: rgba(255,255,255,0.88) !important;
         }
 
         .form-select.form-control option {
@@ -1054,7 +957,7 @@
             background: #050b1c;
             padding: 48px 0;
             text-align: center;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.72);
             font-size: 14px;
         }
 
@@ -1077,7 +980,7 @@
         }
 
         .mini-proof-card span {
-            color: rgba(255,255,255,0.84);
+            color: rgba(255,255,255,0.78);
             line-height: 1.6;
             font-size: 0.96rem;
         }
@@ -1106,14 +1009,6 @@
             color: var(--secondary-blue);
         }
 
-        .no-js-message {
-            background: #fff3cd;
-            color: #4a3b00;
-            padding: 12px 16px;
-            text-align: center;
-            font-weight: 700;
-        }
-
         /* Responsive */
         @media (max-width: 991px) {
             :root {
@@ -1128,9 +1023,7 @@
                 display: none !important;
             }
 
-            .mobile-menu-toggle {
-                display: flex;
-            }
+            .mobile-menu-toggle { display: flex; }
 
             .brand-name {
                 font-size: 14px;
@@ -1183,13 +1076,8 @@
                 height: 120px;
             }
 
-            .number-box {
-                font-size: 78px;
-            }
-
-            .pref-circle {
-                font-size: 48px;
-            }
+            .number-box { font-size: 78px; }
+            .pref-circle { font-size: 48px; }
 
             .grid-wide,
             .grid-tall {
@@ -1217,17 +1105,9 @@
                 padding-bottom: 30px;
             }
 
-            .hero-title {
-                font-size: 2.4rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.18rem;
-            }
-
-            .hero-kicker {
-                font-size: 0.88rem;
-            }
+            .hero-title { font-size: 2.4rem; }
+            .hero-subtitle { font-size: 1.18rem; }
+            .hero-kicker { font-size: 0.88rem; }
 
             .hero-lead {
                 font-size: 1rem;
@@ -1255,9 +1135,7 @@
                 width: min(100%, 340px);
             }
 
-            .vote-panel {
-                gap: 14px;
-            }
+            .vote-panel { gap: 14px; }
 
             .number-box,
             .pref-circle {
@@ -1270,13 +1148,9 @@
                 border-radius: 22px;
             }
 
-            .pref-circle {
-                font-size: 40px;
-            }
+            .pref-circle { font-size: 40px; }
 
-            .section-header {
-                margin-bottom: 34px;
-            }
+            .section-header { margin-bottom: 34px; }
 
             .priority-card,
             .media-card {
@@ -1290,63 +1164,20 @@
                 padding: 18px 16px 24px;
             }
 
-            .mobile-menu-title {
-                font-size: 20px;
-            }
-
-            .countdown-container {
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation: none !important;
-                transition: none !important;
-            }
-
-            .grid-item:hover img,
-            .vote-instruction-img:hover,
-            .btn-main:hover,
-            .mobile-nav-link:hover,
-            .mobile-vote-card:hover,
-            .vote-chip:hover,
-            .social-nav a:hover,
-            .mobile-socials a:hover {
-                transform: none !important;
-            }
+            .mobile-menu-title { font-size: 20px; }
+            .countdown-container { margin-left: auto; margin-right: auto; }
         }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="visually-hidden-focusable">Прескочи към основното съдържание</a>
-
-    <noscript>
-        <div class="no-js-message">
-            Някои интерактивни елементи на тази страница изискват JavaScript.
-        </div>
-    </noscript>
 
     <nav class="navbar sticky-top navbar-dark" id="mainNavbar">
         <div class="container">
             <div class="nav-shell">
                 <div class="navbar-brand-wrap">
-                    <a href="index.html" class="brand-name" aria-label="Начало">РОСЕН СИМЕОНОВ</a>
+                    <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
                     <div class="header-logos d-none d-lg-flex">
-                        <img
-                            src="ПП- ДБ.png"
-                            alt="Продължаваме Промяната и Демократична България"
-                            width="180"
-                            height="50"
-                            decoding="async"
-                        >
+                        <img src="ПП- ДБ.png" alt="Продължаваме Промяната и Демократична България">
                     </div>
                 </div>
 
@@ -1365,7 +1196,7 @@
                             <a class="nav-link nav-scroll-link" href="#contact" data-target="contact">Контакт</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#how-to-vote" class="vote-chip nav-scroll-link" data-target="how-to-vote" aria-label="Как да гласуваш: номер 7, преференция 105">
+                            <a href="#how-to-vote" class="vote-chip nav-scroll-link" data-target="how-to-vote">
                                 <span class="header-num">7</span>
                                 <span class="header-pref">105</span>
                             </a>
@@ -1373,27 +1204,20 @@
                         <li class="nav-item">
                             <div class="social-nav">
                                 <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    <i class="fab fa-facebook-f"></i>
                                 </a>
                                 <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                    <i class="fab fa-linkedin-in"></i>
                                 </a>
                                 <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                                    <i class="fab fa-tiktok"></i>
                                 </a>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <button
-                    type="button"
-                    class="mobile-menu-toggle d-lg-none"
-                    id="mobileMenuToggle"
-                    aria-label="Отвори меню"
-                    aria-expanded="false"
-                    aria-controls="mobileMenu"
-                >
+                <button type="button" class="mobile-menu-toggle d-lg-none" id="mobileMenuToggle" aria-label="Отвори меню" aria-expanded="false" aria-controls="mobileMenu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -1402,22 +1226,16 @@
         </div>
     </nav>
 
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay" hidden></div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
-    <aside
-        class="mobile-menu-drawer"
-        id="mobileMenu"
-        aria-hidden="true"
-        aria-label="Мобилно меню"
-        tabindex="-1"
-    >
+    <aside class="mobile-menu-drawer" id="mobileMenu" aria-hidden="true">
         <div class="mobile-menu-top">
             <div>
                 <div class="mobile-menu-label">Навигация</div>
                 <div class="mobile-menu-title">Росен Симеонов</div>
             </div>
             <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Затвори меню">
-                <i class="fas fa-times" aria-hidden="true"></i>
+                <i class="fas fa-times"></i>
             </button>
         </div>
 
@@ -1427,7 +1245,7 @@
             <a href="#why" class="mobile-nav-link mobile-scroll-link" data-target="why">Защо</a>
             <a href="#contact" class="mobile-nav-link mobile-scroll-link" data-target="contact">Контакт</a>
 
-            <a href="#how-to-vote" class="mobile-vote-card mobile-scroll-link" data-target="how-to-vote" aria-label="ПП–ДБ номер 7, преференция 105">
+            <a href="#how-to-vote" class="mobile-vote-card mobile-scroll-link" data-target="how-to-vote">
                 <div class="mobile-vote-shapes">
                     <span class="header-num">7</span>
                     <span class="header-pref">105</span>
@@ -1442,31 +1260,25 @@
 
             <div class="mobile-socials">
                 <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <i class="fab fa-facebook-f"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    <i class="fab fa-tiktok"></i>
                 </a>
             </div>
         </div>
     </aside>
 
-    <main id="main-content">
+    <main>
         <section class="hero" id="top">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7" data-aos="fade-right">
                         <div class="logos-inline">
-                            <img
-                                src="ПП- ДБ.png"
-                                alt="ПП–ДБ"
-                                width="150"
-                                height="42"
-                                decoding="async"
-                            >
+                            <img src="ПП- ДБ.png" alt="ПП–ДБ">
                         </div>
 
                         <div class="hero-badges">
@@ -1483,24 +1295,24 @@
                             Предприемач с международен опит и управленска перспектива. След близо 20 години в реалната икономика се върнах в Русе, за да работя за повече възможности, ясни правила и дългосрочно развитие на региона.
                         </p>
 
-                        <div class="countdown-container" id="election-countdown" aria-label="Оставащо време до изборите">
+                        <div class="countdown-container" id="election-countdown">
                             <div class="countdown-item">
                                 <span id="days">00</span>
-                                <label for="days">Дни</label>
+                                <label>Дни</label>
                             </div>
                             <div class="countdown-item">
                                 <span id="hours">00</span>
-                                <label for="hours">Часа</label>
+                                <label>Часа</label>
                             </div>
                             <div class="countdown-item">
                                 <span id="minutes">00</span>
-                                <label for="minutes">Мин</label>
+                                <label>Мин</label>
                             </div>
                         </div>
 
                         <div class="vote-panel">
-                            <div class="number-box" aria-label="Номер 7">7</div>
-                            <div class="pref-circle" aria-label="Преференция 105">105</div>
+                            <div class="number-box">7</div>
+                            <div class="pref-circle">105</div>
                             <div class="vote-copy">
                                 <h3>На изборите</h3>
                                 <p>Гласувай за <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
@@ -1515,15 +1327,7 @@
 
                     <div class="col-lg-5" data-aos="fade-left">
                         <div class="hero-image-wrap">
-                            <img
-                                src="rosen_simeonov.png"
-                                alt="Портрет на Росен Симеонов"
-                                class="hero-image"
-                                width="560"
-                                height="760"
-                                fetchpriority="high"
-                                decoding="async"
-                            >
+                            <img src="rosen_simeonov.png" alt="Росен Симеонов" class="hero-image">
                         </div>
                     </div>
                 </div>
@@ -1617,36 +1421,36 @@
                 </div>
 
                 <div class="row g-4">
-                    <div class="col-md-4" data-aos="zoom-in">
-                        <div class="priority-card">
-                            <div class="icon"><i class="fas fa-industry" aria-hidden="true"></i></div>
-                            <h5>Силна икономика и развитие на Русе</h5>
-                            <p>
-                                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
-                            </p>
-                        </div>
-                    </div>
+    <div class="col-md-4" data-aos="zoom-in">
+        <div class="priority-card">
+            <div class="icon"><i class="fas fa-industry"></i></div>
+            <h5>Силна икономика и развитие на Русе</h5>
+            <p>
+                Русе може да бъде икономически двигател на Северна България. Ще работя за повече инвестиции, модерна инфраструктура, по-добра свързаност и реални работни места, които задържат хората в региона.
+            </p>
+        </div>
+    </div>
 
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="priority-card">
-                            <div class="icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-                            <h5>Финансова грамотност и независими граждани</h5>
-                            <p>
-                                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
-                            </p>
-                        </div>
-                    </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="priority-card">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <h5>Финансова грамотност и независими граждани</h5>
+            <p>
+                Свободата не е лозунг. Тя започва с това хората да разбират парите си, рисковете си и възможностите си. Ще работя за повече финансова култура, знания и по-устойчиви семейни решения.
+            </p>
+        </div>
+    </div>
 
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="priority-card">
-                            <div class="icon"><i class="fas fa-shield-heart" aria-hidden="true"></i></div>
-                            <h5>Ограничаване на хазарта и защита на семейството</h5>
-                            <p>
-                                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="priority-card">
+            <div class="icon"><i class="fas fa-shield-heart"></i></div>
+            <h5>Ограничаване на хазарта и защита на семейството</h5>
+            <p>
+                Зависимостите разрушават семейства и подкопават бъдещето на младите. Трябват по-строги правила, ограничаване на агресивната реклама и ясни мерки за превенция и защита.
+            </p>
+        </div>
+    </div>
+</div>
             </div>
         </section>
 
@@ -1690,27 +1494,11 @@
                         </div>
 
                         <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
-                            <img
-                                src="partia.png"
-                                alt="Инструкция за гласуване: ПП–ДБ номер 7"
-                                class="vote-instruction-img"
-                                width="800"
-                                height="1000"
-                                loading="lazy"
-                                decoding="async"
-                            >
+                            <img src="partia.png" alt="Гласувай за ПП-ДБ с №7" class="vote-instruction-img">
                         </div>
 
                         <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
-                            <img
-                                src="preferncia.png"
-                                alt="Инструкция за гласуване: преференция 105"
-                                class="vote-instruction-img"
-                                width="800"
-                                height="1000"
-                                loading="lazy"
-                                decoding="async"
-                            >
+                            <img src="preferncia.png" alt="Избери преференция 105" class="vote-instruction-img">
                         </div>
                     </div>
                 </div>
@@ -1724,65 +1512,23 @@
                 </div>
 
                 <div class="on-field-grid">
-                    <a href="rosen-simeonov-govori-na-protest.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in" aria-label="Отвори снимка: Росен Симеонов говори на протест в Русе">
-                        <img
-                            src="rosen-simeonov-govori-na-protest.jpg"
-                            alt="Росен Симеонов говори на протест в Русе"
-                            width="1200"
-                            height="800"
-                            loading="lazy"
-                            decoding="async"
-                        >
+                    <a href="rosen-simeonov-govori-na-protest.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in">
+                        <img src="rosen-simeonov-govori-na-protest.jpg" alt="Росен Симеонов на събитие">
                     </a>
-                    <a href="rosen-simeonov-protest-ruse-family.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="100" aria-label="Отвори снимка: Росен Симеонов сред граждани и семейства">
-                        <img
-                            src="rosen-simeonov-protest-ruse-family.jpg"
-                            alt="Росен Симеонов сред граждани и семейства в Русе"
-                            width="800"
-                            height="800"
-                            loading="lazy"
-                            decoding="async"
-                        >
+                    <a href="rosen-simeonov-protest-ruse-family.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="rosen-simeonov-protest-ruse-family.jpg" alt="Росен Симеонов сред граждани">
                     </a>
-                    <a href="sreshta-s-grazhdani-ruse.jpg" class="grid-item grid-tall lightbox" data-aos="zoom-in" data-aos-delay="200" aria-label="Отвори снимка: среща с граждани в Русе">
-                        <img
-                            src="sreshta-s-grazhdani-ruse.jpg"
-                            alt="Среща на Росен Симеонов с граждани в Русе"
-                            width="800"
-                            height="1200"
-                            loading="lazy"
-                            decoding="async"
-                        >
+                    <a href="sreshta-s-grazhdani-ruse.jpg" class="grid-item grid-tall lightbox" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="sreshta-s-grazhdani-ruse.jpg" alt="Среща с граждани">
                     </a>
-                    <a href="rosen-simeonov-kiril-petkov-ruse.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="300" aria-label="Отвори снимка: Росен Симеонов и Кирил Петков">
-                        <img
-                            src="rosen-simeonov-kiril-petkov-ruse.jpg"
-                            alt="Росен Симеонов и Кирил Петков в Русе"
-                            width="800"
-                            height="800"
-                            loading="lazy"
-                            decoding="async"
-                        >
+                    <a href="rosen-simeonov-kiril-petkov-ruse.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="rosen-simeonov-kiril-petkov-ruse.jpg" alt="Росен Симеонов и Кирил Петков">
                     </a>
-                    <a href="kampania-ruse-rosen-simeonov-dialog.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="400" aria-label="Отвори снимка: диалог с хората">
-                        <img
-                            src="kampania-ruse-rosen-simeonov-dialog.jpg"
-                            alt="Росен Симеонов в разговор с хора по време на кампания"
-                            width="800"
-                            height="800"
-                            loading="lazy"
-                            decoding="async"
-                        >
+                    <a href="kampania-ruse-rosen-simeonov-dialog.jpg" class="grid-item lightbox" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="kampania-ruse-rosen-simeonov-dialog.jpg" alt="Диалог с хората">
                     </a>
-                    <a href="dsb-ruse-meeting-rosen-simeonov.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in" data-aos-delay="500" aria-label="Отвори снимка: среща с екипа">
-                        <img
-                            src="dsb-ruse-meeting-rosen-simeonov.jpg"
-                            alt="Среща на Росен Симеонов с екипа в Русе"
-                            width="1200"
-                            height="800"
-                            loading="lazy"
-                            decoding="async"
-                        >
+                    <a href="dsb-ruse-meeting-rosen-simeonov.jpg" class="grid-item grid-wide lightbox" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="dsb-ruse-meeting-rosen-simeonov.jpg" alt="Среща с екипа">
                     </a>
                 </div>
             </div>
@@ -1797,7 +1543,7 @@
                 <div class="row g-4">
                     <div class="col-md-6" data-aos="fade-up">
                         <div class="media-card">
-                            <div class="source"><i class="fas fa-newspaper" aria-hidden="true"></i> <span>Вестник Утро</span></div>
+                            <div class="source"><i class="fas fa-newspaper"></i> <span>Вестник Утро</span></div>
                             <h4>„Политиката има смисъл само ако си сред хората.“</h4>
                             <p>Разговор за професионалния път, завръщането в Русе и нуждата от почтени представители с ясна посока.</p>
                             <a href="https://utroruse.com/article/1179302/" target="_blank" rel="noopener noreferrer" class="btn-outline-light">Прочети</a>
@@ -1806,7 +1552,7 @@
 
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="120">
                         <div class="media-card">
-                            <div class="source"><i class="fas fa-newspaper" aria-hidden="true"></i> <span>KISS 13</span></div>
+                            <div class="source"><i class="fas fa-newspaper"></i> <span>KISS 13</span></div>
                             <h4>„Общественият интерес в Русе не е за заобикаляне.“</h4>
                             <p>Позиция по казуса с големия ТИР паркинг и защита на интереса на русенци чрез ясни правила и отчетност.</p>
                             <a href="https://kiss13.net/news/ruse/pp-db-davat-sdelkata-za-golemiya-tir-parking-v-ruse-na-prokuraturata" target="_blank" rel="noopener noreferrer" class="btn-outline-light">Прочети</a>
@@ -1823,30 +1569,25 @@
                         <div class="contact-card" data-aos="fade-up">
                             <div class="text-center mb-5">
                                 <h2 class="fw-900 text-uppercase">Включи се или ми пиши</h2>
-                                <p style="color: rgba(255,255,255,0.88); max-width: 680px; margin: 12px auto 0; line-height: 1.8;">
+                                <p style="color: rgba(255,255,255,0.82); max-width: 680px; margin: 12px auto 0; line-height: 1.8;">
                                     Кампанията се прави от хора. Ако искаш да помогнеш, да зададеш въпрос или да станеш доброволец, пиши ми директно.
                                 </p>
                             </div>
 
-                            <form action="https://formspree.io/f/mnjbakgl" method="POST" novalidate>
+                            <form action="https://formspree.io/f/mnjbakgl" method="POST">
                                 <input type="hidden" name="source" value="campaign-website-homepage">
-                                <input type="hidden" name="_subject" value="Ново съобщение от сайта">
-                                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
 
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label class="visually-hidden" for="name">Име</label>
-                                        <input id="name" type="text" name="name" class="form-control" placeholder="Име" autocomplete="name" required>
+                                        <input type="text" name="name" class="form-control" placeholder="Име" required>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label class="visually-hidden" for="email">Имейл</label>
-                                        <input id="email" type="email" name="email" class="form-control" placeholder="Имейл" autocomplete="email" required>
+                                        <input type="email" name="email" class="form-control" placeholder="Имейл" required>
                                     </div>
 
                                     <div class="col-12">
-                                        <label class="visually-hidden" for="topic">Тема</label>
-                                        <select id="topic" name="topic" class="form-control form-select">
+                                        <select name="topic" class="form-control form-select">
                                             <option value="">Избери тема</option>
                                             <option value="volunteer">Искам да помогна в кампанията</option>
                                             <option value="meeting">Искам среща</option>
@@ -1856,8 +1597,7 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <label class="visually-hidden" for="message">Вашето съобщение</label>
-                                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Вашето съобщение" required></textarea>
+                                        <textarea name="message" class="form-control" rows="5" placeholder="Вашето съобщение" required></textarea>
                                     </div>
 
                                     <div class="col-12 text-center">
@@ -1865,10 +1605,6 @@
                                     </div>
                                 </div>
                             </form>
-
-                            <p class="text-center mt-4 mb-0" style="font-size: 0.92rem; color: rgba(255,255,255,0.74);">
-                                С изпращането на формата се съгласявате данните да бъдат използвани единствено за отговор по вашето запитване.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -1880,10 +1616,10 @@
                 <div class="text-center" data-aos="fade-up">
                     <h2 class="fw-900 text-uppercase mb-4">Знания. Опит.<br>Ясна посока за Русе.</h2>
                     <div class="vote-panel justify-content-center">
-                        <div class="number-box" aria-label="Номер 7">7</div>
-                        <div class="pref-circle" aria-label="Преференция 105">105</div>
+                        <div class="number-box">7</div>
+                        <div class="pref-circle">105</div>
                     </div>
-                    <p style="color: rgba(255,255,255,0.94); font-weight: 700; margin-top: 10px;">Гласувай за ПП–ДБ №7 с преференция 105</p>
+                    <p style="color: rgba(255,255,255,0.92); font-weight: 700; margin-top: 10px;">Гласувай за ПП–ДБ №7 с преференция 105</p>
                 </div>
             </div>
         </section>
@@ -1891,45 +1627,19 @@
 
     <footer>
         <div class="container">
-            <p id="footer-year">© 2026 РОСЕН СИМЕОНОВ | ПП–ДБ РУСЕ</p>
+            <p>© 2026 РОСЕН СИМЕОНОВ | ПП–ДБ РУСЕ</p>
             <div class="disclaimer-box">Купуването и продаването на гласове е престъпление</div>
         </div>
     </footer>
 
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/Luminous.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/Luminous.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const body = document.body;
-            const navbar = document.getElementById('mainNavbar');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const mobileMenuClose = document.getElementById('mobileMenuClose');
-            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-
-            const mobileScrollLinks = document.querySelectorAll('.mobile-scroll-link');
-            const desktopScrollLinks = document.querySelectorAll('.nav-scroll-link');
-            const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link[data-target]');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[data-target]');
-            const desktopVoteChip = document.querySelector('.vote-chip[data-target]');
-            const mobileVoteCard = document.querySelector('.mobile-vote-card[data-target]');
-            const sections = document.querySelectorAll('section[id]');
-            const footerYear = document.getElementById('footer-year');
-            const countdownEl = document.getElementById('election-countdown');
-
-            let lastFocusedElement = null;
-
-            if (footerYear) {
-                footerYear.textContent = `© ${new Date().getFullYear()} РОСЕН СИМЕОНОВ | ПП–ДБ РУСЕ`;
-            }
-
-            if (typeof AOS !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                AOS.init({
-                    duration: 900,
-                    once: true
-                });
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 900, once: true });
             }
 
             if (typeof Luminous !== 'undefined') {
@@ -1938,173 +1648,76 @@
                 });
             }
 
-            function getFocusableElements(container) {
-                if (!container) return [];
-                return Array.from(
-                    container.querySelectorAll(
-                        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
-                    )
-                ).filter(function (el) {
-                    return !el.hasAttribute('hidden') && el.offsetParent !== null;
-                });
-            }
+            const body = document.body;
+            const navbar = document.getElementById('mainNavbar');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileScrollLinks = document.querySelectorAll('.mobile-scroll-link');
+            const desktopScrollLinks = document.querySelectorAll('.nav-scroll-link');
+            const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link[data-target]');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link[data-target]');
+            const sections = document.querySelectorAll('section[id]');
 
             function openMobileMenu() {
                 if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
-
-                lastFocusedElement = document.activeElement;
-
                 mobileMenu.classList.add('active');
                 mobileMenuOverlay.classList.add('active');
                 mobileMenuToggle.classList.add('active');
-
-                mobileMenuOverlay.hidden = false;
                 mobileMenuToggle.setAttribute('aria-expanded', 'true');
                 mobileMenu.setAttribute('aria-hidden', 'false');
                 body.classList.add('menu-open');
-
-                const focusable = getFocusableElements(mobileMenu);
-                if (focusable.length) {
-                    focusable[0].focus();
-                } else {
-                    mobileMenu.focus();
-                }
             }
 
-            function closeMobileMenu(returnFocus = true) {
+            function closeMobileMenu() {
                 if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
-
                 mobileMenu.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
-
                 mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 mobileMenu.setAttribute('aria-hidden', 'true');
                 body.classList.remove('menu-open');
-
-                window.setTimeout(function () {
-                    mobileMenuOverlay.hidden = true;
-                }, 300);
-
-                if (returnFocus && lastFocusedElement) {
-                    lastFocusedElement.focus();
-                }
-            }
-
-            function trapFocus(event) {
-                if (!mobileMenu || !mobileMenu.classList.contains('active') || event.key !== 'Tab') return;
-
-                const focusable = getFocusableElements(mobileMenu);
-                if (!focusable.length) return;
-
-                const first = focusable[0];
-                const last = focusable[focusable.length - 1];
-
-                if (event.shiftKey && document.activeElement === first) {
-                    event.preventDefault();
-                    last.focus();
-                } else if (!event.shiftKey && document.activeElement === last) {
-                    event.preventDefault();
-                    first.focus();
-                }
             }
 
             function smoothScrollTo(targetId) {
                 const target = document.getElementById(targetId);
                 if (!target) return;
-
                 const navbarHeight = navbar ? navbar.offsetHeight : 80;
                 const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
-
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-                });
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
 
             function handleScrollState() {
                 if (!navbar) return;
-
-                if (window.scrollY > 16) {
-                    navbar.classList.add('navbar-scrolled');
-                } else {
-                    navbar.classList.remove('navbar-scrolled');
-                }
-            }
-
-            function clearActiveStates() {
-                desktopNavLinks.forEach(function (link) {
-                    link.classList.remove('active');
-                    link.removeAttribute('aria-current');
-                });
-
-                mobileNavLinks.forEach(function (link) {
-                    link.classList.remove('active');
-                    link.removeAttribute('aria-current');
-                });
-
-                if (desktopVoteChip) {
-                    desktopVoteChip.classList.remove('active');
-                    desktopVoteChip.removeAttribute('aria-current');
-                }
-
-                if (mobileVoteCard) {
-                    mobileVoteCard.classList.remove('active');
-                    mobileVoteCard.removeAttribute('aria-current');
-                }
+                if (window.scrollY > 16) { navbar.classList.add('navbar-scrolled'); } 
+                else { navbar.classList.remove('navbar-scrolled'); }
             }
 
             function setActiveNav() {
                 if (!sections.length || !navbar) return;
-
                 let currentId = '';
-
                 sections.forEach(function (section) {
                     const sectionTop = section.offsetTop - (navbar.offsetHeight + 120);
                     const sectionHeight = section.offsetHeight;
-
                     if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                         currentId = section.getAttribute('id');
                     }
                 });
-
-                clearActiveStates();
-
-                desktopNavLinks.forEach(function (link) {
-                    if (link.dataset.target === currentId) {
-                        link.classList.add('active');
-                        link.setAttribute('aria-current', 'page');
-                    }
-                });
-
-                mobileNavLinks.forEach(function (link) {
-                    if (link.dataset.target === currentId) {
-                        link.classList.add('active');
-                        link.setAttribute('aria-current', 'page');
-                    }
-                });
-
-                if (desktopVoteChip && desktopVoteChip.dataset.target === currentId) {
-                    desktopVoteChip.classList.add('active');
-                    desktopVoteChip.setAttribute('aria-current', 'page');
-                }
-
-                if (mobileVoteCard && mobileVoteCard.dataset.target === currentId) {
-                    mobileVoteCard.classList.add('active');
-                    mobileVoteCard.setAttribute('aria-current', 'page');
-                }
+                desktopNavLinks.forEach(function (link) { link.classList.toggle('active', link.dataset.target === currentId); });
+                mobileNavLinks.forEach(function (link) { link.classList.toggle('active', link.dataset.target === currentId); });
             }
 
+            // Countdown Timer Logic
             function updateCountdown() {
-                if (!countdownEl) return;
-
-                // 19 април 2026, 00:00 българско време
-                const electionDate = new Date('2026-04-19T00:00:00+03:00').getTime();
-                const now = Date.now();
+                // ДАТА НА ИЗБОРИТЕ: 19 април 2026
+                const electionDate = new Date(2026, 3, 19, 0, 0, 0).getTime();
+                const now = new Date().getTime();
                 const distance = electionDate - now;
 
-                if (distance <= 0) {
-                    countdownEl.hidden = true;
+                if (distance < 0) {
+                    const countdownEl = document.getElementById("election-countdown");
+                    if(countdownEl) countdownEl.style.display = "none";
                     return;
                 }
 
@@ -2112,80 +1725,43 @@
                 const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-                const daysEl = document.getElementById('days');
-                const hoursEl = document.getElementById('hours');
-                const minutesEl = document.getElementById('minutes');
-
-                if (daysEl) daysEl.textContent = String(d).padStart(2, '0');
-                if (hoursEl) hoursEl.textContent = String(h).padStart(2, '0');
-                if (minutesEl) minutesEl.textContent = String(m).padStart(2, '0');
+                document.getElementById("days").innerText = d.toString().padStart(2, '0');
+                document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
             }
 
             if (mobileMenuToggle) {
                 mobileMenuToggle.addEventListener('click', function (e) {
                     e.preventDefault();
-
-                    if (mobileMenu && mobileMenu.classList.contains('active')) {
-                        closeMobileMenu(false);
-                        mobileMenuToggle.focus();
-                    } else {
-                        openMobileMenu();
-                    }
+                    if (mobileMenu && mobileMenu.classList.contains('active')) { closeMobileMenu(); } 
+                    else { openMobileMenu(); }
                 });
             }
 
-            if (mobileMenuClose) {
-                mobileMenuClose.addEventListener('click', function () {
-                    closeMobileMenu();
-                });
-            }
-
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.addEventListener('click', function () {
-                    closeMobileMenu();
-                });
-            }
+            if (mobileMenuClose) { mobileMenuClose.addEventListener('click', closeMobileMenu); }
+            if (mobileMenuOverlay) { mobileMenuOverlay.addEventListener('click', closeMobileMenu); }
 
             [...desktopScrollLinks, ...mobileScrollLinks].forEach(function (link) {
                 link.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
                     const targetId = this.dataset.target || (href && href.startsWith('#') ? href.substring(1) : '');
-
                     if (targetId) {
                         e.preventDefault();
-                        closeMobileMenu(false);
+                        closeMobileMenu();
                         smoothScrollTo(targetId);
                     }
                 });
             });
 
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
-                    closeMobileMenu();
-                }
-
-                trapFocus(e);
-            });
-
             window.addEventListener('scroll', function () {
                 handleScrollState();
                 setActiveNav();
-            }, { passive: true });
-
-            window.addEventListener('resize', function () {
-                handleScrollState();
-                setActiveNav();
-
-                if (window.innerWidth >= 992 && mobileMenu && mobileMenu.classList.contains('active')) {
-                    closeMobileMenu(false);
-                }
             });
 
             handleScrollState();
             setActiveNav();
+            setInterval(updateCountdown, 60000);
             updateCountdown();
-
-            window.setInterval(updateCountdown, 60000);
         });
     </script>
 </body>
