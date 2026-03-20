@@ -64,7 +64,7 @@
         }
 
         /* =========================
-           PREMIUM NAVBAR
+            PREMIUM NAVBAR
         ========================= */
         .navbar {
             background: rgba(10, 20, 58, 0.82);
@@ -577,7 +577,7 @@
         }
 
         /* =========================
-           HERO
+            HERO
         ========================= */
         .hero {
             min-height: 96vh;
@@ -750,7 +750,7 @@
         .logos-inline img { height: 42px; width: auto; }
 
         /* =========================
-           SECTIONS
+            SECTIONS
         ========================= */
         .section-dark { background: #0c1743; padding: 72px 0; }
         .section-white { background: #fff; color: var(--text-dark); padding: 100px 0; }
@@ -799,6 +799,18 @@
             padding: 42px;
             color: #fff;
             box-shadow: var(--shadow);
+        }
+
+        /* Vote Instructions Styling */
+        .vote-instruction-img {
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        .vote-instruction-img:hover {
+            transform: scale(1.02);
         }
 
         .on-field-grid {
@@ -899,7 +911,7 @@
         }
 
         /* =========================
-           RESPONSIVE
+            RESPONSIVE
         ========================= */
         @media (max-width: 991px) {
             :root {
@@ -1269,15 +1281,15 @@
             <div class="container">
                 <div class="vote-banner" data-aos="fade-up">
                     <div class="row align-items-center g-4">
-                        <div class="col-lg-7">
-                            <h3>Как да гласуваш</h3>
-                            <p>В изборния ден гласувай за <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
+                        <div class="col-lg-12 text-center mb-4">
+                            <h3 class="display-5 fw-900 text-uppercase">Как да гласуваш</h3>
+                            <p class="lead">В изборния ден гласувай за <strong>ПП–ДБ с №7</strong> и отбележи <strong>преференция 105</strong> за Росен Симеонов.</p>
                         </div>
-                        <div class="col-lg-5">
-                            <div class="vote-panel justify-content-lg-end">
-                                <div class="number-box">7</div>
-                                <div class="pref-circle">105</div>
-                            </div>
+                        <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                            <img src="partia.png" alt="Гласувай за ПП-ДБ с №7" class="vote-instruction-img">
+                        </div>
+                        <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                            <img src="preferencia.png" alt="Избери преференция 105" class="vote-instruction-img">
                         </div>
                     </div>
                 </div>
@@ -1588,3 +1600,5 @@
         setActiveNav();
     });
 </script>
+</body>
+</html>
