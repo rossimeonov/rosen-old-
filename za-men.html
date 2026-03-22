@@ -3,20 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>За мен | Росен Симеонов</title>
 
-    <title>За мен | Росен Симеонов | №7 | 105</title>
     <meta name="description" content="Научете повече за Росен Симеонов – опит, образование, ценности, професионален път и кауза за Русе.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#243a96">
+    <link rel="canonical" href="https://rosensimeonov.com/za-men.html">
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Росен Симеонов">
+    <meta property="og:url" content="https://rosensimeonov.com/za-men.html">
     <meta property="og:title" content="За мен | Росен Симеонов">
     <meta property="og:description" content="Професионален път, опит, ценности и мотивация на Росен Симеонов.">
-    <meta property="og:image" content="rosen_simeonov.png">
-    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://rosensimeonov.com/rosen_simeonov.png">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="За мен | Росен Симеонов">
+    <meta name="twitter:description" content="Професионален път, опит, ценности и мотивация на Росен Симеонов.">
+    <meta name="twitter:image" content="https://rosensimeonov.com/rosen_simeonov.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://rosensimeonov.com/#website",
+          "url": "https://rosensimeonov.com/",
+          "name": "Росен Симеонов",
+          "inLanguage": "bg"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://rosensimeonov.com/za-men.html#webpage",
+          "url": "https://rosensimeonov.com/za-men.html",
+          "name": "За мен | Росен Симеонов",
+          "description": "Научете повече за Росен Симеонов – опит, образование, ценности, професионален път и кауза за Русе.",
+          "inLanguage": "bg",
+          "isPartOf": {
+            "@id": "https://rosensimeonov.com/#website"
+          },
+          "about": {
+            "@id": "https://rosensimeonov.com/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://rosensimeonov.com/#person",
+          "name": "Росен Симеонов",
+          "url": "https://rosensimeonov.com/",
+          "image": "https://rosensimeonov.com/rosen_simeonov.png",
+          "description": "Росен Симеонов е кандидат за народен представител от Русе, предприемач, инвеститор и човек с управленски опит.",
+          "jobTitle": "Кандидат за народен представител",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Русе",
+            "addressCountry": "BG"
+          },
+          "sameAs": [
+            "https://www.facebook.com/rosen.simeonov.12",
+            "https://www.linkedin.com/in/rosen-simeonov/",
+            "https://www.tiktok.com/@rossimeonov"
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
     <style>
         :root {
@@ -32,14 +94,14 @@
             --text-muted: #526287;
             --shadow: 0 18px 45px rgba(7, 21, 59, 0.28);
             --shadow-soft: 0 10px 30px rgba(7, 21, 59, 0.16);
-            --radius-xl: 24px;
-            --radius-lg: 18px;
-            --radius-md: 14px;
             --nav-height: 86px;
             --nav-height-scrolled: 72px;
+            --focus-ring: 0 0 0 3px rgba(255,255,255,0.22);
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         html {
             scroll-behavior: smooth;
@@ -54,6 +116,8 @@
             font-family: 'Roboto', sans-serif;
             background: #eef3ff;
             color: var(--text-dark);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
 
         body.menu-open {
@@ -66,13 +130,58 @@
             letter-spacing: 0.3px;
         }
 
-        .fw-900 { font-weight: 900; }
+        a,
+        button {
+            transition: 0.25s ease;
+        }
 
-        a { transition: 0.25s ease; }
+        a:focus-visible,
+        button:focus-visible {
+            outline: none;
+            box-shadow: var(--focus-ring);
+        }
 
         img {
             max-width: 100%;
             height: auto;
+        }
+
+        .fw-900 {
+            font-weight: 900;
+        }
+
+        .visually-hidden-focusable:not(:focus):not(:focus-within) {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 11000;
+            background: #fff;
+            color: var(--primary-blue);
+            padding: 12px 16px;
+            border-radius: 999px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            position: absolute;
+            width: auto !important;
+            height: auto !important;
+            clip: auto !important;
+            margin: 0 !important;
+            white-space: normal !important;
         }
 
         /* =========================
@@ -185,7 +294,9 @@
             transition: transform 0.2s ease;
         }
 
-        .vote-chip:hover { transform: translateY(-1px) scale(1.03); }
+        .vote-chip:hover {
+            transform: translateY(-1px) scale(1.03);
+        }
 
         .header-num {
             width: 32px;
@@ -244,7 +355,7 @@
             background: rgba(255,255,255,0.1);
         }
 
-        /* Mobile menu */
+        /* Mobile */
         .mobile-menu-toggle {
             width: 54px;
             height: 54px;
@@ -257,7 +368,6 @@
             align-items: center;
             gap: 5px;
             padding: 0;
-            transition: 0.25s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.18);
             flex: 0 0 auto;
         }
@@ -351,13 +461,14 @@
             font-weight: 700;
         }
 
-        . {
+        .mobile-menu-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 22px;
             font-weight: 900;
             color: #fff;
             line-height: 1.1;
             word-break: break-word;
+            text-decoration: none;
         }
 
         .mobile-menu-close {
@@ -368,7 +479,6 @@
             color: #fff;
             border-radius: 14px;
             flex: 0 0 auto;
-            transition: 0.25s ease;
         }
 
         .mobile-menu-close:hover {
@@ -400,7 +510,6 @@
             letter-spacing: 0.4px;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.06);
-            transition: 0.25s ease;
         }
 
         .mobile-nav-link:hover,
@@ -497,7 +606,6 @@
             justify-content: center;
             font-size: 17px;
             text-decoration: none;
-            transition: 0.25s ease;
         }
 
         .mobile-socials a:hover {
@@ -519,119 +627,114 @@
             font-size: 15px;
         }
 
-        /* =========================
-           PAGE HERO
-        ========================= */
-        .about-hero {
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.16), transparent 24%),
-                linear-gradient(135deg, #0a143d 0%, #1d2d7d 45%, #3147b7 100%);
-            color: #fff;
-            padding: 120px 0 80px;
-        }
-
-        .about-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 78% 70%, rgba(255,255,255,0.18) 0 2px, transparent 3px) 0 0/22px 22px;
-            opacity: 0.15;
-            pointer-events: none;
-        }
-
-        .about-hero .container {
-            position: relative;
-            z-index: 2;
-            overflow: hidden;
-        }
-
-        .about-hero .row {
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        .eyebrow {
-            display: inline-flex;
+        .mobile-quick-menu {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            min-width: 88px;
+            height: 52px;
+            padding: 0 16px;
+            border: none;
+            border-radius: 999px;
+            background: #ffffff;
+            color: var(--primary-blue);
+            display: none;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+            z-index: 1045;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: 0.4px;
+            line-height: 1;
+        }
+
+        .mobile-quick-menu span {
+            display: inline-block;
+            transform: translateY(1px);
+        }
+
+        .mobile-quick-menu:hover {
+            transform: translateY(-2px);
+            background: var(--accent-light);
+            color: var(--deep-blue);
+        }
+
+        .mobile-quick-menu.show {
+            display: inline-flex;
+        }
+
+        .mobile-quick-menu span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transform: translateY(1px);
+}
+        /* =========================
+           PAGE INTRO
+        ========================= */
+        .page-intro {
+            background: linear-gradient(180deg, #f3f6ff 0%, #eef3ff 100%);
+            padding: 148px 0 44px;
+        }
+
+        .page-intro-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-kicker {
+            display: inline-block;
+            margin-bottom: 18px;
             padding: 10px 16px;
             border-radius: 999px;
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.14);
-            font-size: 12px;
+            background: rgba(36, 58, 150, 0.08);
+            color: var(--secondary-blue);
+            font-size: 13px;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-weight: 800;
+        }
+
+        .page-intro h1 {
+            font-size: clamp(2.3rem, 4.8vw, 4.3rem);
+            font-weight: 900;
+            line-height: 1.02;
+            text-transform: uppercase;
+            color: var(--deep-blue);
             margin-bottom: 20px;
         }
 
-        .about-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.8rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            line-height: 0.98;
-            margin-bottom: 18px;
-        }
-
-        .about-hero .lead-text {
-            font-size: 1.12rem;
+        .page-intro p {
+            margin: 0 auto;
+            max-width: 780px;
+            font-size: 1.08rem;
             line-height: 1.9;
-            color: var(--text-soft);
-            max-width: 700px;
-            margin-bottom: 0;
-        }
-
-        .hero-photo-card {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 28px;
-            padding: 16px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .hero-photo-card img {
-            width: 100%;
-            border-radius: 22px;
-            display: block;
-        }
-
-        .hero-stat-strip {
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .hero-stat {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 22px;
-        }
-
-        .hero-stat strong {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .hero-stat span {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.95rem;
-            line-height: 1.5;
+            color: var(--text-muted);
         }
 
         /* Sections */
-        .section-white { background: #fff; padding: 96px 0; }
-        .section-soft { background: #eef3ff; padding: 96px 0; }
-        .section-dark { background: #0c1743; color: #fff; padding: 88px 0; }
+        .section-white {
+            background: #fff;
+            padding: 88px 0;
+        }
 
-        .section-header { margin-bottom: 44px; }
+        .section-soft {
+            background: #eef3ff;
+            padding: 88px 0;
+        }
+
+        .section-dark {
+            background: #0c1743;
+            color: #fff;
+            padding: 84px 0;
+        }
+
+        .section-header {
+            margin-bottom: 42px;
+        }
 
         .section-header h2 {
             font-weight: 900;
@@ -648,65 +751,14 @@
             max-width: 760px;
         }
 
-        .timeline-card,
+        .gallery-card,
         .value-card,
         .highlight-card,
-        .fact-panel,
         .quote-card,
         .contact-panel {
             background: #fff;
             border-radius: 24px;
             box-shadow: var(--shadow-soft);
-        }
-
-        .fact-panel {
-            padding: 34px;
-            height: 100%;
-        }
-
-        .fact-panel h3 {
-            font-size: 1.2rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: var(--deep-blue);
-            margin-bottom: 24px;
-        }
-
-        .fact-list {
-            display: grid;
-            gap: 16px;
-        }
-
-        .fact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
-
-        .fact-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 14px;
-            background: #eef3ff;
-            color: var(--secondary-blue);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex: 0 0 auto;
-        }
-
-        .fact-item strong {
-            display: block;
-            color: var(--deep-blue);
-            margin-bottom: 4px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .fact-item span {
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 0.97rem;
         }
 
         .story-copy p,
@@ -716,55 +768,9 @@
             color: var(--text-dark);
         }
 
-        .timeline-wrap {
-            display: grid;
-            gap: 18px;
-        }
-
-        .timeline-card {
-            padding: 26px 26px 24px 84px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .timeline-card::before {
-            content: attr(data-year);
-            position: absolute;
-            left: 24px;
-            top: 26px;
-            width: 44px;
-            height: 44px;
-            border-radius: 14px;
-            background: var(--secondary-blue);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 900;
-        }
-
-        .timeline-card h4 {
-            font-size: 1.15rem;
-            font-weight: 900;
-            color: var(--deep-blue);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .timeline-card p {
-            margin: 0;
-            color: var(--text-dark);
-            line-height: 1.8;
-        }
-
         .gallery-card {
-            border-radius: 24px;
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
             height: 100%;
-            background: #fff;
         }
 
         .gallery-card img {
@@ -816,7 +822,7 @@
         }
 
         .quote-card p {
-            font-size: 1.25rem;
+            font-size: 1.24rem;
             line-height: 1.8;
             margin: 0;
             font-style: italic;
@@ -845,34 +851,10 @@
             font-size: 1.2rem;
         }
 
-        .check-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .check-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 14px;
-            line-height: 1.8;
-            color: var(--text-dark);
-        }
-
-        .check-list li::before {
-            content: "\f00c";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: var(--secondary-blue);
-        }
-
         .contact-band {
             background: linear-gradient(135deg, #1b2f86 0%, #2e43ae 100%);
             color: #fff;
-            padding: 90px 0;
+            padding: 84px 0;
         }
 
         .contact-panel {
@@ -880,6 +862,7 @@
             border: 1px solid rgba(255,255,255,0.12);
             padding: 38px;
             box-shadow: var(--shadow);
+            text-align: center;
         }
 
         .contact-panel h2 {
@@ -905,7 +888,6 @@
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
-            transition: 0.25s ease;
         }
 
         .btn-main:hover {
@@ -916,7 +898,7 @@
 
         .final-section {
             background: #08122f;
-            padding: 85px 0;
+            padding: 80px 0;
             color: #fff;
             overflow: hidden;
         }
@@ -981,7 +963,6 @@
             overflow: hidden;
         }
 
-        /* Responsive */
         @media (max-width: 991px) {
             :root {
                 --nav-height: 76px;
@@ -1004,29 +985,28 @@
                 letter-spacing: 0.6px;
             }
 
-            .about-hero {
-                padding: 105px 0 70px;
-                text-align: center;
-            }
-
-            .about-hero .lead-text {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-stat-strip {
-                grid-template-columns: 1fr;
+            .page-intro {
+                padding: 128px 0 34px;
             }
 
             .section-white,
             .section-soft,
             .section-dark,
             .contact-band {
-                padding: 78px 0;
+                padding: 76px 0;
             }
         }
 
         @media (max-width: 767px) {
+            .page-intro h1 {
+                font-size: 2.35rem;
+            }
+
+            .page-intro p {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
             .mobile-menu-drawer {
                 width: 100%;
                 max-width: 100%;
@@ -1034,20 +1014,10 @@
                 padding: 18px 16px 24px;
             }
 
-            . {
+            .mobile-menu-title {
                 font-size: 20px;
             }
 
-            .timeline-card {
-                padding: 82px 22px 22px;
-            }
-
-            .timeline-card::before {
-                left: 22px;
-                top: 22px;
-            }
-
-            .fact-panel,
             .value-card,
             .highlight-card,
             .contact-panel,
@@ -1070,37 +1040,57 @@
                 font-size: 40px;
             }
         }
+
+        @media (min-width: 992px) {
+            .mobile-quick-menu {
+                display: none !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Прескочи към съдържанието</a>
 
-    <nav class="navbar sticky-top navbar-dark" id="mainNavbar">
+    <nav class="navbar sticky-top navbar-dark" id="mainNavbar" aria-label="Основна навигация">
         <div class="container">
             <div class="nav-shell">
                 <div class="navbar-brand-wrap">
-                    <a href="index.html" class="brand-name">РОСЕН СИМЕОНОВ</a>
+                    <a href="index.html" class="brand-name" aria-label="Начало">РОСЕН СИМЕОНОВ</a>
                     <div class="header-logos d-none d-lg-flex">
-                        <img src="ПП- ДБ.png" alt="Продължаваме Промяната и Демократична България">
+                        <img src="pp-db.png" alt="Лого на ПП–ДБ" width="180" height="50">
                     </div>
                 </div>
 
                 <div class="desktop-nav d-none d-lg-flex align-items-center">
                     <ul class="navbar-nav flex-row align-items-center">
                         <li class="nav-item"><a class="nav-link active" href="za-men.html">За мен</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#priorities">Приоритети</a></li>
+                        <li class="nav-item"><a class="nav-link" href="prioriteti.html">Приоритети</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#why">Защо</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#contact">Контакт</a></li>
                         <li class="nav-item">
-                            <a href="index.html#how-to-vote" class="vote-chip">
+                            <a href="index.html#how-to-vote" class="vote-chip" aria-label="Гласувай с номер 7 и преференция 105">
                                 <span class="header-num">7</span>
                                 <span class="header-pref">105</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <div class="social-nav">
-                                <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <div class="social-nav" aria-label="Социални мрежи">
+                                <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                                <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
                             </div>
                         </li>
                     </ul>
@@ -1115,26 +1105,26 @@
         </div>
     </nav>
 
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" hidden></div>
 
-    <aside class="mobile-menu-drawer" id="mobileMenu" aria-hidden="true">
+    <aside class="mobile-menu-drawer" id="mobileMenu" aria-hidden="true" aria-label="Мобилно меню">
         <div class="mobile-menu-top">
             <div>
                 <div class="mobile-menu-label">Навигация</div>
                 <a href="index.html" class="mobile-menu-title js-close-menu">Росен Симеонов</a>
             </div>
             <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Затвори меню">
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
 
         <div class="mobile-menu-content">
             <a href="za-men.html" class="mobile-nav-link active">За мен</a>
-            <a href="index.html#priorities" class="mobile-nav-link">Приоритети</a>
+            <a href="prioriteti.html" class="mobile-nav-link">Приоритети</a>
             <a href="index.html#why" class="mobile-nav-link">Защо</a>
             <a href="index.html#contact" class="mobile-nav-link">Контакт</a>
 
-            <a href="index.html#how-to-vote" class="mobile-vote-card">
+            <a href="index.html#how-to-vote" class="mobile-vote-card" aria-label="Гласувай за ПП–ДБ номер 7 с преференция 105">
                 <div class="mobile-vote-shapes">
                     <span class="header-num">7</span>
                     <span class="header-pref">105</span>
@@ -1147,37 +1137,23 @@
 
             <a href="index.html#contact" class="mobile-cta">Пиши ми</a>
 
-            <div class="mobile-socials">
-                <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <div class="mobile-socials" aria-label="Социални мрежи">
+                <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
             </div>
         </div>
     </aside>
 
-    <main>
-        <section class="about-hero">
+    <main id="main-content">
+        <section class="page-intro">
             <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-7" data-aos="fade-right">
-                        <span class="eyebrow"><i class="fas fa-user"></i> За мен</span>
-                        <h1>Опит, който искам да работи за Русе</h1>
-                        <p class="lead-text">
-                            Почти две десетилетия професионален опит в международна среда, обучение по финанси и управление, предприемаческо мислене и ясно решение да се върна в Русе. Това е основата, върху която стъпвам днес – не заради шумни обещания, а заради работа с посока.
-                        </p>
-
-                        <div class="hero-stat-strip">
-                            <div class="hero-stat"><strong>20+</strong><span>години опит в реалната икономика, логистиката и управлението</span></div>
-                            <div class="hero-stat"><strong>MBA</strong><span>финанси, управление и дългосрочен стратегически поглед</span></div>
-                            <div class="hero-stat"><strong>Русе</strong><span>завръщане с кауза – наученото да има стойност за града</span></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5" data-aos="fade-left">
-                        <div class="hero-photo-card">
-                            <img src="rosen_simeonov.png" alt="Росен Симеонов">
-                        </div>
-                    </div>
+                <div class="page-intro-inner">
+                    <span class="intro-kicker">За мен</span>
+                    <h1>Опит, който искам да работи за Русе</h1>
+                    <p>
+                        Почти две десетилетия професионален опит в международна среда, обучение по финанси и управление, предприемаческо мислене и ясно решение да се върна в Русе. Това е основата, върху която стъпвам днес – не заради шумни обещания, а заради работа с посока.
+                    </p>
                 </div>
             </div>
         </section>
@@ -1185,19 +1161,13 @@
         <section class="section-white">
             <div class="container">
                 <div class="row g-5 align-items-start">
-                    <div class="col-lg-4" data-aos="fade-up">
-                        <div class="fact-panel">
-                            <h3>Профил накратко</h3>
-                            <div class="fact-list">
-                                <div class="fact-item"><div class="fact-icon"><i class="fas fa-graduation-cap"></i></div><div><strong>Образование</strong><span>Аграрна икономика, финанси и MBA с международна перспектива.</span></div></div>
-                                <div class="fact-item"><div class="fact-icon"><i class="fas fa-briefcase"></i></div><div><strong>Професионален път</strong><span>Логистика, инвестиции, управление на процеси и екипи.</span></div></div>
-                                <div class="fact-item"><div class="fact-icon"><i class="fas fa-chart-line"></i></div><div><strong>Фокус</strong><span>Финансова култура, устойчиво развитие и повече възможности за Русе.</span></div></div>
-                                <div class="fact-item"><div class="fact-icon"><i class="fas fa-house-user"></i></div><div><strong>Личен избор</strong><span>Завръщане в родния град със семейството и ангажимент към местната общност.</span></div></div>
-                            </div>
+                    <div class="col-lg-5" data-aos="fade-up">
+                        <div class="gallery-card">
+                            <img src="rosen_simeonov.png" alt="Росен Симеонов" width="800" height="1000">
                         </div>
                     </div>
 
-                    <div class="col-lg-8 story-copy" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-7 story-copy" data-aos="fade-up" data-aos-delay="100">
                         <div class="section-header mb-4">
                             <h2>Кой е Росен Симеонов</h2>
                             <p>История за дисциплина, професионално израстване и завръщане с цел.</p>
@@ -1215,30 +1185,18 @@
         <section class="section-soft">
             <div class="container">
                 <div class="section-header text-center" data-aos="fade-up">
-                    <h2>Пътят накратко</h2>
-                    <p style="margin-left:auto;margin-right:auto;">Ключови етапи, които оформят професионалния и личния му профил.</p>
+                    <h2>Подготовка и знания</h2>
+                    <p style="margin-left:auto;margin-right:auto;">Практически опит, подкрепен с последователно образование.</p>
                 </div>
 
-                <div class="timeline-wrap">
-                    <div class="timeline-card" data-year="1977" data-aos="fade-up"><h4>Начало в Русе</h4><p>Роден и израснал в Русе – градът, към който остава свързан и към който по-късно съзнателно се завръща.</p></div>
-                    <div class="timeline-card" data-year="UK" data-aos="fade-up" data-aos-delay="80"><h4>Международен професионален опит</h4><p>Близо 20 години работа в Обединеното кралство, натрупан опит в логистика, организация, управление на процеси и работа в конкурентна среда.</p></div>
-                    <div class="timeline-card" data-year="MBA" data-aos="fade-up" data-aos-delay="140"><h4>Образование и развитие</h4><p>Финансова и икономическа подготовка, допълнена от MBA – с акцент върху лидерство, управление и стратегическо мислене.</p></div>
-                    <div class="timeline-card" data-year="2022" data-aos="fade-up" data-aos-delay="200"><h4>Завръщане в Русе</h4><p>Решение с дългосрочен смисъл – натрупаният опит да се превърне в конкретни действия и принос за местната среда.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-white">
-            <div class="container">
                 <div class="row g-4 align-items-center mb-5">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <div class="gallery-card"><img src="top achiever rosen simeonov.png" alt="Отличие за академични постижения"></div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="section-header mb-4">
-                            <h2>Подготовка и знания</h2>
-                            <p>Практически опит, подкрепен с последователно образование.</p>
+                        <div class="gallery-card">
+                            <img src="top achiever rosen simeonov.png" alt="Отличие за академични постижения" loading="lazy" width="1200" height="900">
                         </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-left">
                         <div class="text-rich">
                             <p>За Росен Симеонов образованието не е формалност, а инструмент за по-добри решения. Финансовата и икономическата подготовка, както и MBA обучението, допълват натрупания опит в реалната икономика.</p>
                             <p>Този тип подготовка дава способност да се мисли не само оперативно, а и стратегически – как се изгражда устойчив модел, как се планира в перспектива и как се управлява ресурс така, че да носи реална стойност.</p>
@@ -1249,8 +1207,11 @@
 
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <div class="gallery-card"><img src="rosen simeonov radan kanve atanas burov akademia.jpg" alt="Политическа академия Атанас Буров"></div>
+                        <div class="gallery-card">
+                            <img src="rosen simeonov radan kanve atanas burov akademia.jpg" alt="Политическа академия Атанас Буров" loading="lazy" width="1200" height="900">
+                        </div>
                     </div>
+
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="highlight-card">
                             <h3>Политическа академия</h3>
@@ -1271,7 +1232,7 @@
             </div>
         </section>
 
-        <section class="section-soft">
+        <section class="section-white">
             <div class="container">
                 <div class="section-header text-center" data-aos="fade-up">
                     <h2>Какво го определя</h2>
@@ -1279,35 +1240,70 @@
                 </div>
 
                 <div class="row g-4 mb-5">
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in"><div class="value-card"><div class="icon"><i class="fas fa-people-group"></i></div><h4>Семейство</h4><p>Съпруг и баща. Гледа на развитието на Русе през перспективата на бъдещето за следващото поколение.</p></div></div>
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="80"><div class="value-card"><div class="icon"><i class="fas fa-scale-balanced"></i></div><h4>Принципи</h4><p>Вярва, че правилата трябва да важат еднакво за всички и че доверието се печели с последователност.</p></div></div>
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="160"><div class="value-card"><div class="icon"><i class="fas fa-lightbulb"></i></div><h4>Мислене</h4><p>Фокус върху решения, а не върху шум. Управленски подход, основан на факти, ресурс и ефект.</p></div></div>
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="240"><div class="value-card"><div class="icon"><i class="fas fa-location-dot"></i></div><h4>Връзка с Русе</h4><p>Не наблюдава отстрани. Избира да бъде тук и да работи за мястото, от което е тръгнал.</p></div></div>
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                        <div class="value-card">
+                            <div class="icon"><i class="fas fa-people-group" aria-hidden="true"></i></div>
+                            <h4>Семейство</h4>
+                            <p>Съпруг и баща. Гледа на развитието на Русе през перспективата на бъдещето за следващото поколение.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="80">
+                        <div class="value-card">
+                            <div class="icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
+                            <h4>Принципи</h4>
+                            <p>Вярва, че правилата трябва да важат еднакво за всички и че доверието се печели с последователност.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="160">
+                        <div class="value-card">
+                            <div class="icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+                            <h4>Мислене</h4>
+                            <p>Фокус върху решения, а не върху шум. Управленски подход, основан на факти, ресурс и ефект.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="240">
+                        <div class="value-card">
+                            <div class="icon"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                            <h4>Връзка с Русе</h4>
+                            <p>Не наблюдава отстрани. Избира да бъде тук и да работи за мястото, от което е тръгнал.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row g-4 align-items-stretch">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <div class="gallery-card"><img src="rosen simeonov semeistvo.jpg" alt="Росен Симеонов със семейството"></div>
+                        <div class="gallery-card">
+                            <img src="rosen simeonov semeistvo.jpg" alt="Росен Симеонов със семейството" loading="lazy" width="1200" height="900">
+                        </div>
                     </div>
+
                     <div class="col-lg-6" data-aos="fade-left">
-                        <div class="gallery-card"><img src="rosen simeonov black belt kick box.jpg" alt="Росен Симеонов с черен колан по кикбокс"></div>
+                        <div class="gallery-card">
+                            <img src="rosen simeonov black belt kick box.jpg" alt="Росен Симеонов с черен колан по кикбокс" loading="lazy" width="1200" height="900">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-white">
+        <section class="section-soft">
             <div class="container">
                 <div class="row g-4 align-items-center mb-5">
                     <div class="col-lg-6" data-aos="fade-right">
                         <div class="highlight-card">
                             <h3>AlphaInvest.bg: Мисия за икономическа свобода</h3>
-                            <p class="text-rich mb-3">Паралелно с професионалния си път в международната логистика, Росен Симеонов е създател на <a href="https://www.alphainvest.bg" target="_blank" style="color: inherit; text-decoration: underline;">AlphaInvest.bg</a> – водеща платформа за финансово образование в България. За него икономическата грамотност не е просто теоретично знание, а фундаментът, върху който се гради истинската гражданска свобода.</p>
-                            <p class="text-rich mb-0">Росен твърдо вярва, че финансово независимият човек е в пъти по-устойчив на политически популизъм и икономически кризи. Когато гражданите умеят да управляват своите ресурси и да градят дългосрочни стратегии за натрупване на капитал, те стават по-свободни в своите избори и по-взискателни към управлението на публичните средства.</p></p>
+                            <p class="text-rich mb-3">Паралелно с професионалния си път в международната логистика, Росен Симеонов е създател на <a href="https://www.alphainvest.bg" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">AlphaInvest.bg</a> – водеща платформа за финансово образование в България. За него икономическата грамотност не е просто теоретично знание, а фундаментът, върху който се гради истинската гражданска свобода.</p>
+                            <p class="text-rich mb-0">Росен твърдо вярва, че финансово независимият човек е в пъти по-устойчив на политически популизъм и икономически кризи. Когато гражданите умеят да управляват своите ресурси и да градят дългосрочни стратегии за натрупване на капитал, те стават по-свободни в своите избори и по-взискателни към управлението на публичните средства.</p>
                         </div>
                     </div>
+
                     <div class="col-lg-6" data-aos="fade-left">
-                        <div class="gallery-card"><img src="finansova-konferncia-invest-pro-rosen-simeonov.jpg" alt="Росен Симеонов на финансова конференция"></div>
+                        <div class="gallery-card">
+                            <img src="finansova-konferncia-invest-pro-rosen-simeonov.jpg" alt="Росен Симеонов на финансова конференция" loading="lazy" width="1200" height="900">
+                        </div>
                     </div>
                 </div>
 
@@ -1319,18 +1315,30 @@
                             <p class="text-rich mb-0">Именно този тип опит му дава увереност да говори не с абстракции, а с разбиране как се организира екип, как се носи отговорност и как се търси ефективност.</p>
                         </div>
                     </div>
+
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
                         <div class="row g-3">
-                            <div class="col-6"><div class="gallery-card"><img src="mattison-scaffolding.jpg" alt="Mattison Scaffolding"></div></div>
-                            <div class="col-6"><div class="gallery-card"><img src="rosen-simeonov-manager-mattison.jpg" alt="Росен Симеонов в Mattison"></div></div>
+                            <div class="col-6">
+                                <div class="gallery-card">
+                                    <img src="mattison-scaffolding.jpg" alt="Mattison Scaffolding" loading="lazy" width="900" height="900">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="gallery-card">
+                                    <img src="rosen-simeonov-manager-mattison.jpg" alt="Росен Симеонов в Mattison" loading="lazy" width="900" height="900">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <div class="gallery-card"><img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" alt="Росен Симеонов в ДСБ Русе"></div>
+                        <div class="gallery-card">
+                            <img src="Rosen Simeonov poema posta obshtinski predsedatel.jpg" alt="Росен Симеонов в ДСБ Русе" loading="lazy" width="1200" height="900">
+                        </div>
                     </div>
+
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="highlight-card">
                             <h3>ДСБ и обществена отговорност</h3>
@@ -1344,10 +1352,12 @@
 
         <section class="contact-band">
             <div class="container">
-                <div class="contact-panel text-center" data-aos="fade-up">
+                <div class="contact-panel" data-aos="fade-up">
                     <h2>Нека продължим разговора</h2>
                     <p>Ако искаш да се свържеш с мен, да зададеш въпрос или да подкрепиш каузата за по-силен Русе, отвори страницата за контакт и ми пиши директно.</p>
-                    <div class="mt-4"><a href="index.html#contact" class="btn-main">Към контакт</a></div>
+                    <div class="mt-4">
+                        <a href="index.html#contact" class="btn-main">Към контакт</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1368,13 +1378,17 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 РОСЕН СИМЕОНОВ | ПП–ДБ РУСЕ</p>
+            <p>© <span id="currentYear">2026</span> РОСЕН СИМЕОНОВ | ПП–ДБ РУСЕ</p>
             <div class="disclaimer-box">Купуването и продаването на гласове е престъпление</div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <button type="button" id="mobileQuickMenu" class="mobile-quick-menu d-lg-none" aria-label="Обратно нагоре">
+    <span>↑ 7 / 105</span>
+</button>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             if (typeof AOS !== 'undefined') {
@@ -1387,11 +1401,20 @@
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const mobileMenuClose = document.getElementById('mobileMenuClose');
             const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileQuickMenu = document.getElementById('mobileQuickMenu');
+            const closeMenuLinks = document.querySelectorAll('.js-close-menu');
+            const currentYear = document.getElementById('currentYear');
+
+            if (currentYear) {
+                currentYear.textContent = new Date().getFullYear();
+            }
 
             function openMobileMenu() {
                 if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
+
                 mobileMenu.classList.add('active');
                 mobileMenuOverlay.classList.add('active');
+                mobileMenuOverlay.hidden = false;
                 mobileMenuToggle.classList.add('active');
                 mobileMenuToggle.setAttribute('aria-expanded', 'true');
                 mobileMenu.setAttribute('aria-hidden', 'false');
@@ -1400,16 +1423,24 @@
 
             function closeMobileMenu() {
                 if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
+
                 mobileMenu.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
                 mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 mobileMenu.setAttribute('aria-hidden', 'true');
                 body.classList.remove('menu-open');
+
+                window.setTimeout(function () {
+                    if (!mobileMenuOverlay.classList.contains('active')) {
+                        mobileMenuOverlay.hidden = true;
+                    }
+                }, 300);
             }
 
             function handleScrollState() {
                 if (!navbar) return;
+
                 if (window.scrollY > 16) {
                     navbar.classList.add('navbar-scrolled');
                 } else {
@@ -1417,43 +1448,83 @@
                 }
             }
 
+            function handleQuickMenuVisibility() {
+                if (!mobileQuickMenu) return;
+
+                if (window.innerWidth < 992 && window.scrollY > 320 && !body.classList.contains('menu-open')) {
+                    mobileQuickMenu.classList.add('show');
+                } else {
+                    mobileQuickMenu.classList.remove('show');
+                }
+            }
+
             if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function (e) {
-                    e.preventDefault();
+                mobileMenuToggle.addEventListener('click', function (event) {
+                    event.preventDefault();
+
                     if (mobileMenu && mobileMenu.classList.contains('active')) {
                         closeMobileMenu();
                     } else {
                         openMobileMenu();
                     }
+
+                    handleQuickMenuVisibility();
                 });
             }
 
             if (mobileMenuClose) {
-                mobileMenuClose.addEventListener('click', function (e) {
-                    e.preventDefault();
+                mobileMenuClose.addEventListener('click', function (event) {
+                    event.preventDefault();
                     closeMobileMenu();
+                    handleQuickMenuVisibility();
                 });
             }
 
             if (mobileMenuOverlay) {
-                mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+                mobileMenuOverlay.addEventListener('click', function () {
+                    closeMobileMenu();
+                    handleQuickMenuVisibility();
+                });
             }
 
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape') {
+          if (mobileQuickMenu) {
+    mobileQuickMenu.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+        });
+    });
+}
+
+            closeMenuLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
                     closeMobileMenu();
+                    handleQuickMenuVisibility();
+                });
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                    handleQuickMenuVisibility();
                 }
             });
 
-            window.addEventListener('scroll', handleScrollState);
+            window.addEventListener('scroll', function () {
+                handleScrollState();
+                handleQuickMenuVisibility();
+            });
 
             window.addEventListener('resize', function () {
                 if (window.innerWidth >= 992) {
                     closeMobileMenu();
                 }
+
+                handleQuickMenuVisibility();
             });
 
             handleScrollState();
+            handleQuickMenuVisibility();
         });
     </script>
 </body>
