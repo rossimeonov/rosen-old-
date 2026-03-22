@@ -665,113 +665,54 @@
         }
 
         /* =========================
-           PAGE HERO
+           PAGE INTRO
         ========================= */
-        .page-hero {
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at top right, rgba(255, 255, 255, 0.09), transparent 25%),
-                linear-gradient(135deg, rgba(7, 21, 59, 0.96) 0%, rgba(36, 58, 150, 0.92) 100%);
-            color: #fff;
-            padding: 150px 0 90px;
+        .page-intro {
+            background: linear-gradient(180deg, #f3f6ff 0%, #eef3ff 100%);
+            padding: 148px 0 48px;
         }
 
-        .page-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
-            pointer-events: none;
+        .page-intro-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        .page-hero .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badges {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
-        }
-
-        .badge-soft {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #fff;
+        .intro-kicker {
+            display: inline-block;
+            margin-bottom: 18px;
             padding: 10px 16px;
             border-radius: 999px;
+            background: rgba(36, 58, 150, 0.08);
+            color: var(--secondary-blue);
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.4px;
+            letter-spacing: 0.5px;
         }
 
-        .page-hero h1 {
-            font-size: clamp(2.4rem, 5vw, 4.8rem);
+        .page-intro h1 {
+            font-size: clamp(2.2rem, 4.5vw, 4.1rem);
             font-weight: 900;
-            line-height: 0.98;
+            line-height: 1.05;
             text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        .page-hero p {
-            max-width: 760px;
-            margin: 0;
-            font-size: 1.14rem;
-            line-height: 1.9;
-            color: var(--text-soft);
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 30px;
-        }
-
-        .btn-main {
-            background: #fff;
-            color: var(--primary-blue);
-            border: none;
-            border-radius: 999px;
-            padding: 16px 32px;
-            font-weight: 900;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-main:hover {
-            transform: translateY(-3px);
             color: var(--deep-blue);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+            margin-bottom: 20px;
         }
 
-        .btn-outline-light {
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255, 255, 255, 0.55);
-            border-radius: 999px;
-            padding: 14px 30px;
-            font-weight: 900;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-outline-light:hover {
-            background: #fff;
-            color: var(--primary-blue);
+        .page-intro p {
+            margin: 0 auto;
+            max-width: 760px;
+            font-size: 1.08rem;
+            line-height: 1.9;
+            color: var(--text-muted);
         }
 
         /* =========================
            PRIORITIES
         ========================= */
         .priorities-section {
-            padding: 90px 0 100px;
+            padding: 36px 0 100px;
             background: linear-gradient(180deg, #eef3ff 0%, #ffffff 100%);
         }
 
@@ -781,7 +722,7 @@
         }
 
         .section-header h2 {
-            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-size: clamp(1.9rem, 3vw, 2.7rem);
             font-weight: 900;
             text-transform: uppercase;
             color: var(--deep-blue);
@@ -792,7 +733,7 @@
             max-width: 760px;
             margin: 0 auto;
             color: var(--text-muted);
-            font-size: 1.06rem;
+            font-size: 1.04rem;
             line-height: 1.85;
         }
 
@@ -835,7 +776,7 @@
         }
 
         .priority-card h3 {
-            font-size: 1.45rem;
+            font-size: 1.42rem;
             font-weight: 900;
             color: var(--deep-blue);
             margin-bottom: 16px;
@@ -859,7 +800,7 @@
         }
 
         .priority-highlight h3 {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 14px;
@@ -869,7 +810,7 @@
             margin: 0;
             line-height: 1.9;
             color: rgba(255,255,255,0.9);
-            font-size: 1.06rem;
+            font-size: 1.04rem;
         }
 
         .cta-section {
@@ -881,13 +822,13 @@
             background: #08122f;
             color: #fff;
             border-radius: 28px;
-            padding: 48px 42px;
+            padding: 46px 42px;
             box-shadow: var(--shadow);
             text-align: center;
         }
 
         .cta-box h2 {
-            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-size: clamp(1.9rem, 3vw, 2.7rem);
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 14px;
@@ -898,7 +839,7 @@
             margin: 0 auto 28px;
             color: rgba(255,255,255,0.86);
             line-height: 1.85;
-            font-size: 1.05rem;
+            font-size: 1.03rem;
         }
 
         .vote-panel {
@@ -990,14 +931,8 @@
                 letter-spacing: 0.6px;
             }
 
-            .page-hero {
-                padding: 130px 0 72px;
-                text-align: center;
-            }
-
-            .hero-badges,
-            .hero-actions {
-                justify-content: center;
+            .page-intro {
+                padding: 128px 0 32px;
             }
 
             .priority-grid {
@@ -1025,23 +960,13 @@
         }
 
         @media (max-width: 767px) {
-            .page-hero h1 {
-                font-size: 2.5rem;
+            .page-intro h1 {
+                font-size: 2.3rem;
             }
 
-            .page-hero p {
+            .page-intro p {
                 font-size: 1rem;
                 line-height: 1.8;
-            }
-
-            .btn-main,
-            .btn-outline-light {
-                width: 100%;
-                text-align: center;
-            }
-
-            .hero-actions {
-                width: 100%;
             }
 
             .priority-card {
@@ -1049,7 +974,7 @@
             }
 
             .priority-card h3 {
-                font-size: 1.28rem;
+                font-size: 1.24rem;
             }
 
             .number-box,
@@ -1209,22 +1134,14 @@
     </aside>
 
     <main id="main-content">
-        <section class="page-hero">
+        <section class="page-intro">
             <div class="container">
-                <div class="hero-badges">
-                    <span class="badge-soft">Русе</span>
-                    <span class="badge-soft">Приоритети</span>
-                    <span class="badge-soft">Ясна посока</span>
-                </div>
-
-                <h1>Моите<br>приоритети</h1>
-                <p>
-                    Вярвам, че Русе може да се развива по-силно, по-справедливо и с повече перспектива за хората, които живеят и работят тук. За мен политиката има смисъл само когато води до решения, които се усещат в ежедневието.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#priorities-list" class="btn-main">Виж приоритетите</a>
-                    <a href="index.html#contact" class="btn-outline-light">Свържи се с мен</a>
+                <div class="page-intro-inner">
+                    <span class="intro-kicker">Приоритети за Русе</span>
+                    <h1>Какво искам да се промени</h1>
+                    <p>
+                        За мен политиката има смисъл само когато води до по-добър живот за хората. Това са приоритетите, върху които искам да работя – ясно, последователно и с реален фокус върху Русе, семействата, младите и бизнеса.
+                    </p>
                 </div>
             </div>
         </section>
@@ -1232,9 +1149,9 @@
         <section class="priorities-section" id="priorities-list">
             <div class="container">
                 <div class="section-header">
-                    <h2>Посока за Русе</h2>
+                    <h2>Моите приоритети</h2>
                     <p>
-                        Това са темите, върху които искам да работя последователно – с мисъл за хората, за семействата, за бизнеса и за бъдещето на града.
+                        Не повече лозунги, а ясни теми, по които трябва да има работа, решения и отговорност.
                     </p>
                 </div>
 
@@ -1297,9 +1214,9 @@
                 </div>
 
                 <div class="priority-highlight">
-                    <h3>За мен това е смисълът</h3>
+                    <h3>Ясна посока за Русе</h3>
                     <p>
-                        Русе има потенциал. Нужни са ясни приоритети, последователност и хора, които разбират, че доверието не се печели с лозунги, а с работа, почтеност и реални резултати.
+                        Вярвам, че Русе може да бъде по-силен, по-подреден и по-справедлив град – място, в което си струва да останеш, да се върнеш и да планираш бъдещето си спокойно.
                     </p>
                 </div>
             </div>
@@ -1308,7 +1225,7 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-box">
-                    <h2>Знания. Опит. Ясна посока за Русе.</h2>
+                    <h2>По-малко обещания, повече резултати</h2>
                     <p>
                         Подкрепи посока, в която има повече работа, повече справедливост, по-малко бюрокрация и реална защита за семействата и младите хора.
                     </p>
