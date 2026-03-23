@@ -647,35 +647,6 @@
         /* =========================
            HERO
         ========================= */
-        .hero-mobile-top {
-    position: relative;
-    width: 100%;
-    height: 42vh;
-    min-height: 280px;
-    max-height: 420px;
-    overflow: hidden;
-}
-
-.hero-mobile-top img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-}
-
-.hero-mobile-top::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(7, 21, 59, 0) 0%,
-        rgba(7, 21, 59, 0.35) 40%,
-        rgba(7, 21, 59, 0.75) 70%,
-        rgba(7, 21, 59, 0.95) 100%
-    );
-}
         .hero {
             min-height: 96vh;
             display: flex;
@@ -689,80 +660,111 @@
         }
 
         .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(90deg,
-            rgba(7, 21, 59, 0.94) 0%,
-            rgba(18, 37, 102, 0.82) 38%,
-            rgba(27, 52, 136, 0.46) 68%,
-            rgba(27, 52, 136, 0.20) 100%);
-    z-index: 1;
-}
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg,
+                    rgba(7, 21, 59, 0.94) 0%,
+                    rgba(18, 37, 102, 0.82) 38%,
+                    rgba(27, 52, 136, 0.46) 68%,
+                    rgba(27, 52, 136, 0.20) 100%);
+            z-index: 1;
+        }
+
+        .hero-mobile-top {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 46vh;
+            min-height: 300px;
+            max-height: 460px;
+            overflow: hidden;
+        }
+
+        .hero-mobile-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .hero-mobile-top::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(7, 21, 59, 0) 0%,
+                rgba(7, 21, 59, 0.25) 35%,
+                rgba(7, 21, 59, 0.65) 65%,
+                rgba(7, 21, 59, 0.95) 100%
+            );
+            z-index: 1;
+        }
 
         .hero-media {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 54%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    overflow: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 54%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(
+                to left,
+                rgba(0,0,0,1) 58%,
+                rgba(0,0,0,0.88) 70%,
+                rgba(0,0,0,0.45) 84%,
+                rgba(0,0,0,0.08) 96%,
+                rgba(0,0,0,0) 100%
+            );
+            mask-image: linear-gradient(
+                to left,
+                rgba(0,0,0,1) 58%,
+                rgba(0,0,0,0.88) 70%,
+                rgba(0,0,0,0.45) 84%,
+                rgba(0,0,0,0.08) 96%,
+                rgba(0,0,0,0) 100%
+            );
+        }
 
-    -webkit-mask-image: linear-gradient(
-        to left,
-        rgba(0,0,0,1) 58%,
-        rgba(0,0,0,0.88) 70%,
-        rgba(0,0,0,0.45) 84%,
-        rgba(0,0,0,0.08) 96%,
-        rgba(0,0,0,0) 100%
-    );
-    mask-image: linear-gradient(
-        to left,
-        rgba(0,0,0,1) 58%,
-        rgba(0,0,0,0.88) 70%,
-        rgba(0,0,0,0.45) 84%,
-        rgba(0,0,0,0.08) 96%,
-        rgba(0,0,0,0) 100%
-    );
-}
+        .hero-media::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(
+                to bottom,
+                rgba(10, 24, 72, 0.08) 0%,
+                rgba(10, 24, 72, 0.12) 45%,
+                rgba(10, 24, 72, 0.22) 100%
+            );
+        }
 
-.hero-media::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background: linear-gradient(
-        to bottom,
-        rgba(10, 24, 72, 0.08) 0%,
-        rgba(10, 24, 72, 0.12) 45%,
-        rgba(10, 24, 72, 0.22) 100%
-    );
-}
+        .hero-media::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            background: radial-gradient(
+                circle at 72% 38%,
+                rgba(255,255,255,0.10) 0%,
+                rgba(255,255,255,0.04) 18%,
+                rgba(255,255,255,0) 42%
+            );
+        }
 
-.hero-media::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    background: radial-gradient(
-        circle at 72% 38%,
-        rgba(255,255,255,0.10) 0%,
-        rgba(255,255,255,0.04) 18%,
-        rgba(255,255,255,0) 42%
-    );
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 68% top;
-    display: block;
-    filter: saturate(1.02) contrast(1.02);
-}
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 68% top;
+            display: block;
+            filter: saturate(1.02) contrast(1.02);
+        }
 
         .hero .container {
             position: relative;
@@ -771,9 +773,6 @@
             padding-bottom: 40px;
         }
 
-        <div class="hero-mobile-top d-lg-none">
-    <img src="rosen.simeonov1.png" alt="Росен Симеонов">
-</div>
         .hero .row {
             min-height: calc(96vh - 110px);
             align-items: center;
@@ -1285,7 +1284,9 @@
                 display: none !important;
             }
 
-            .mobile-menu-toggle { display: flex; }
+            .mobile-menu-toggle {
+                display: flex;
+            }
 
             .brand-name {
                 font-size: 14px;
@@ -1293,33 +1294,54 @@
             }
 
             .hero {
-                text-align: center;
                 min-height: auto;
+                padding-top: 0;
+                display: block;
+                text-align: center;
+                background: var(--navy);
+                background-image: none;
             }
 
             .hero::before {
-                background:
-                    linear-gradient(180deg,
-                        rgba(7, 21, 59, 0.88) 0%,
-                        rgba(18, 37, 102, 0.82) 55%,
-                        rgba(18, 37, 102, 0.92) 100%);
+                display: none;
             }
 
             .hero-media {
-                width: 100%;
-                opacity: 0.34;
+                display: none;
             }
 
-            .hero-media::before {
-                background:
-                    linear-gradient(180deg,
-                        rgba(7, 21, 59, 0.60) 0%,
-                        rgba(7, 21, 59, 0.75) 38%,
-                        rgba(7, 21, 59, 0.92) 100%);
+            .hero-mobile-top {
+                display: block;
             }
 
-            .hero-image {
-                object-position: center top;
+            .hero .container {
+                padding-top: 0;
+                padding-bottom: 55px;
+            }
+
+            .hero .row {
+                min-height: auto;
+                margin-top: -100px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .hero-content {
+                padding: 0 16px;
+                text-align: center;
+            }
+
+            .logos-inline {
+                justify-content: center;
+                margin-bottom: 16px;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
 
             .hero-badges,
@@ -1334,10 +1356,6 @@
                 padding-left: 0;
                 border-left: none;
                 max-width: 90%;
-            }
-
-            .logos-inline {
-                justify-content: center;
             }
 
             .vote-copy {
@@ -1371,65 +1389,30 @@
             .trust-box {
                 padding: 28px;
             }
-            @media (max-width: 991px) {
-    .hero {
-        min-height: auto;
-        padding-top: 0;
-    }
-
-    /* махаме стария overlay */
-    .hero::before {
-        display: none;
-    }
-
-    /* махаме desktop image */
-    .hero-media {
-        display: none;
-    }
-
-    .hero .container {
-        padding-top: 0;
-    }
-
-    .hero .row {
-        margin-top: -80px; /* това вкарва текста в градиента */
-        position: relative;
-        z-index: 2;
-    }
-
-    .hero-content {
-        padding: 0 16px;
-        text-align: center;
-    }
-
-    .logos-inline {
-        justify-content: center;
-        margin-bottom: 16px;
-    }
-
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-}
         }
 
         @media (max-width: 767px) {
+            .hero-mobile-top {
+                height: 44vh;
+                min-height: 280px;
+                max-height: 380px;
+            }
+
             .hero .container {
-                padding-top: 100px;
                 padding-bottom: 55px;
             }
 
-            .hero .row {
-                min-height: auto;
+            .hero-title {
+                font-size: 2.4rem;
             }
 
-            .hero-title { font-size: 2.4rem; }
-            .hero-subtitle { font-size: 1.18rem; }
-            .hero-kicker { font-size: 0.88rem; }
+            .hero-subtitle {
+                font-size: 1.18rem;
+            }
+
+            .hero-kicker {
+                font-size: 0.88rem;
+            }
 
             .hero-lead {
                 font-size: 1rem;
@@ -1448,9 +1431,13 @@
                 text-align: center;
             }
 
-            .hero-actions { width: 100%; }
+            .hero-actions {
+                width: 100%;
+            }
 
-            .vote-panel { gap: 14px; }
+            .vote-panel {
+                gap: 14px;
+            }
 
             .number-box,
             .pref-circle {
@@ -1463,9 +1450,13 @@
                 border-radius: 22px;
             }
 
-            .pref-circle { font-size: 40px; }
+            .pref-circle {
+                font-size: 40px;
+            }
 
-            .section-header { margin-bottom: 34px; }
+            .section-header {
+                margin-bottom: 34px;
+            }
 
             .priority-card,
             .media-card {
@@ -1479,7 +1470,9 @@
                 padding: 18px 16px 24px;
             }
 
-            .mobile-menu-title { font-size: 20px; }
+            .mobile-menu-title {
+                font-size: 20px;
+            }
 
             .countdown-container {
                 margin-left: auto;
@@ -1599,6 +1592,10 @@
 
     <main>
         <section class="hero" id="top">
+            <div class="hero-mobile-top d-lg-none" aria-hidden="true">
+                <img src="rosen.simeonov1.png" alt="Росен Симеонов">
+            </div>
+
             <div class="hero-media" aria-hidden="true">
                 <img src="rosen.simeonov1.png" alt="" class="hero-image">
             </div>
