@@ -647,6 +647,35 @@
         /* =========================
            HERO
         ========================= */
+        .hero-mobile-top {
+    position: relative;
+    width: 100%;
+    height: 42vh;
+    min-height: 280px;
+    max-height: 420px;
+    overflow: hidden;
+}
+
+.hero-mobile-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.hero-mobile-top::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(7, 21, 59, 0) 0%,
+        rgba(7, 21, 59, 0.35) 40%,
+        rgba(7, 21, 59, 0.75) 70%,
+        rgba(7, 21, 59, 0.95) 100%
+    );
+}
         .hero {
             min-height: 96vh;
             display: flex;
@@ -682,7 +711,6 @@
     pointer-events: none;
     overflow: hidden;
 
-    /* това прави истинското преливане наляво */
     -webkit-mask-image: linear-gradient(
         to left,
         rgba(0,0,0,1) 58%,
@@ -743,6 +771,9 @@
             padding-bottom: 40px;
         }
 
+        <div class="hero-mobile-top d-lg-none">
+    <img src="rosen.simeonov1.png" alt="Росен Симеонов">
+</div>
         .hero .row {
             min-height: calc(96vh - 110px);
             align-items: center;
@@ -1340,6 +1371,50 @@
             .trust-box {
                 padding: 28px;
             }
+            @media (max-width: 991px) {
+    .hero {
+        min-height: auto;
+        padding-top: 0;
+    }
+
+    /* махаме стария overlay */
+    .hero::before {
+        display: none;
+    }
+
+    /* махаме desktop image */
+    .hero-media {
+        display: none;
+    }
+
+    .hero .container {
+        padding-top: 0;
+    }
+
+    .hero .row {
+        margin-top: -80px; /* това вкарва текста в градиента */
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content {
+        padding: 0 16px;
+        text-align: center;
+    }
+
+    .logos-inline {
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
         }
 
         @media (max-width: 767px) {
