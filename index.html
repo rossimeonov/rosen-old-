@@ -2048,18 +2048,17 @@
                     link.classList.toggle('active', link.dataset.target === currentId);
                 });
             }
-
             function updateCountdown() {
-    const electionDate = new Date(2026, 3, 19, 20, 0, 0).getTime();
-    const now = new Date().getTime();
-    const distance = electionDate - now;
+                const electionDate = new Date(2026, 3, 19, 20, 0, 0).getTime();
+                const now = new Date().getTime();
+                const distance = electionDate - now;
 
-    const countdownEl = document.getElementById("election-countdown");
-    if (!countdownEl) return;
+                const countdownEl = document.getElementById("election-countdown");
+                if (!countdownEl) return;
 
-    if (distance < 0) {
-        countdownEl.innerText = "Изборният ден приключи";
-        return;
+                if (distance < 0) {
+                    countdownEl.innerText = "Изборният ден приключи";
+                    return;
 
                 const d = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
