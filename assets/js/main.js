@@ -1,218 +1,213 @@
+/**
+ * main.js — Росен Симеонов | rosensimeonov.com
+ * Handles: mobile drawer, header scroll, smooth scroll, contact form, back-to-top
+ */
+
 document.addEventListener('DOMContentLoaded', function () {
-    if (typeof AOS !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        AOS.init({
-            duration: 900,
-            once: true
+
+  /* ─── ELEMENTS ─────────────────────────────────────────── */
+  const header       = document.getElementById('siteHeader');
+  const burgerBtn    = document.getElementById('burgerBtn');
+  const drawer       = document.getElementById('drawer');
+  const drawerClose  = document.getElementById('drawerClose');
+  const drawerOverlay= document.getElementById('drawerOverlay');
+  const backTop      = document.getElementById('backTop');
+  const contactForm  = document.getElementById('contactForm');
+  const formSubmit   = document.getElementById('formSubmit');
+  const formStatus   = document.getElementById('formStatus');
+
+  const scrollLinks  = document.querySelectorAll('.js-scroll-link');
+  const closeDrawerLinks = document.querySelectorAll('.js-close-drawer');
+
+  let lastFocused = null;
+  let ticking = false;
+
+  /* ─── DRAWER ────────────────────────────────────────────── */
+  function openDrawer() {
+    lastFocused = document.activeElement;
+    drawer.classList.add('is-open');
+    drawerOverlay.classList.add('is-open');
+    burgerBtn.classList.add('is-open');
+    burgerBtn.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('drawer-open');
+    drawerClose.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    drawerOverlay.classList.remove('is-open');
+    burgerBtn.classList.remove('is-open');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('drawer-open');
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      lastFocused.focus();
+    }
+  }
+
+  if (burgerBtn) {
+    burgerBtn.addEventListener('click', function () {
+      drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+    });
+  }
+
+  if (drawerClose)   drawerClose.addEventListener('click', closeDrawer);
+  if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+  closeDrawerLinks.forEach(function (el) {
+    el.addEventListener('click', closeDrawer);
+  });
+
+  // Close drawer on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && drawer && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
+  });
+
+  // Close drawer on resize to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900 && drawer && drawer.classList.contains('is-open')) {
+      closeDrawer();
+    }
+  });
+
+  /* ─── HEADER SCROLL STATE ───────────────────────────────── */
+  function updateHeader() {
+    if (!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }
+
+  /* ─── BACK TO TOP ───────────────────────────────────────── */
+  function updateBackTop() {
+    if (!backTop) return;
+    backTop.classList.toggle('is-visible', window.scrollY > 400);
+  }
+
+  if (backTop) {
+    backTop.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      });
+    });
+  }
+
+  /* ─── SCROLL HANDLER (rAF-throttled) ───────────────────── */
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        updateHeader();
+        updateBackTop();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateHeader();
+  updateBackTop();
+
+  /* ─── SMOOTH SCROLL ─────────────────────────────────────── */
+  function smoothScrollTo(targetId) {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    const headerH = header ? header.offsetHeight : 80;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - headerH - 12;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' });
+
+    // Move focus for keyboard / screen reader users
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+  }
+
+  scrollLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const targetId = this.dataset.target;
+      if (!targetId) return;
+      e.preventDefault();
+      closeDrawer();
+      // Small delay so drawer animates out before scroll
+      setTimeout(function () { smoothScrollTo(targetId); }, 50);
+    });
+  });
+
+  /* ─── CONTACT FORM ──────────────────────────────────────── */
+  if (contactForm && formSubmit && formStatus) {
+
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Clear old status
+      setStatus('', '');
+
+      if (!contactForm.checkValidity()) {
+        setStatus('error', 'Моля, попълнете коректно всички задължителни полета.');
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' }
         });
-    }
 
-    const body = document.body;
-    const navbar = document.getElementById('mainNavbar');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileMenuClose = document.getElementById('mobileMenuClose');
-    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-    const mobileQuickTop = document.getElementById('mobileQuickTop');
-    const closeMenuLinks = document.querySelectorAll('.js-close-menu');
-    const mobileContactLinks = document.querySelectorAll('.mobile-contact-link');
-    const contactForm = document.getElementById('contactForm');
-    const contactSubmitButton = document.getElementById('contactSubmitButton');
-    const formStatus = document.getElementById('formStatus');
-
-    let lastFocusedElement = null;
-
-    function openMobileMenu() {
-        if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
-
-        lastFocusedElement = document.activeElement;
-
-        mobileMenu.classList.add('active');
-        mobileMenuOverlay.classList.add('active');
-        mobileMenuOverlay.hidden = false;
-        mobileMenuToggle.classList.add('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'true');
-        mobileMenu.setAttribute('aria-hidden', 'false');
-        body.classList.add('menu-open');
-        mobileMenu.focus();
-    }
-
-    function closeMobileMenu() {
-        if (!mobileMenu || !mobileMenuOverlay || !mobileMenuToggle) return;
-
-        mobileMenu.classList.remove('active');
-        mobileMenuOverlay.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        body.classList.remove('menu-open');
-
-        window.setTimeout(function () {
-            mobileMenuOverlay.hidden = true;
-        }, 300);
-
-        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-            lastFocusedElement.focus();
-        }
-    }
-
-    function smoothScrollTo(targetId) {
-        const target = document.getElementById(targetId);
-        if (!target) return;
-
-        const navbarHeight = navbar ? navbar.offsetHeight : 80;
-        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 12;
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        window.scrollTo({
-            top: offsetTop,
-            behavior: reducedMotion ? 'auto' : 'smooth'
-        });
-    }
-
-    function handleScrollState() {
-        if (!navbar) return;
-
-        if (window.scrollY > 16) {
-            navbar.classList.add('navbar-scrolled');
+        if (res.ok) {
+          contactForm.reset();
+          setStatus('success', 'Съобщението беше изпратено успешно. Благодарим Ви!');
         } else {
-            navbar.classList.remove('navbar-scrolled');
+          setStatus('error', 'Възникна проблем при изпращането. Моля, опитайте отново.');
         }
-    }
-
-    function handleQuickTopVisibility() {
-        if (!mobileQuickTop) return;
-
-        if (window.innerWidth < 992 && window.scrollY > 320 && !body.classList.contains('menu-open')) {
-            mobileQuickTop.classList.add('show');
-        } else {
-            mobileQuickTop.classList.remove('show');
-        }
-    }
-
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                closeMobileMenu();
-            } else {
-                openMobileMenu();
-            }
-
-            handleQuickTopVisibility();
-        });
-    }
-
-    if (mobileMenuClose) {
-        mobileMenuClose.addEventListener('click', function () {
-            closeMobileMenu();
-            handleQuickTopVisibility();
-        });
-    }
-
-    if (mobileMenuOverlay) {
-        mobileMenuOverlay.addEventListener('click', function () {
-            closeMobileMenu();
-            handleQuickTopVisibility();
-        });
-    }
-
-    closeMenuLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-            closeMobileMenu();
-            handleQuickTopVisibility();
-        });
+      } catch (_) {
+        setStatus('error', 'Неуспешна връзка. Моля, опитайте след малко.');
+      } finally {
+        setLoading(false);
+      }
     });
+  }
 
-    mobileContactLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
+  function setLoading(on) {
+    if (!formSubmit) return;
+    formSubmit.disabled = on;
+    formSubmit.textContent = on ? 'Изпращане…' : 'Изпрати';
+    formSubmit.classList.toggle('is-loading', on);
+  }
 
-            if (href === '#contact') {
-                e.preventDefault();
-                closeMobileMenu();
-                smoothScrollTo('contact');
-                window.setTimeout(handleQuickTopVisibility, 400);
-            }
+  function setStatus(type, msg) {
+    if (!formStatus) return;
+    formStatus.className = 'form-status' + (type ? ' is-visible is-' + type : '');
+    formStatus.textContent = msg;
+  }
+
+  /* ─── HERO SCROLL HINT: hide after first scroll ─────────── */
+  const scrollHint = document.querySelector('.hero-scroll-hint');
+  if (scrollHint) {
+    window.addEventListener('scroll', function hideHint() {
+      if (window.scrollY > 60) {
+        scrollHint.style.opacity = '0';
+        scrollHint.style.pointerEvents = 'none';
+        window.removeEventListener('scroll', hideHint);
+      }
+    }, { passive: true });
+  }
+
+  /* ─── FAQ: close others on open ─────────────────────────── */
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (this.open) {
+        faqItems.forEach(function (other) {
+          if (other !== item && other.open) other.open = false;
         });
+      }
     });
+  });
 
-    if (mobileQuickTop) {
-        mobileQuickTop.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-            });
-        });
-    }
-
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
-            closeMobileMenu();
-            handleQuickTopVisibility();
-        }
-    });
-
-    window.addEventListener('scroll', function () {
-        handleScrollState();
-        handleQuickTopVisibility();
-    });
-
-    window.addEventListener('resize', function () {
-        if (window.innerWidth >= 992) {
-            closeMobileMenu();
-        }
-
-        handleQuickTopVisibility();
-    });
-
-    if (contactForm && contactSubmitButton && formStatus) {
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            if (!contactForm.checkValidity()) {
-                formStatus.className = 'form-status is-visible is-error';
-                formStatus.textContent = 'Моля, попълнете коректно всички задължителни полета.';
-                return;
-            }
-
-            const formData = new FormData(contactForm);
-
-            contactSubmitButton.classList.add('is-loading');
-            contactSubmitButton.disabled = true;
-            contactSubmitButton.textContent = 'Изпращане...';
-
-            formStatus.className = 'form-status';
-            formStatus.textContent = '';
-
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    contactForm.reset();
-                    formStatus.className = 'form-status is-visible is-success';
-                    formStatus.textContent = 'Съобщението беше изпратено успешно. Благодарим Ви.';
-                } else {
-                    formStatus.className = 'form-status is-visible is-error';
-                    formStatus.textContent = 'Възникна проблем при изпращането. Моля, опитайте отново.';
-                }
-            } catch (error) {
-                formStatus.className = 'form-status is-visible is-error';
-                formStatus.textContent = 'Неуспешна връзка. Моля, опитайте отново след малко.';
-            } finally {
-                contactSubmitButton.classList.remove('is-loading');
-                contactSubmitButton.disabled = false;
-                contactSubmitButton.textContent = 'Изпрати';
-            }
-        });
-    }
-
-    handleScrollState();
-    handleQuickTopVisibility();
 });
