@@ -375,64 +375,68 @@ ul, ol { list-style: none; }
   position: relative;
   overflow: hidden;
   background: var(--navy);
+  background-image: url('../images/ruse.jpg');
+  background-size: cover;
+  background-position: center 30%;
   color: var(--white);
   min-height: calc(100svh - var(--header-h));
   display: flex;
   flex-direction: column;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('../images/ruse.jpg');
-  background-size: cover;
-  background-position: center 30%;
-  z-index: 0;
-}
-
-.hero-overlay {
+/* Overlay като ::before — не създава stacking context проблеми */
+.hero::before {
+  content: '';
   position: absolute;
   inset: 0;
   background:
     linear-gradient(105deg,
-      rgba(6,15,40,0.97) 0%,
-      rgba(10,24,64,0.88) 40%,
-      rgba(18,40,100,0.5) 68%,
-      rgba(18,40,100,0.1) 100%);
+      rgba(6,15,40,0.96) 0%,
+      rgba(10,24,64,0.88) 38%,
+      rgba(18,40,100,0.5) 66%,
+      rgba(18,40,100,0.12) 100%);
   z-index: 1;
 }
 
-/* Desktop right-edge photo */
+/* Снимката на Росен — десен ръб, над overlay */
 .hero-photo {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 54%;
   height: 100%;
-  z-index: 3;
+  z-index: 2;
   pointer-events: none;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to left,
-    rgba(0,0,0,1) 50%,
-    rgba(0,0,0,0.7) 68%,
-    rgba(0,0,0,0.2) 84%,
-    transparent 100%);
-  mask-image: linear-gradient(to left,
-    rgba(0,0,0,1) 50%,
-    rgba(0,0,0,0.7) 68%,
-    rgba(0,0,0,0.2) 84%,
-    transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to left,
+    rgba(0,0,0,1) 58%,
+    rgba(0,0,0,0.88) 70%,
+    rgba(0,0,0,0.45) 84%,
+    rgba(0,0,0,0.08) 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    rgba(0,0,0,1) 58%,
+    rgba(0,0,0,0.88) 70%,
+    rgba(0,0,0,0.45) 84%,
+    rgba(0,0,0,0.08) 96%,
+    transparent 100%
+  );
 }
 .hero-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: 68% top;
+  display: block;
+  filter: saturate(1.02) contrast(1.02);
 }
 
 .hero-container {
   position: relative;
-  z-index: 4;
+  z-index: 3;
   flex: 1;
   display: flex;
   align-items: center;
@@ -495,9 +499,6 @@ ul, ol { list-style: none; }
   margin-bottom: 40px;
 }
 
-
-/* Mobile photo strip - unused, kept for reference */
-.hero-mobile-photo { display: none; }
 
 /* Scroll hint */
 .hero-scroll-hint {
@@ -1262,32 +1263,37 @@ ul, ol { list-style: none; }
   .header-socials { display: none; }
   .burger { display: flex; }
 
-  /* On mobile: show Rosen's photo as right-side background */
+  /* На мобилен снимката остава видима — само маската се адаптира */
   .hero-photo {
-    display: block;
     width: 60%;
-    -webkit-mask-image: linear-gradient(to left,
+    -webkit-mask-image: linear-gradient(
+      to left,
       rgba(0,0,0,0.9) 30%,
-      rgba(0,0,0,0.5) 60%,
-      transparent 100%);
-    mask-image: linear-gradient(to left,
+      rgba(0,0,0,0.5) 58%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to left,
       rgba(0,0,0,0.9) 30%,
-      rgba(0,0,0,0.5) 60%,
-      transparent 100%);
+      rgba(0,0,0,0.5) 58%,
+      transparent 100%
+    );
   }
 
-  /* Darken overlay more on mobile so text is readable */
-  .hero-overlay {
+  /* По-тъмен overlay на мобилен за четимост */
+  .hero::before {
     background:
       linear-gradient(105deg,
         rgba(6,15,40,0.97) 0%,
-        rgba(10,24,64,0.92) 45%,
-        rgba(18,40,100,0.6) 72%,
-        rgba(18,40,100,0.15) 100%);
+        rgba(10,24,64,0.93) 45%,
+        rgba(18,40,100,0.65) 72%,
+        rgba(18,40,100,0.2) 100%);
   }
 
-  .hero { min-height: calc(100svh - var(--header-h)); display: flex; flex-direction: column; }
-  .hero-container { padding-block: 40px 56px; flex: 1; }
+  .hero {
+    min-height: calc(100svh - var(--header-h));
+  }
+  .hero-container { padding-block: 40px 56px; }
   .hero-lead { border-left: none; padding-left: 0; }
   .hero-cta { flex-wrap: wrap; }
   .hero-cta .btn { flex: 0 0 auto; }
@@ -1336,4 +1342,4 @@ ul, ol { list-style: none; }
   .pill { font-size: 0.72rem; padding: 0 10px; height: 32px; }
   .hero-cta { flex-direction: column; }
   .hero-cta .btn { width: 100%; justify-content: center; }
-} 
+}
