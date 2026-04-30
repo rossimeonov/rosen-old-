@@ -1343,3 +1343,20 @@ ul, ol { list-style: none; }
   .hero-cta { flex-direction: column; }
   .hero-cta .btn { width: 100%; justify-content: center; }
 }
+@media (max-width: 900px) {
+  .hero-photo {
+    position: relative;
+    width: 100%;
+    height: min(58vh, 520px);
+    min-height: 360px;
+  }
+
+  .hero-photo img {
+    object-fit: cover;
+    object-position: center 18%;
+  }
+
+  .hero-container {
+    margin-top: -118px;
+  }
+}
