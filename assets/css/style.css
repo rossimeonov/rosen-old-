@@ -1263,37 +1263,44 @@ ul, ol { list-style: none; }
   .header-socials { display: none; }
   .burger { display: flex; }
 
-  /* На мобилен снимката остава видима — само маската се адаптира */
-  .hero-photo {
-    width: 60%;
-    -webkit-mask-image: linear-gradient(
-      to left,
-      rgba(0,0,0,0.9) 30%,
-      rgba(0,0,0,0.5) 58%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to left,
-      rgba(0,0,0,0.9) 30%,
-      rgba(0,0,0,0.5) 58%,
-      transparent 100%
-    );
+  /* На мобилен снимката остава видима — показва се отгоре като чист портрет */
+  .hero {
+    min-height: auto;
+    display: block;
   }
 
-  /* По-тъмен overlay на мобилен за четимост */
+  .hero-photo {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 430px;
+    min-height: 430px;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* По-мек overlay на мобилен — без да изяжда снимката */
   .hero::before {
     background:
-      linear-gradient(105deg,
-        rgba(6,15,40,0.97) 0%,
-        rgba(10,24,64,0.93) 45%,
-        rgba(18,40,100,0.65) 72%,
-        rgba(18,40,100,0.2) 100%);
+      linear-gradient(180deg,
+        rgba(6,15,40,0.10) 0%,
+        rgba(6,15,40,0.20) 45%,
+        rgba(6,15,40,0.88) 100%);
   }
 
-  .hero {
-    min-height: calc(100svh - var(--header-h));
+  .hero-container {
+    padding-block: 28px 56px;
+    margin-top: 0;
+    align-items: flex-start;
   }
-  .hero-container { padding-block: 40px 56px; }
   .hero-lead { border-left: none; padding-left: 0; }
   .hero-cta { flex-wrap: wrap; }
   .hero-cta .btn { flex: 0 0 auto; }
@@ -1332,8 +1339,12 @@ ul, ol { list-style: none; }
 
   .hero-scroll-hint { display: none; }
 
-  /* On small screens photo fades more to ensure text legibility */
-  .hero-photo { width: 55%; }
+  /* On small screens photo stays clean and visible */
+  .hero-photo {
+    width: 100%;
+    height: 500px;
+    min-height: 500px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -1342,21 +1353,37 @@ ul, ol { list-style: none; }
   .pill { font-size: 0.72rem; padding: 0 10px; height: 32px; }
   .hero-cta { flex-direction: column; }
   .hero-cta .btn { width: 100%; justify-content: center; }
-}
-@media (max-width: 900px) {
+
   .hero-photo {
-    position: relative;
-    width: 100%;
-    height: min(58vh, 520px);
-    min-height: 360px;
+    height: 460px;
+    min-height: 460px;
+  }
+}
+
+/* Cleaner desktop hero photo treatment */
+@media (min-width: 901px) {
+  .hero::before {
+    background:
+      linear-gradient(90deg,
+        rgba(6,15,40,0.98) 0%,
+        rgba(6,15,40,0.94) 42%,
+        rgba(6,15,40,0.30) 58%,
+        rgba(6,15,40,0.00) 72%);
+  }
+
+  .hero-photo {
+    width: 50%;
+    right: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .hero-photo img {
     object-fit: cover;
-    object-position: center 18%;
+    object-position: center center;
   }
 
-  .hero-container {
-    margin-top: -118px;
+  .hero-content {
+    max-width: 620px;
   }
 }
