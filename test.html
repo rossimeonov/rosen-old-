@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Росен Симеонов | Русе, икономика, визия и обществена дейност</title>
   <meta name="description" content="Официален сайт на Росен Симеонов – русенец, икономист, финансист, предприемач и обществено ангажиран гражданин. Биография, позиции, публикации, медийни участия и визия за развитието на Русе.">
@@ -41,286 +40,6 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <style>
-    /* Homepage premium visual additions */
-    .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 560px;
-      margin-top: 8px;
-    }
-    .hero-proof-item {
-      padding: 16px 18px;
-      border-radius: var(--r-md);
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-    }
-    .hero-proof-item strong {
-      display: block;
-      font-family: 'Syne', sans-serif;
-      font-size: 1.35rem;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .hero-proof-item span {
-      display: block;
-      font-size: 0.78rem;
-      line-height: 1.35;
-      color: var(--text-inv-dim);
-    }
-    .visual-split {
-      display: grid;
-      grid-template-columns: 1fr 0.85fr;
-      gap: 48px;
-      align-items: center;
-      margin-bottom: 64px;
-    }
-    .image-collage {
-      position: relative;
-      min-height: 520px;
-    }
-    .image-card {
-      position: absolute;
-      overflow: hidden;
-      border-radius: var(--r-xl);
-      box-shadow: var(--shadow-lg);
-      background: var(--off);
-      border: 1px solid rgba(255,255,255,0.5);
-    }
-    .image-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.95) contrast(1.04);
-    }
-    .image-card-main {
-      inset: 0 72px 74px 0;
-    }
-    .image-card-small {
-      right: 0;
-      bottom: 0;
-      width: 52%;
-      height: 260px;
-      border: 8px solid var(--white);
-    }
-    .image-caption {
-      position: absolute;
-      left: 24px;
-      bottom: 98px;
-      max-width: 260px;
-      padding: 16px 18px;
-      border-radius: var(--r-md);
-      background: rgba(6,15,40,0.9);
-      color: var(--white);
-      box-shadow: var(--shadow-md);
-    }
-    .image-caption strong {
-      display: block;
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-    .image-caption span {
-      display: block;
-      font-size: 0.82rem;
-      line-height: 1.45;
-      color: var(--text-inv);
-    }
-    .ruse-showcase {
-      background:
-        linear-gradient(180deg, rgba(6,15,40,0.02), rgba(6,15,40,0.06)),
-        var(--off);
-    }
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-    .showcase-photo {
-      position: relative;
-      min-height: 420px;
-      overflow: hidden;
-      border-radius: var(--r-xl);
-      box-shadow: var(--shadow-md);
-      background: var(--navy);
-    }
-    .showcase-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.9;
-    }
-    .showcase-photo::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 30%, rgba(6,15,40,0.72));
-    }
-    .showcase-photo-text {
-      position: absolute;
-      left: 32px;
-      right: 32px;
-      bottom: 30px;
-      z-index: 1;
-      color: var(--white);
-    }
-    .showcase-photo-text h3 {
-      font-size: clamp(1.5rem, 2.4vw, 2.2rem);
-      margin-bottom: 8px;
-    }
-    .showcase-photo-text p {
-      max-width: 560px;
-      color: var(--text-inv);
-      margin: 0;
-    }
-    .showcase-points {
-      display: grid;
-      gap: 18px;
-    }
-    .showcase-point {
-      padding: 26px;
-      border-radius: var(--r-lg);
-      background: var(--white);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-    }
-    .showcase-point i {
-      color: var(--blue);
-      font-size: 1.25rem;
-      margin-bottom: 14px;
-    }
-    .showcase-point h3 {
-      font-size: 1.05rem;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-    }
-    .showcase-point p {
-      color: var(--text-soft);
-      font-size: 0.92rem;
-      line-height: 1.7;
-      margin: 0;
-    }
-    .media-visual {
-      position: relative;
-      min-height: 460px;
-      border-radius: var(--r-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      background: var(--navy);
-    }
-    .media-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.72;
-    }
-    .media-visual-card {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      padding: 24px;
-      border-radius: var(--r-lg);
-      background: rgba(255,255,255,0.92);
-      color: var(--text-dark);
-      box-shadow: var(--shadow-md);
-    }
-    .media-visual-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-    }
-    .media-visual-card p {
-      color: var(--text-mid);
-      margin: 0;
-      font-size: 0.92rem;
-    }
-    .campaign-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 52px;
-    }
-    .campaign-strip figure {
-      min-height: 260px;
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-    .campaign-strip img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.82;
-    }
-    /* Better mobile hero portrait layout */
-    @media (max-width: 900px) {
-      .hero {
-        min-height: auto;
-        padding-bottom: 0;
-      }
-      .hero::before {
-        background:
-          linear-gradient(180deg,
-            rgba(6,15,40,0.36) 0%,
-            rgba(6,15,40,0.58) 34%,
-            rgba(6,15,40,0.94) 62%,
-            rgba(6,15,40,0.98) 100%);
-      }
-      .hero-photo {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-        height: min(58vh, 520px);
-        min-height: 360px;
-        z-index: 2;
-        -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-        mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-      }
-      .hero-photo img {
-        object-fit: cover;
-        object-position: center 18%;
-      }
-      .hero-container {
-        margin-top: -118px;
-        padding-block: 0 56px;
-        align-items: flex-start;
-      }
-      .hero-content {
-        max-width: 100%;
-      }
-      .hero-title {
-        font-size: clamp(3rem, 14vw, 5.2rem);
-      }
-      .hero-proof {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .hero-proof,
-      .visual-split,
-      .showcase-grid,
-      .campaign-strip { grid-template-columns: 1fr; }
-      .image-collage { min-height: 460px; }
-      .image-card-main { inset: 0 34px 90px 0; }
-      .image-card-small { width: 58%; height: 220px; }
-      .media-visual { min-height: 360px; }
-    }
-    @media (max-width: 640px) {
-      .hero-proof { gap: 8px; }
-      .hero-proof-item { padding: 14px; }
-      .image-collage { min-height: 380px; }
-      .image-caption { left: 14px; right: 14px; bottom: 84px; max-width: none; }
-      .showcase-photo { min-height: 340px; }
-      .showcase-photo-text { left: 22px; right: 22px; }
-      .campaign-strip figure { min-height: 220px; }
-    }
-  </style>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -338,7 +57,11 @@
         "name": "Росен Симеонов",
         "url": "https://rosensimeonov.com/",
         "jobTitle": "Икономист, финансист, предприемач",
-        "address": { "@type": "PostalAddress", "addressLocality": "Русе", "addressCountry": "BG" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Русе",
+          "addressCountry": "BG"
+        },
         "sameAs": [
           "https://www.facebook.com/rosen.simeonov.12",
           "https://www.linkedin.com/in/rosen-simeonov/",
@@ -351,12 +74,42 @@
           {
             "@type": "Question",
             "name": "Кой е Росен Симеонов?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Росен Симеонов е русенец, икономист, финансист, предприемач и обществено ангажиран гражданин с международен професионален опит." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Росен Симеонов е русенец, икономист, финансист, предприемач и обществено ангажиран гражданин с международен професионален опит."
+            }
           },
           {
             "@type": "Question",
             "name": "Какви теми поставя във фокус?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Икономика, инвестиции, финансова грамотност, градска среда, прозрачност и бъдещето на Русе." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Икономика, инвестиции, финансова грамотност, градска среда, прозрачност, отчетност и бъдещето на Русе."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Къде могат да се прочетат публикациите му?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "В секцията Публикации — позиции, анализи и идеи за Русе, икономиката и обществената среда."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Къде могат да се видят медийните участия?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "В секцията Медии — интервюта и участия по теми от обществен интерес."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как може да се осъществи контакт?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Чрез формата за контакт в сайта или чрез официалните профили в социалните мрежи."
+            }
           }
         ]
       }
@@ -376,36 +129,36 @@
         <div class="drawer-eyebrow">Навигация</div>
         <a href="index.html" class="drawer-brand js-close-drawer">Росен Симеонов</a>
       </div>
-      <button class="drawer-close" id="drawerClose" aria-label="Затвори менюто">
+      <button class="drawer-close" id="drawerClose" aria-label="Затвори менюто" type="button">
         <i class="fas fa-times" aria-hidden="true"></i>
       </button>
     </div>
 
     <nav class="drawer-nav" aria-label="Мобилна навигация">
-      <a href="za-men.html" class="drawer-link">
+      <a href="za-men.html" class="drawer-link js-close-drawer">
         <span>За Росен</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a>
-      <a href="publikacii.html" class="drawer-link">
+      <a href="publikacii.html" class="drawer-link js-close-drawer">
         <span>Публикации</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a>
-      <a href="medii.html" class="drawer-link">
+      <a href="medii.html" class="drawer-link js-close-drawer">
         <span>Медии</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a>
-      <a href="kampania-2026.html" class="drawer-link">
+      <a href="kampania-2026.html" class="drawer-link js-close-drawer">
         <span>Кампания 2026</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a>
-      <a href="#contact" class="drawer-link js-scroll-link" data-target="contact">
+      <a href="#contact" class="drawer-link js-scroll-link js-close-drawer" data-target="contact">
         <span>Контакт</span>
         <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a>
     </nav>
 
     <div class="drawer-footer">
-      <div class="drawer-socials">
+      <div class="drawer-socials" aria-label="Социални мрежи">
         <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <i class="fab fa-facebook-f" aria-hidden="true"></i>
         </a>
@@ -460,8 +213,11 @@
   <main id="main-content" tabindex="-1">
 
     <section class="hero" aria-label="Представяне">
-      <div class="hero-photo" aria-hidden="true">
-        <img src="assets/images/rosen-simeonov.JPG" alt="" width="880" height="1100" fetchpriority="high" loading="eager" decoding="async">
+      <div class="hero-photo">
+        <picture>
+          <source srcset="assets/images/rosen-simeonov.webp" type="image/webp">
+          <img src="assets/images/rosen-simeonov.JPG" alt="Росен Симеонов в Русе" width="880" height="1100" fetchpriority="high" loading="eager" decoding="async">
+        </picture>
       </div>
 
       <div class="container hero-container">
@@ -477,7 +233,7 @@
           <p class="hero-tagline">Опит, дисциплина и ясна визия за Русе.</p>
           <p class="hero-lead">Почти две десетилетия международен опит, подготовка по икономика, финанси и управление и съзнателен избор да се върна в Русе — не с шумни обещания, а с работа и отговорност към града.</p>
 
-          <div class="hero-cta">
+          <div class="hero-cta" aria-label="Основни действия">
             <a href="za-men.html" class="btn btn-white">За Росен</a>
             <a href="#vision" class="btn btn-ghost js-scroll-link" data-target="vision">Визия за Русе</a>
           </div>
@@ -516,16 +272,17 @@
 
         <div class="visual-split">
           <div class="about-copy">
-            <p>Сайтът представя професионален, спокоен и ясен профил — с акцент върху опит, компетентност и връзка с Русе. Визуалният език е изчистен: силна типография, тъмни акценти, реалистични послания и повече въздух между секциите.</p>
-            <p>Примерните изображения по-долу са поставени като временни визуални ориентири. При финален вариант е най-добре да бъдат заменени с авторски снимки от Русе, срещи с граждани, професионални портрети и кадри от публични участия.</p>
+            <p>Росен Симеонов е русенец, икономист, финансист и предприемач с международен опит и активна обществена позиция. След години работа в международна среда и натрупана практическа подготовка, той се завръща в Русе с убеждението, че знанията имат смисъл само когато работят в полза на хората и града.</p>
+            <p>Подходът му е основан на дисциплина, реалистичен поглед към ресурсите, дългосрочно мислене и уважение към труда. Обществената дейност за него не е поза, а естествено продължение на ценностите, с които живее.</p>
+            <a href="za-men.html" class="link-arrow">Прочети пълната биография <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
 
           <div class="image-collage" aria-label="Визуално представяне">
             <figure class="image-card image-card-main">
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1100&q=80" alt="Професионална работна среда" loading="lazy" decoding="async">
+              <img src="assets/images/ruse-city.jpg" alt="Градска среда в Русе" width="1100" height="760" loading="lazy" decoding="async">
             </figure>
             <figure class="image-card image-card-small">
-              <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Работна среща и обсъждане" loading="lazy" decoding="async">
+              <img src="assets/images/meeting.jpg" alt="Работна среща и обсъждане" width="800" height="600" loading="lazy" decoding="async">
             </figure>
             <div class="image-caption">
               <strong>Работа по същество</strong>
@@ -536,9 +293,8 @@
 
         <div class="about-grid">
           <div class="about-copy">
-            <p>Росен Симеонов е русенец, икономист, финансист и предприемач с международен опит и активна обществена позиция. След години работа в международна среда и натрупана практическа подготовка, той се завръща в Русе с убеждението, че знанията имат смисъл само когато работят в полза на хората и града.</p>
-            <p>Подходът му е основан на дисциплина, реалистичен поглед към ресурсите, дългосрочно мислене и уважение към труда. Обществената дейност за него не е поза, а естествено продължение на ценностите, с които живее.</p>
-            <a href="za-men.html" class="link-arrow">Прочети пълната биография <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <p>В публичната си позиция Росен Симеонов поставя акцент върху икономика, инвестиции, финансова грамотност, градска среда и прозрачност. За него силният град се гради с постоянство, отчетност и реални приоритети.</p>
+            <p>Фокусът му е върху решения, които могат да бъдат обяснени, измерени и защитени пред гражданите — без излишен шум, но с ясна отговорност.</p>
           </div>
 
           <aside class="about-panel" aria-label="Профил накратко">
@@ -583,9 +339,9 @@
       <div class="container">
         <div class="showcase-grid">
           <figure class="showcase-photo">
-            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1400&q=80" alt="Градска среда и икономическо развитие" loading="lazy" decoding="async">
+            <img src="assets/images/ruse-showcase.jpg" alt="Русе като град с посока" width="1400" height="900" loading="lazy" decoding="async">
             <figcaption class="showcase-photo-text">
-              <h3 id="ruse-h">Русе като град с посока</h3>
+              <h2 id="ruse-h">Русе като град с посока</h2>
               <p>Модерната градска политика започва с ред, предвидимост, силна местна икономика и реален диалог с хората.</p>
             </figcaption>
           </figure>
@@ -646,9 +402,9 @@
         </div>
 
         <div class="campaign-strip" aria-label="Кампания и срещи">
-          <figure><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80" alt="Публично обсъждане и среща с хора" loading="lazy" decoding="async"></figure>
-          <figure><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Работна среща и планиране" loading="lazy" decoding="async"></figure>
-          <figure><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80" alt="Професионален разговор и партньорство" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/images/campaign-1.jpg" alt="Публично обсъждане и среща с хора" width="900" height="620" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/images/campaign-2.jpg" alt="Работна среща и планиране" width="900" height="620" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/images/campaign-3.jpg" alt="Професионален разговор и партньорство" width="900" height="620" loading="lazy" decoding="async"></figure>
         </div>
       </div>
     </section>
@@ -711,14 +467,14 @@
 
           <div>
             <figure class="media-visual">
-              <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1100&q=80" alt="Медийно участие и публично говорене" loading="lazy" decoding="async">
+              <img src="assets/images/media.jpg" alt="Медийно участие и публично говорене" width="1100" height="760" loading="lazy" decoding="async">
               <figcaption class="media-visual-card">
                 <h3>Публично присъствие с ясна позиция</h3>
                 <p>Участия, интервюта и коментари по теми, свързани с икономика, обществен интерес и бъдещето на Русе.</p>
               </figcaption>
             </figure>
 
-            <blockquote class="media-quote" aria-label="Цитат" style="margin-top: 20px;">
+            <blockquote class="media-quote" aria-label="Цитат">
               <p>„Общественият интерес не е за заобикаляне. Когато става дума за Русе, трябва да има яснота, аргументи и отговорност."</p>
               <footer>— <cite>Росен Симеонов</cite></footer>
             </blockquote>
@@ -775,12 +531,12 @@
           <div class="contact-form-wrap">
             <form id="contactForm" action="https://formspree.io/f/mnjbakgl" method="POST" novalidate aria-label="Форма за контакт">
               <input type="hidden" name="source" value="personal-website-homepage">
-              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <input type="text" name="_gotcha" hidden tabindex="-1" autocomplete="off" aria-hidden="true">
 
               <div class="form-row">
                 <div class="field">
                   <label for="f-name">Име <span aria-label="задължително">*</span></label>
-                  <input type="text" id="f-name" name="name" placeholder="Вашето Име" autocomplete="name" required aria-required="true">
+                  <input type="text" id="f-name" name="name" placeholder="Вашето име" autocomplete="name" required aria-required="true">
                 </div>
                 <div class="field">
                   <label for="f-email">Имейл <span aria-label="задължително">*</span></label>
