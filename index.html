@@ -1,546 +1,237 @@
 <!DOCTYPE html>
 <html lang="bg-BG">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Росен Симеонов | Обновяване</title>
 
-  <title>Росен Симеонов | Русе, икономика, визия и обществена дейност</title>
-  <meta name="description" content="Официален сайт на Росен Симеонов – русенец, икономист, финансист, предприемач и обществено ангажиран гражданин. Биография, позиции, публикации, медийни участия и визия за развитието на Русе.">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="author" content="Росен Симеонов">
-  <meta name="theme-color" content="#060f28">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="canonical" href="https://rosensimeonov.com/">
+  <style>
+    :root{
+      --bg:#060f28;
+      --text:rgba(255,255,255,0.92);
+      --muted:rgba(255,255,255,0.6);
+      --accent:#4ea1ff;
+      --border:rgba(255,255,255,0.12);
+    }
 
-  <meta property="og:locale" content="bg_BG">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Росен Симеонов">
-  <meta property="og:title" content="Росен Симеонов | Русе, икономика, визия и обществена дейност">
-  <meta property="og:description" content="Биография, позиции, публикации, медийни участия и визия за развитието на Русе.">
-  <meta property="og:url" content="https://rosensimeonov.com/">
-  <meta property="og:image" content="https://rosensimeonov.com/assets/images/thumbnail-rosen.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+    *{margin:0;padding:0;box-sizing:border-box}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Росен Симеонов | Русе, икономика, визия и обществена дейност">
-  <meta name="twitter:description" content="Биография, позиции, публикации, медийни участия и визия за развитието на Русе.">
-  <meta name="twitter:image" content="https://rosensimeonov.com/assets/images/thumbnail-rosen.png">
+    body{
+      font-family:"DM Sans",sans-serif;
+      background:radial-gradient(1200px 800px at 20% 10%, #0b1b44 0%, var(--bg) 55%);
+      height:100vh;
+      overflow:hidden;
+      color:var(--text);
+      cursor:none;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    /* ================= CURSOR LIGHT ================= */
+    .cursor{
+      position:fixed;
+      width:300px;
+      height:300px;
+      background:radial-gradient(circle, rgba(78,161,255,0.25), transparent 60%);
+      border-radius:50%;
+      pointer-events:none;
+      transform:translate(-50%,-50%);
+      transition:0.08s linear;
+      filter:blur(10px);
+      z-index:1;
+    }
 
-  <link rel="preload" as="image" href="assets/images/rosen-simeonov.png" fetchpriority="high">
+    /* ================= TICKER ================= */
+    .ticker{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      padding:12px 0;
+      overflow:hidden;
+      border-bottom:1px solid var(--border);
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:blur(10px);
+    }
 
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    .ticker-track{
+      display:flex;
+      gap:60px;
+      white-space:nowrap;
+      animation:scroll 18s linear infinite;
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
 
-  <link rel="stylesheet" href="assets/css/style.css">
+    @keyframes scroll{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
+    }
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://rosensimeonov.com/#website",
-        "url": "https://rosensimeonov.com/",
-        "name": "Росен Симеонов",
-        "inLanguage": "bg-BG"
-      },
-      {
-        "@type": "Person",
-        "@id": "https://rosensimeonov.com/#person",
-        "name": "Росен Симеонов",
-        "url": "https://rosensimeonov.com/",
-        "jobTitle": "Икономист, финансист, предприемач",
-        "address": { "@type": "PostalAddress", "addressLocality": "Русе", "addressCountry": "BG" },
-        "sameAs": [
-          "https://www.facebook.com/rosen.simeonov.12",
-          "https://www.linkedin.com/in/rosen-simeonov/",
-          "https://www.tiktok.com/@rossimeonov"
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Кой е Росен Симеонов?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Росен Симеонов е русенец, икономист, финансист, предприемач и обществено ангажиран гражданин с международен професионален опит." }
-          },
-          {
-            "@type": "Question",
-            "name": "Какви теми поставя във фокус?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Икономика, инвестиции, финансова грамотност, градска среда, прозрачност и бъдещето на Русе." }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+    /* ================= MAIN ================= */
+    .wrap{
+      position:relative;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:2;
+      text-align:center;
+      padding:40px;
+    }
+
+    h1{
+      font-family:"Syne",sans-serif;
+      font-size:46px;
+      margin-bottom:14px;
+    }
+
+    .accent{color:var(--accent)}
+
+    p{
+      color:var(--muted);
+      max-width:600px;
+      margin:0 auto 30px auto;
+      line-height:1.7;
+    }
+
+    /* ================= DASHBOARD CARDS ================= */
+    .cards{
+      display:flex;
+      gap:16px;
+      justify-content:center;
+      margin-top:30px;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      width:180px;
+      padding:16px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(14px);
+      transition:0.3s;
+      animation:float 6s ease-in-out infinite;
+    }
+
+    .card:nth-child(2){animation-delay:1s}
+    .card:nth-child(3){animation-delay:2s}
+
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(78,161,255,0.5);
+    }
+
+    .label{
+      font-size:11px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:0.1em;
+    }
+
+    .value{
+      margin-top:6px;
+      font-size:14px;
+      color:var(--text);
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
+
+    /* ================= STATUS DOT ================= */
+    .status{
+      margin-top:25px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent);
+      animation:pulse 1.2s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(0.8);opacity:0.4}
+      50%{transform:scale(1.4);opacity:1}
+    }
+
+  </style>
 </head>
+
 <body>
 
-  <a href="#main-content" class="skip-link">Пропусни към съдържанието</a>
+<div class="cursor" id="cursor"></div>
 
-  <!-- OVERLAY -->
-  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>САЙТЪТ СЕ ОБНОВЯВА · НОВА СТРУКТУРА · НОВ ДИЗАЙН · РУСЕ · ИКОНОМИКА · ОБЩЕСТВЕНА ДЕЙНОСТ ·</span>
+    <span>САЙТЪТ СЕ ОБНОВЯВА · НОВА СТРУКТУРА · НОВ ДИЗАЙН · РУСЕ · ИКОНОМИКА · ОБЩЕСТВЕНА ДЕЙНОСТ ·</span>
+  </div>
+</div>
 
-  <!-- MOBILE DRAWER -->
-  <aside class="drawer" id="drawer" aria-label="Мобилна навигация" aria-hidden="true">
-    <div class="drawer-top">
-      <div>
-        <div class="drawer-eyebrow">Навигация</div>
-        <a href="index.html" class="drawer-brand js-close-drawer">Росен Симеонов</a>
+<div class="wrap">
+
+  <div>
+    <h1>
+      Сайтът на <span class="accent">Росен Симеонов</span><br>
+      се обновява
+    </h1>
+
+    <p>
+      Работим по нова версия с по-ясна структура, по-силна визуална идентичност
+      и по-фокусирано съдържание.
+    </p>
+
+    <!-- FLOATING INFO CARDS -->
+    <div class="cards">
+
+      <div class="card">
+        <div class="label">Статус</div>
+        <div class="value">Активно обновяване</div>
       </div>
-      <button class="drawer-close" id="drawerClose" aria-label="Затвори менюто">
-        <i class="fas fa-times" aria-hidden="true"></i>
-      </button>
+
+      <div class="card">
+        <div class="label">Фокус</div>
+        <div class="value">Дизайн + структура</div>
+      </div>
+
+      <div class="card">
+        <div class="label">Очакване</div>
+        <div class="value">Скоро онлайн</div>
+      </div>
+
     </div>
 
-    <nav class="drawer-nav" aria-label="Мобилна навигация">
-      <a href="za-men.html" class="drawer-link">
-        <span>За Росен</span>
-        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
-      <a href="publikacii.html" class="drawer-link">
-        <span>Публикации</span>
-        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
-      <a href="medii.html" class="drawer-link">
-        <span>Медии</span>
-        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
-      <a href="kampania-2026.html" class="drawer-link">
-        <span>Кампания 2026</span>
-        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
-      <a href="#contact" class="drawer-link js-scroll-link" data-target="contact">
-        <span>Контакт</span>
-        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
-    </nav>
-
-    <div class="drawer-footer">
-      <div class="drawer-socials">
-        <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <i class="fab fa-tiktok" aria-hidden="true"></i>
-        </a>
-      </div>
-      <p class="drawer-copy">© 2026 Росен Симеонов</p>
+    <div class="status">
+      <span class="dot"></span>
+      Системна модернизация
     </div>
-  </aside>
+  </div>
 
-  <!-- HEADER -->
-  <header class="site-header" id="siteHeader" role="banner">
-    <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Начало – Росен Симеонов">
-        <span class="brand-name">Росен Симеонов</span>
-        <span class="brand-sub" aria-hidden="true">Русе · Икономика · Обществена дейност</span>
-      </a>
+</div>
 
-      <nav class="desktop-nav" aria-label="Главна навигация">
-        <a href="za-men.html">За Росен</a>
-        <a href="publikacii.html">Публикации</a>
-        <a href="medii.html">Медии</a>
-        <a href="kampania-2026.html">Кампания 2026</a>
-        <a href="#contact" class="js-scroll-link" data-target="contact">Контакт</a>
-      </nav>
+<script>
+  // cursor follow effect
+  const cursor = document.getElementById("cursor");
 
-      <div class="header-right">
-        <div class="header-socials" aria-label="Социални мрежи">
-          <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-            <i class="fab fa-tiktok" aria-hidden="true"></i>
-          </a>
-        </div>
+  window.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  });
+</script>
 
-        <button
-          class="burger"
-          id="burgerBtn"
-          aria-label="Отвори менюто"
-          aria-expanded="false"
-          aria-controls="drawer"
-          type="button"
-        >
-          <span class="burger-bar"></span>
-          <span class="burger-bar"></span>
-          <span class="burger-bar"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content" tabindex="-1">
-
-    <!-- ═══════════════════════════════════
-         HERO
-    ═══════════════════════════════════ -->
-    <section class="hero" aria-label="Представяне">
-
-      <div class="hero-photo" aria-hidden="true">
-        <img src="assets/images/rosen-simeonov.png" alt="" width="880" height="1100" fetchpriority="high" loading="eager" decoding="async">
-      </div>
-
-      <div class="container hero-container">
-        <div class="hero-content">
-          <div class="hero-pills" aria-label="Ключови роли">
-            <span class="pill">Русенец</span>
-            <span class="pill">Икономист</span>
-            <span class="pill">Финансист</span>
-            <span class="pill">Предприемач</span>
-          </div>
-
-          <h1 class="hero-title">
-            Росен<br>Симеонов
-          </h1>
-
-          <p class="hero-tagline">Опит, дисциплина и ясна визия за Русе.</p>
-
-          <p class="hero-lead">
-            Почти две десетилетия международен опит, подготовка по икономика, финанси и управление и съзнателен избор да се върна в Русе — не с шумни обещания, а с работа и отговорност към града.
-          </p>
-
-          <div class="hero-cta">
-            <a href="za-men.html" class="btn btn-white">За Росен</a>
-            <a href="#vision" class="btn btn-ghost js-scroll-link" data-target="vision">Визия за Русе</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span></span>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         STATEMENT BAND
-    ═══════════════════════════════════ -->
-    <section class="band" aria-label="Принцип">
-      <div class="container band-inner">
-        <p class="band-kicker">Принцип</p>
-        <h2 class="band-text">Русе има нужда не от повече шум — а от повече работа, ред и ясни приоритети.</h2>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         ЗА РОСЕН
-    ═══════════════════════════════════ -->
-    <section class="section section-light" id="about" aria-labelledby="about-h">
-      <div class="container">
-
-        <div class="section-label">За Росен Симеонов</div>
-        <h2 class="section-title" id="about-h">Икономика, финанси и обществен ангажимент</h2>
-
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>Росен Симеонов е русенец, икономист, финансист и предприемач с международен опит и активна обществена позиция. След години работа в международна среда и натрупана практическа подготовка, той се завръща в Русе с убеждението, че знанията имат смисъл само когато работят в полза на хората и града.</p>
-            <p>Подходът му е основан на дисциплина, реалистичен поглед към ресурсите, дългосрочно мислене и уважение към труда. Обществената дейност за него не е поза, а естествено продължение на ценностите, с които живее.</p>
-            <a href="za-men.html" class="link-arrow">Прочети пълната биография <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          </div>
-
-          <aside class="about-panel" aria-label="Профил накратко">
-            <h3 class="panel-title">В няколко думи</h3>
-            <ul class="check-list">
-              <li>Международен професионален опит</li>
-              <li>Подготовка по икономика, финанси и управление</li>
-              <li>Предприемаческо мислене и практичен подход</li>
-              <li>Съзнателно завръщане в Русе</li>
-              <li>Фокус върху решения, не върху шум</li>
-              <li>Последователна обществена позиция</li>
-            </ul>
-          </aside>
-        </div>
-
-        <div class="cards-grid">
-          <article class="card-icon">
-            <div class="card-icon-wrap" aria-hidden="true"><i class="fas fa-globe-europe"></i></div>
-            <h3>Международен опит</h3>
-            <p>Години в среда с високи стандарти и реална отчетност, изградила дисциплина и управленски поглед.</p>
-          </article>
-          <article class="card-icon">
-            <div class="card-icon-wrap" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
-            <h3>Икономика и финанси</h3>
-            <p>Образование и практика, които дават основа за анализ на местни бюджети, инвестиционна среда и публични решения.</p>
-          </article>
-          <article class="card-icon">
-            <div class="card-icon-wrap" aria-hidden="true"><i class="fas fa-people-group"></i></div>
-            <h3>Обществена отговорност</h3>
-            <p>Доверие, отчетност и работа по същество — не временен ефект и политически шум.</p>
-          </article>
-          <article class="card-icon">
-            <div class="card-icon-wrap" aria-hidden="true"><i class="fas fa-location-dot"></i></div>
-            <h3>Връзка с Русе</h3>
-            <p>Личен избор да бъде тук и да работи за по-силна икономика и повече перспектива за следващото поколение.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         ВИЗИЯ
-    ═══════════════════════════════════ -->
-    <section class="section section-dark" id="vision" aria-labelledby="vision-h">
-      <div class="container">
-        <div class="section-label light">Визия за Русе</div>
-        <h2 class="section-title light" id="vision-h">Ясни приоритети за по-силен град</h2>
-        <p class="section-intro light">Русе има потенциал да бъде град с по-силна икономика, по-добра среда и повече причини младите хора да избират да останат. Това изисква дисциплина и дългосрочен подход.</p>
-
-        <div class="vision-grid">
-          <article class="vision-card vision-card-featured">
-            <div class="vision-card-num" aria-hidden="true">01</div>
-            <h3>Икономика и инвестиции</h3>
-            <p>Русе трябва да привлича бизнес и работни места чрез предвидима среда, добра инфраструктура и уважение към предприемачеството.</p>
-          </article>
-          <article class="vision-card">
-            <div class="vision-card-num" aria-hidden="true">02</div>
-            <h3>Градска среда</h3>
-            <p>По-подреден, по-чист и по-добре управляван град с реален фокус върху качеството на живот.</p>
-          </article>
-          <article class="vision-card">
-            <div class="vision-card-num" aria-hidden="true">03</div>
-            <h3>Прозрачност</h3>
-            <p>Публичните решения трябва да се вземат ясно, аргументирано и в интерес на гражданите.</p>
-          </article>
-          <article class="vision-card">
-            <div class="vision-card-num" aria-hidden="true">04</div>
-            <h3>Финансова грамотност</h3>
-            <p>По-силна култура на отговорност към парите и икономическите решения на лично и обществено ниво.</p>
-          </article>
-          <article class="vision-card">
-            <div class="vision-card-num" aria-hidden="true">05</div>
-            <h3>Младите хора</h3>
-            <p>Повече възможности и перспектива, така че Русе да не губи енергията на следващото поколение.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         ПУБЛИКАЦИИ
-    ═══════════════════════════════════ -->
-    <section class="section section-light" id="publications" aria-labelledby="pub-h">
-      <div class="container">
-        <div class="section-label">Публикации</div>
-        <h2 class="section-title" id="pub-h">Позиции, анализи и идеи</h2>
-
-        <div class="pub-layout">
-          <article class="pub-featured">
-            <div class="pub-featured-inner">
-              <span class="pub-tag">Блог · 2026</span>
-              <h3>Как Русе може да привлича повече инвестиции и работни места</h3>
-              <p>Няколко конкретни посоки за по-силна местна икономика, по-добра бизнес среда и повече възможности за хората в града.</p>
-              <a href="publikacii.html" class="btn btn-white-sm" aria-label="Прочети: Как Русе може да привлича повече инвестиции">Прочети →</a>
-            </div>
-          </article>
-
-          <div class="pub-side">
-            <article class="pub-card">
-              <span class="pub-tag-blue">Блог · 2026</span>
-              <h3><a href="publikacii.html">Финансовата грамотност не е лукс, а необходимост</a></h3>
-              <p>Защо доброто управление на личните финанси има значение и за по-стабилна общност.</p>
-            </article>
-            <article class="pub-card">
-              <span class="pub-tag-blue">Блог · 2026</span>
-              <h3><a href="publikacii.html">Русе има потенциал, но му трябват ясни приоритети</a></h3>
-              <p>Инфраструктура, администрация и икономика — темите, които трябва да са в центъра на местните решения.</p>
-            </article>
-            <a href="publikacii.html" class="link-arrow">Всички публикации <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         МЕДИИ
-    ═══════════════════════════════════ -->
-    <section class="section section-mid" id="media" aria-labelledby="media-h">
-      <div class="container">
-        <div class="section-label light">Медийни участия</div>
-        <h2 class="section-title light" id="media-h">Публично присъствие по важните теми за Русе</h2>
-
-        <div class="media-grid">
-          <div class="media-list-col">
-            <ul class="media-list" aria-label="Медийни участия">
-              <li class="media-item">
-                <div class="media-source">Economy.bg</div>
-                <p>За грешките на индивидуалните инвеститори и нуждата от дисциплина</p>
-              </li>
-              <li class="media-item">
-                <div class="media-source">Вестник Утро</div>
-                <p>За завръщането в Русе и смисъла от почтено обществено представителство</p>
-              </li>
-              <li class="media-item">
-                <div class="media-source">KISS 13</div>
-                <p>За защита на обществения интерес и нуждата от ясни правила</p>
-              </li>
-            </ul>
-            <a href="medii.html" class="btn btn-white">Всички участия</a>
-          </div>
-
-          <blockquote class="media-quote" aria-label="Цитат">
-            <p>„Общественият интерес не е за заобикаляне. Когато става дума за Русе, трябва да има яснота, аргументи и отговорност."</p>
-            <footer>— <cite>Росен Симеонов</cite></footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         FAQ
-    ═══════════════════════════════════ -->
-    <section class="section section-light" id="faq" aria-labelledby="faq-h">
-      <div class="container faq-container">
-        <div class="section-label">Въпроси</div>
-        <h2 class="section-title" id="faq-h">Често задавани въпроси</h2>
-
-        <div class="faq-list" role="list">
-          <details class="faq-item" role="listitem">
-            <summary>Кой е Росен Симеонов?</summary>
-            <div class="faq-body"><p>Русенец, икономист, финансист, предприемач и обществено ангажиран гражданин с международен опит и активна позиция по теми, свързани с Русе и региона.</p></div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary>Какви теми поставя във фокус?</summary>
-            <div class="faq-body"><p>Икономика, инвестиции, финансова грамотност, градска среда, прозрачност, отчетност и бъдещето на Русе.</p></div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary>Къде могат да се прочетат публикациите му?</summary>
-            <div class="faq-body"><p>В секцията <a href="publikacii.html">„Публикации"</a> — позиции, анализи и идеи за Русе, икономиката и обществената среда.</p></div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary>Къде могат да се видят медийните участия?</summary>
-            <div class="faq-body"><p>В секцията <a href="medii.html">„Медии"</a> — интервюта и участия по теми от обществен интерес.</p></div>
-          </details>
-          <details class="faq-item" role="listitem">
-            <summary>Как може да се осъществи контакт?</summary>
-            <div class="faq-body"><p>Чрез формата в секцията <a href="#contact" class="js-scroll-link" data-target="contact">„Контакт"</a> по-долу или директно чрез социалните мрежи.</p></div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         КОНТАКТ
-    ═══════════════════════════════════ -->
-    <section class="section section-contact" id="contact" aria-labelledby="contact-h">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-intro">
-            <div class="section-label light">Контакт</div>
-            <h2 class="section-title light" id="contact-h">Свържи се с Росен Симеонов</h2>
-            <p>Ако имаш въпрос, идея или покана за среща по тема, важна за Русе, използвай формата за контакт.</p>
-
-            <nav class="contact-socials" aria-label="Социални мрежи">
-              <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook (отваря нов прозорец)">
-                <i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook
-              </a>
-              <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (отваря нов прозорец)">
-                <i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn
-              </a>
-              <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok (отваря нов прозорец)">
-                <i class="fab fa-tiktok" aria-hidden="true"></i> TikTok
-              </a>
-            </nav>
-          </div>
-
-          <div class="contact-form-wrap">
-            <form
-              id="contactForm"
-              action="https://formspree.io/f/mnjbakgl"
-              method="POST"
-              novalidate
-              aria-label="Форма за контакт"
-            >
-              <input type="hidden" name="source" value="personal-website-homepage">
-              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-              <div class="form-row">
-                <div class="field">
-                  <label for="f-name">Име <span aria-label="задължително">*</span></label>
-                  <input type="text" id="f-name" name="name" placeholder="Вашето Име" autocomplete="name" required aria-required="true">
-                </div>
-                <div class="field">
-                  <label for="f-email">Имейл <span aria-label="задължително">*</span></label>
-                  <input type="email" id="f-email" name="email" placeholder="Вашият имейл" autocomplete="email" required aria-required="true">
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="f-topic">Тема</label>
-                <input type="text" id="f-topic" name="topic" placeholder="Тема на съобщението" autocomplete="off">
-              </div>
-
-              <div class="field">
-                <label for="f-message">Съобщение <span aria-label="задължително">*</span></label>
-                <textarea id="f-message" name="message" rows="5" placeholder="Вашето съобщение" required aria-required="true"></textarea>
-              </div>
-
-              <div id="formStatus" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
-
-              <button type="submit" id="formSubmit" class="btn btn-white">Изпрати</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-name">Росен Симеонов</p>
-        <p class="footer-desc">Официален сайт — русенец, икономист, финансист, предприемач и обществено ангажиран гражданин.</p>
-      </div>
-
-      <nav class="footer-nav" aria-label="Footer навигация">
-        <a href="za-men.html">За Росен</a>
-        <a href="publikacii.html">Публикации</a>
-        <a href="medii.html">Медии</a>
-        <a href="kampania-2026.html">Кампания 2026</a>
-        <a href="#contact" class="js-scroll-link" data-target="contact">Контакт</a>
-      </nav>
-
-      <div class="footer-socials" aria-label="Социални мрежи">
-        <a href="https://www.facebook.com/rosen.simeonov.12" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/rosen-simeonov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.tiktok.com/@rossimeonov" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <i class="fab fa-tiktok" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <small>© <time datetime="2026">2026</time> Росен Симеонов. Всички права запазени.</small>
-    </div>
-  </footer>
-
-  <!-- Back to top -->
-  <button class="back-top" id="backTop" aria-label="Нагоре" type="button">
-    <i class="fas fa-chevron-up" aria-hidden="true"></i>
-  </button>
-
-  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
