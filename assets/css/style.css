@@ -1866,3 +1866,17 @@ ul, ol { list-style: none; }
     font-size: clamp(3.5rem, 15vw, 5rem);
   }
 }
+.hero-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%,100% {
+    transform: scale(1);
+    opacity: .7;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
